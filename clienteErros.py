@@ -2,6 +2,8 @@
 
 '''
 Este modulo cuida do registro dos logs do programa e está divido em funcoes para criar os arquivos e os preencher
+
+desenvolvido por Eduardo Martins Lopes < edumlopes at gmail dot com >
 '''
    
 def registrar(nomeDaFuncao, mensagem):

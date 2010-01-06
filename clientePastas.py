@@ -1,6 +1,10 @@
 #-*- coding: utf-8 -*-
 
-'''Este módulo é responsável pela preparação do cliente para operar como parte do sistema de cálculo da SBQInt'''
+'''
+Este módulo é responsável pela preparação do cliente para operar como parte do sistema de cálculo da SBQInt
+
+desenvolvido por Eduardo Martins Lopes < edumlopes at gmail dot com >
+'''
 
 
 def listar():
@@ -14,13 +18,14 @@ def listar():
     caminhoraiz = '/home/'+nome+'/.qnint'
     logs = caminhoraiz+'/logs'
     sistema = caminhoraiz+'/bin'
+    calculo = caminhoraiz+'/calculos'
     
-    diretorios = [nome, caminhoraiz, logs, sistema]
+    diretorios = [nome, caminhoraiz, logs, sistema, calculos]
     
     return diretorios
     
 
-def criar():
+def padrao():
     
     import os
     import sys
@@ -29,6 +34,7 @@ def criar():
     caminhoraiz = diretorios[1]
     logs = diretorios[2]
     sistema = diretorios[3]
+    calculos = diretorios[4]
 
     try:
         os.mkdir(caminhoraiz)
@@ -44,6 +50,23 @@ def criar():
         mensagem = 'Nao foi possivel criar as sub-pastas necessarias, por favor remova as pasts %s e %s \n' %(logs, systema)
         sys.stderr.write(mensagem)
 
+        
+def criar(usuario):
+    
+    import os
+    import clienteErros
+    
+    diretorios = listar()
+    calculos = diretorios[4]    
+    
+    resultados = calculos + '/' + usuario
+    
+    try:
+        os.mkdir(resultados)
+    except: 
+        mensagem = 'nao foi possivel criar a pasta para o usuario %s' %(usuario)
+        clienteErros.registrar('clientePastas.criar', mensagem)
+        
 def remover():
     
     import commands
@@ -59,6 +82,10 @@ def remover():
         
         sys.stderr.write('Remova manualmente os seguintes diretorios: \n')
         sys.stderr.write(diretorios)
+        
+
+
+        
         
         
     

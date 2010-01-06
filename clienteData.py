@@ -1,6 +1,10 @@
 #-*- coding:utf-8 -*-
 
-'''Este modulo contem as funcoes usadas para mapear a carga do cliente, hostname e ip. Nenhuma aceita variaveis de entrada '''
+'''
+Este modulo contem as funcoes usadas para mapear a carga do cliente, hostname e ip. Nenhuma aceita variaveis de entrada 
+
+desenvolvido por Eduardo Martins Lopes < edumlopes at gmail dot com >
+'''
 
 def carga():
     
@@ -15,7 +19,7 @@ def carga():
         carga = output[2]
         return carga
     except:
-        mensagem = 'impossivel obter a carga de uso em seu equipamento. Ele podera ser incluido no Grid-QNInt ate resolvermos esse problema. \n'
+        mensagem = 'impossivel obter a carga de uso em seu equipamento. Ele nao podera ser incluido no Grid-QNInt ate resolvermos esse problema. \n'
         sys.stderr.write(mensagem)
         clienteErros.registrar('clienteData.carga', mensagem) #registra o erro no log do programa
 
@@ -48,7 +52,7 @@ def pegarIP():
     
     except:
         #escreve a mensagem de erro na saida de erro padrao
-        mensagem = 'sem conexao com a internet. Seu equipamento nao poder ser incluido no GRID-QNInt ate resolver esse problema. \n'
+        mensagem = 'sem conexao com a internet. Seu equipamento nao podera ser acessado pelo GRID-QNInt ate resolver esse problema. \n'
         sys.stderr.write(mensagem)
         #registra o erro no log
         clienteErros.registrar('clienteData.pegarIP', mensagem)
