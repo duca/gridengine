@@ -1,6 +1,6 @@
-#-*- coding: latin-1 -*-
+#-*- coding: utf-8 -*-
 
-'''Este mÛdulo È respons·vel pela preparaÁ„o do cliente para operar como parte do sistema de c·lculo da SBQInt'''
+'''Este m√≥dulo √© respons√°vel pela prepara√ß√£o do cliente para operar como parte do sistema de c√°lculo da SBQInt'''
 
 
 def listar():

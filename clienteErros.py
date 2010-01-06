@@ -1,7 +1,7 @@
-#-*- coding:latin-1 -*-
+#-*- coding:utf-8 -*-
 
 '''
-Este modulo cuida do registro dos logs do programa e est· divido em funcoes para criar os arquivos e os preencher
+Este modulo cuida do registro dos logs do programa e est√° divido em funcoes para criar os arquivos e os preencher
 '''
    
 def registrar(nomeDaFuncao, mensagem):
