@@ -62,7 +62,6 @@ def pegarIP():
 def gerarNodeKey():
     
     import sys    
-    import pickle 
     import clienteData
     import clienteErros
     import clienteDB
