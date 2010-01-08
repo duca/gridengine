@@ -27,8 +27,24 @@ def carga():
     
 def hostname():
     '''Esta funcao detecta o hostname do pc'''
-    #a
+    import os
     
+    nome = 'NomePadrao'
+    
+    try: 
+        
+        nome = os.getoutput('/bin/uname -a')
+        
+    except:
+        
+        try:
+            
+            nome = os.getoutput('uname -a')
+            
+        except:
+            
+            nome = os.getoutput('/sbin/uname -a')
+    return nome
 
 def pegarIP():
     
@@ -77,8 +93,26 @@ def gerarNodeKey():
         sys.stderr.write(mensagem)
         
     
+def verificarKey(self,chave):
 
-    clienteDB.verificar
+            querysql = "select NodeKey from Nodes"
+            
+            chaves = clienteDB.fetchAll(querysql)
+            
+             
+            for results in chaves: #loop por toda a lista de resultadods
+                
+                if chave == chaves:
+                    
+                    confere = 'sim'
+                    break
+                
+                else:
+                    
+                    confere = 'nao'
+                    
+            return confere 
+
         
         
     
