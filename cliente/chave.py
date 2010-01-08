@@ -3,7 +3,8 @@
 '''
 Este módulo tem a única função de gerar as chaves utilizadas para identificar os nós e os processos atribuídos a cada usuário 
 
-desenvolvido por Eduardo Martins Lopes < edumlopes at gmail dot com >
+:version: 0.01
+:author: por Eduardo Martins Lopes < edumlopes at gmail.com dot com > 
 '''
 
 def gerar(tamanho):

@@ -3,7 +3,8 @@
 '''
 Este modulo contem as funcoes usadas para mapear a carga do cliente, hostname e ip. Nenhuma aceita variaveis de entrada 
 
-desenvolvido por Eduardo Martins Lopes < edumlopes at gmail dot com >
+:version: 0.01
+:author: por Eduardo Martins Lopes < edumlopes at gmail.com dot com > 
 '''
 
 def carga():
@@ -58,9 +59,27 @@ def pegarIP():
         clienteErros.registrar('clienteData.pegarIP', mensagem)
         
     
+def gerarNodeKey():
     
+    import sys    
+    import pickle 
+    import clienteData
+    import clienteErros
+    import clienteDB
+    import chave
 
     
+    tamanho = 10
+    try:
+        NodeKey = chave.gerar(tamanho)
+    except:
+        mensagem = 'Nao foi possivel gerar a chave para este Nodo'
+        clienteErros.registrar('clienteDB.gerarNodeKey', mensagem)
+        sys.stderr.write(mensagem)
+        
+    
+
+    clienteDB.verificar
         
         
     
