@@ -7,7 +7,7 @@ Este modulo contem as funcoes usadas para mapear a carga do cliente, hostname e 
 :author: por Eduardo Martins Lopes < edumlopes at gmail.com dot com > 
 '''
 
-def carga():
+def Carga():
     
     '''funcao usada para levantar a carga media em 5min da cpu '''
     
@@ -93,25 +93,29 @@ def gerarNodeKey():
         sys.stderr.write(mensagem)
         
     
-def verificarKey(self,chave):
-
-            querysql = "select NodeKey from Nodes"
+def verificarKey(chave):
+    
+    import clienteDB
+    
+    querysql = "select NodeKey from Nodes"
             
-            chaves = clienteDB.fetchAll(querysql)
+    chaves = clienteDB.fetchAll(querysql)
             
              
-            for results in chaves: #loop por toda a lista de resultadods
-                
-                if chave == chaves:
+    for results in chaves: #loop por toda a lista de resultadods
+        
+        
+        if chave == chaves:
+            
+            confere = 'sim'
+            
+            break
+        
+        else:            
+          
+            confere = 'nao'
                     
-                    confere = 'sim'
-                    break
-                
-                else:
-                    
-                    confere = 'nao'
-                    
-            return confere 
+    return confere 
 
         
         
