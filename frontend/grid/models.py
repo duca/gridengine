@@ -17,7 +17,7 @@ class Nodes(models.Model):
     nodeAvail = models.IntegerField('Ativo (sim:1 ou nao:0)')
     nodeHostname = models.CharField('Hostname', max_length = 100)
     nodeIP = models.CharField('IP do Nodo', max_length = 15)
-    nodeCheck = models.DateTimeField('Data de Registro')
+    nodeDate = models.CharField('Data de Registro', max_length = 30)
     
 class NodeLoad(models.Model):
     nodeKey = models.CharField('Id do Nodo', max_length = 5)

@@ -3,10 +3,24 @@
 '''
 Este modulo contem as funcoes usadas para mapear a carga do cliente, hostname e ip. Nenhuma aceita variaveis de entrada 
 
-:version: 0.01
+:version: 0.0.1
 :author: por Eduardo Martins Lopes < edumlopes at gmail.com dot com > 
 '''
 
+def Datetime():
+    
+    import commands
+    import clienteErros
+    import sys
+    
+    try:
+        string = commands.getoutput('date')
+    except:
+        message = 'Nao foi possivel levantar a data e a hora atuais.'
+        sys.stderr.write(message)
+        clienteErros.registrar('clienteData.Datetime', message)
+    return string
+        
 def Carga():
     
     '''funcao usada para levantar a carga media em 5min da cpu '''
@@ -100,7 +114,7 @@ def ram():
     
     try:
         memoria = os.popen("free -m").readlines()[1].split()[1]
-        return memoria
+        return int(memoria)
     except:
         message = "Nao foi possivel obter informacao de quanta ram ha no sistema, essa informacao é importante para o Grid e portanto seu workstation nao foi adicionado ainda. Tente novamente mais tarde"
         sys.stderr.write(message)
@@ -113,10 +127,11 @@ def sumario():
     
     key = Chave.gerar(5)
     nome = hostname()
+    datahora = Datetime()
     IP = pegarIP()
     cpus = nucleos()
     sisram = ram()    
-    tudo = {'key' : key, 'nome' : nome, 'IP': IP, 'nucleos' : cpus, 'ram' : sisram}
+    tudo = {'key' : key, 'nome' : nome, 'IP': IP, 'nucleos' : cpus, 'ram' : sisram, 'datetime' : datahora}
     
     return tudo
 
@@ -161,6 +176,7 @@ def verificarKey(chave):
     servidor.conectar()
 
     chaves = servidor.fetchAll(querysql)
+    servidor.Desconectar()
     
     for results in chaves: #loop por toda a lista de resultadods
         

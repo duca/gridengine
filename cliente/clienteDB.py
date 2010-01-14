@@ -3,7 +3,7 @@
 '''
 Este módulo contém as funções que registram, no banco de dados, as informações relativas ao nó em que foi instalado
 
-:version: 0.01
+:version: 0.0.1
 :author: por Eduardo Martins Lopes < edumlopes at gmail.com dot com > 
 '''
 
@@ -32,8 +32,8 @@ class banco:
         except:
             
             mensagem = "Nao foi possivel conectar ao servidor. Verifique a conexao e tente mais tarde"
-            #clienteErros.registrar('clienteDB.conectar', mensagem)
-            #sys.exit()
+            clienteErros.registrar('clienteDB.conectar', mensagem)
+            sys.exit()
         con.select_db("grid")
         self.cursor = con.cursor()
         
@@ -57,11 +57,22 @@ class banco:
         
 
 
-    def registrarInfo(self):
+    def registrarWorkstation(self, sumario ):
         
-        nodeKey = models.CharField('Id do Nodo', max_length = 5)
-        nodeCores = models.IntegerField('Num. de Nucleos')
-        nodeAvail = models.IntegerField('Ativo (sim:1 ou nao:0)')
-        nodeHostname = models.CharField('Hostname', max_length = 20)
-        nodeIP = models.CharField('IP do Nodo', max_length = 15)
-        nodeCheck = models.DateTimeField('Data de Registro')
+        import clienteData
+        import clienteErros
+        import sys
+        
+        dados = clienteData.sbp()
+       
+        status = verificarKey(sumario['key'])
+        
+        if status == 1:
+            message = 'Seu workstation ja esta cadastrado'
+            sys.stderr.write(message)
+            clienteErros('clienteFuncoes.cadastrar', message)
+            sys.exit()            
+            
+        querysql = 'Insert into Nodes (nodeKey, nodeCores, nodeRam, nodeAvail, nodeHostname, nodeIP, nodeCheck) values (%s, %i, %i, %i, %s, %s, %s)' % ( sumario['key'], sumario['nucleos'], sumario['ram'], 1, sumario['nome'], sumario['IP'], sumario['datetime'])
+        
+        self.cursor.execute(querysql)

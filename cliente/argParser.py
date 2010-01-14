@@ -2,7 +2,8 @@
 
 '''
 Este módulo é o responsável por processar a lista de argumentos
-
+:version: 0.0.1
+:author: por Eduardo Martins Lopes < edumlopes at gmail.com dot com > 
 '''
 
 def Padrao(argumentos):

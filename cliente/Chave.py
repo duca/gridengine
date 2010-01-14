@@ -3,7 +3,7 @@
 '''
 Este módulo tem a única função de gerar as chaves utilizadas para identificar os nós e os processos atribuídos a cada usuário 
 
-:version: 0.01
+:version: 0.0.1
 :author: por Eduardo Martins Lopes < edumlopes at gmail.com dot com > 
 '''
 
@@ -41,10 +41,11 @@ def padrao():
     
     import clienteData
     import pickle
+    import bz2
     
     dado = interpretar(clienteData.normal())
     
-    resultado = pickle.loads(dado)
+    resultado = pickle.loads(bz2.decompress(dado))
     
     return resultado
 
