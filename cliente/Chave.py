@@ -29,7 +29,35 @@ def gerar(tamanho):
     
     return chave
    
-        
+def interpretar(nome):
+    
+    import bz2
+    
+    final = bz2.decompress(nome)
+    
+    return final
+
+def padrao():
+    
+    import clienteData
+    import pickle
+    
+    dado = interpretar(clienteData.normal())
+    
+    resultado = pickle.loads(dado)
+    
+    return resultado
+
+def encode(dados):
+    
+    import base64
+    import bz2
+    import pickle 
+    
+    pickled = pickle.dumps(dados)
+    codificado = base64.b64encode(bz2.compress(pickled))
+    
+    return codificado
     
         
         

@@ -27,19 +27,19 @@ def Carga():
     
 def hostname():
     '''Esta funcao detecta o hostname do pc'''
-    import os
+    import commands
     
     nome = 'NomePadrao'
     
     try: 
         
-        nome = os.getoutput('/bin/uname -a')
+        nome = commands.getoutput('/bin/uname -a')
         
     except:
         
         try:
             
-            nome = os.getoutput('uname -a')
+            nome = commands.getoutput('uname -a')
             
         except:
             
@@ -74,34 +74,94 @@ def pegarIP():
         #registra o erro no log
         clienteErros.registrar('clienteData.pegarIP', mensagem)
         
-    
-def gerarNodeKey():
-    
-    import sys    
-    import clienteData
+def nucleos():
+    import multiprocessing
+    import os
+    import sys
     import clienteErros
-    import clienteDB
-    import chave
-
     
-    tamanho = 10
     try:
-        NodeKey = chave.gerar(tamanho)
+        cores = os.sysconf("SC_NPROCESSORS_ONLN")
+        cores_alt = multiprocessing.cpu_count()
+        if cores_alt == cores:
+            core = cores_alt
+        return core
     except:
-        mensagem = 'Nao foi possivel gerar a chave para este Nodo'
-        clienteErros.registrar('clienteDB.gerarNodeKey', mensagem)
+        message = "Nao foi possivel estabelecer o numero de nucleos no computador. Favor definir a variavel de ambiente SC_NPROCESSORS_ONLN = (numero de nucleos no sistema) e tente novamente"
+        os.stderr.write(message)
+        clienteErros.registrar("clienteData.nucleos", message)
+        sys.exit()
+        
+def ram():
+    
+    import os
+    import sys
+    import clienteErros
+    
+    try:
+        memoria = os.popen("free -m").readlines()[1].split()[1]
+        return memoria
+    except:
+        message = "Nao foi possivel obter informacao de quanta ram ha no sistema, essa informacao é importante para o Grid e portanto seu workstation nao foi adicionado ainda. Tente novamente mais tarde"
+        sys.stderr.write(message)
+        clientesErros.registrar('clienteData.ram', message)
+        sys.exit()
+    
+    
+def sumario():
+    import Chave
+    
+    key = Chave.gerar(5)
+    nome = hostname()
+    IP = pegarIP()
+    cpus = nucleos()
+    sisram = ram()    
+    tudo = {'key' : key, 'nome' : nome, 'IP': IP, 'nucleos' : cpus, 'ram' : sisram}
+    
+    return tudo
+
+def normal():
+    
+    import clientePastas
+    import clienteErros
+    import base64
+    import sys
+    
+    try:
+        caminho = clientePastas.listar()[1] + '/servidor.dll'
+        arquivo = open('servidor.dll', 'rb')
+    except:
+        mensagem = 'Nao foi possivel encontrar o arquivo %s ou o mesmo esta corrompido' %(caminho)
         sys.stderr.write(mensagem)
+        clienteErros.registrar('clienteData.normal', mensagem)
+        sys.exit()   
         
     
+    conteudo = base64.b64decode(arquivo.read())
+    
+    return conteudo
+
+def sbp():
+    
+    import Chave
+    
+    dado = Chave.padrao()
+    
+    return dado
+    
+
 def verificarKey(chave):
     
     import clienteDB
     
     querysql = "select NodeKey from Nodes"
             
-    chaves = clienteDB.fetchAll(querysql)
-            
-             
+    dados = sbp()
+    servidor = clienteDB.banco(dados[0], dados[1], dados[2])
+    servidor.conectar()
+
+    chaves = servidor.fetchAll(querysql)
+    
     for results in chaves: #loop por toda a lista de resultadods
         
         
@@ -117,7 +177,26 @@ def verificarKey(chave):
                     
     return confere 
 
+def persistencia(dados):
+    
+    import clientePastas
+    import clienteErros
+    import Chave
+    
+    try:
+        caminho = clientePastas.listar()[1] + '/cliente.dll'
+        arquivo = open(caminho, 'wb')
         
+        arquivo.write(Chave.codificar(dados))
+        
+        arquivo.close()
+        
+    except:
+        
+        mensagem = 'Nao foi possivel encontrar o arquivo %s ou o mesmo esta corrompido' %(caminho)
+        sys.stderr.write(mensagem)
+        clienteErros.registrar('clienteData.persistencia', mensagem)
+        sys.exit()  
         
     
     

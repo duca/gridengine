@@ -26,7 +26,7 @@ def listar():
     
 
 def padrao():
-    
+    ''' Gera as pastas padrão que devem haver no cliente. Lembrando que ficam dentro de uma pasta raiz escondida'''
     import os
     import sys
 
@@ -52,7 +52,7 @@ def padrao():
 
         
 def criar(usuario):
-    
+    '''Essa função cria a pasta que conterá os dados da simulação e seu resultado.'''
     import os
     import clienteErros
     
@@ -68,7 +68,7 @@ def criar(usuario):
         clienteErros.registrar('clientePastas.criar', mensagem)
         
 def remover():
-    
+    '''Remove todas as pastas criadas no cliente.'''
     import commands
     import sys
     

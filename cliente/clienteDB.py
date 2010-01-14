@@ -7,7 +7,7 @@ Este módulo contém as funções que registram, no banco de dados, as informaç
 :author: por Eduardo Martins Lopes < edumlopes at gmail.com dot com > 
 '''
 
-class BD:
+class banco:
     
     usuario = None
     senha = None
