@@ -1,3 +1,10 @@
+#-*- coding: utf-8 -*-
+
+'''
+:version: 0.01
+:author: por Eduardo Martins Lopes < edumlopes at gmail.com dot com > 
+'''
+
 def compactar(usuario):
     
     import tarfile
