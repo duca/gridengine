@@ -7,7 +7,14 @@
 import sys
 import argParser
   
-argParser.Processar(sys.argv)
+status = argParser.Processar(sys.argv)
+
+if status == False: #Não iniciar o serviço
+    
+    sys.exit()
+    
+else if status == True: #Iniciar o serviço
+    #início do loop principal
       
 
 

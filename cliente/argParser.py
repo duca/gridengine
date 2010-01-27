@@ -30,18 +30,26 @@ def Processar(argumentos):
   Check(argumentos)
       
   argumento = argumentos[1][3:]
-  if argumento == "cadastrar":
+  if arumento == "iniciar":
+    return True
+  else if argumento == "cadastrar":
     clienteFuncoes.cadastrar()
+    return False
   else if argumento == "descadastrar":
     clienteFuncoes.descadastrar()
+    return False
   else if argumento == "preparar":
     clienteFuncoes.preparar()
+    return False
   else if argumento == "remover":
     clienteFuncoes.remover()
+    return False
   else if argumento == "ajuda":
     Ajuda(argumentos)
+    return False
   else if argumento == "versao":
     clienteFuncoes.versao(argumentos)
+    return False
       
 def Check(argumentos):
   '''Fecha o programa se houver argumento inválido'''

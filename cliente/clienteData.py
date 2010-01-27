@@ -11,13 +11,11 @@ def Datetime():
     
     import commands
     import clienteErros
-    import sys
     
     try:
         string = commands.getoutput('date')
     except:
         message = 'Nao foi possivel levantar a data e a hora atuais.'
-        sys.stderr.write(message)
         clienteErros.registrar('clienteData.Datetime', message)
     return string
         
@@ -35,7 +33,6 @@ def Carga():
         return carga
     except:
         mensagem = 'impossivel obter a carga de uso em seu equipamento. Ele nao podera ser incluido no Grid-QNInt ate resolvermos esse problema. \n'
-        sys.stderr.write(mensagem)
         clienteErros.registrar('clienteData.carga', mensagem) #registra o erro no log do programa
 
     
@@ -65,7 +62,6 @@ def pegarIP():
     '''Esta funcao detecta qual e o verdadeiro endereco ip com o qual a maquina acessa a internet atraves do que o site www.qualmeuip.net retorna ao acessa-la atraves do python'''
      
     import urllib #biblioteca padrao para manipular url's
-    import sys
     import clienteErros
     
     try:
@@ -84,14 +80,13 @@ def pegarIP():
     except:
         #escreve a mensagem de erro na saida de erro padrao
         mensagem = 'sem conexao com a internet. Seu equipamento nao podera ser acessado pelo GRID-QNInt ate resolver esse problema. \n'
-        sys.stderr.write(mensagem)
         #registra o erro no log
         clienteErros.registrar('clienteData.pegarIP', mensagem)
         
 def nucleos():
     import multiprocessing
-    import os
     import sys
+    import os
     import clienteErros
     
     try:
@@ -102,7 +97,6 @@ def nucleos():
         return core
     except:
         message = "Nao foi possivel estabelecer o numero de nucleos no computador. Favor definir a variavel de ambiente SC_NPROCESSORS_ONLN = (numero de nucleos no sistema) e tente novamente"
-        os.stderr.write(message)
         clienteErros.registrar("clienteData.nucleos", message)
         sys.exit()
         
@@ -117,7 +111,6 @@ def ram():
         return int(memoria)
     except:
         message = "Nao foi possivel obter informacao de quanta ram ha no sistema, essa informacao é importante para o Grid e portanto seu workstation nao foi adicionado ainda. Tente novamente mais tarde"
-        sys.stderr.write(message)
         clientesErros.registrar('clienteData.ram', message)
         sys.exit()
     
@@ -147,7 +140,6 @@ def normal():
         arquivo = open('servidor.dll', 'rb')
     except:
         mensagem = 'Nao foi possivel encontrar o arquivo %s ou o mesmo esta corrompido' %(caminho)
-        sys.stderr.write(mensagem)
         clienteErros.registrar('clienteData.normal', mensagem)
         sys.exit()   
         
@@ -198,6 +190,7 @@ def persistencia(dados):
     import clientePastas
     import clienteErros
     import Chave
+    import sys
     
     try:
         caminho = clientePastas.listar()[1] + '/cliente.dll'
@@ -210,7 +203,6 @@ def persistencia(dados):
     except:
         
         mensagem = 'Nao foi possivel encontrar o arquivo %s ou o mesmo esta corrompido' %(caminho)
-        sys.stderr.write(mensagem)
         clienteErros.registrar('clienteData.persistencia', mensagem)
         sys.exit()  
         

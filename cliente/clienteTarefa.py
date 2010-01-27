@@ -14,7 +14,7 @@ class Tarefa:
     nucleos = 0
     
     
-    def __init__(self, ident, programa, nucleos):
+    def __init__(self, ident, programa):
         
         self.ident = ident
         self.programa = programa
@@ -33,12 +33,42 @@ class Tarefa:
         
     def executar(self,ident):
         
-        import commandos
+        import commands
+        import clienteErros
         
+        #etapa de otimização        
+        if self.programa == 'gaussian':
+         
+            otimizacao = "gaussian ... "
+        else:
+            mensagem = "A tarefa %s exigiu o programa %s e este ainda nao e suportado" %(self.ident, self.programa)
+            clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
+
+        try:             
+            out = commands.getoutput(otimizacao)
+        except:
+            
+            mensagem = "A Tarefa %s (fase de otimizacao) nao pode ser executada" %(self.ident)
+            clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
         
-        
-        
+        #etapa de simulacao
     
+     
+        if self.programa == 'gaussian':
+         
+            simulacao = "gaussian ... "
+        else:
+            mensagem = "A tarefa %s exigiu o programa %s e este ainda nao e suportado" %(self.ident, self.programa)
+            clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
+
+        try:             
+            out = commands.getoutput(simulacao)
+        except:
+            
+            mensagem = "A Tarefa %s (fase de simulacao) nao pode ser executada" %(self.ident)
+            clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
         
+    def compactar(self, ident):
         
+        du = ' '
 

@@ -48,8 +48,8 @@ def cadastrar():
                 sys.exit()
 
     
-def iniciar():
-    du = ' '
+def queue():
+    
 
 def descadastrar():
     
