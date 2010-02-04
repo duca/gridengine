@@ -14,12 +14,28 @@ class banco:
     servidor = None
     
     def __init__(self, usuario, senha, servidor):
+        import MySQLdb
+        import clienteErros
+        import sys
         
         self.usuario = usuario
         self.senha = senha
         self.servidor = servidor
         
-    def Conectar(self):
+        print self.servidor, self.usuario, self.senha
+        try:
+            con = MySQLdb.connect(self.servidor, self.usuario, self.senha)
+            print self.servidor, self.usuario, self.senha
+                        
+        except:
+            
+            mensagem = "Nao foi possivel conectar ao servidor. Verifique a conexao e tente mais tarde"
+            clienteErros.registrar('clienteDB.conectar', mensagem)
+            sys.exit()
+        con.select_db("grid")
+        self.cursor = con.cursor()
+        
+    def Reconectar(self):
         
         import MySQLdb
         import clienteErros
@@ -36,21 +52,7 @@ class banco:
             sys.exit()
         con.select_db("grid")
         self.cursor = con.cursor()
-        
-        
-        
-    def fetchAll(querysql):
-        
-        self.cursor.execute(querysql)
-        resultado = self.cursor.fetchall() #envia o conteudo da tabela numa lista
-        return resultado
 
-    def fetchSelected(querysql):
-        
-        self.cursor.execute(querysql)
-        resultado = self.cursor.fetchone()
-        return resultado
-    
     def Desconectar(self):
         
         self.cursor.close()
@@ -83,15 +85,24 @@ class banco:
         
         querysql = "SELECT * FROM queue WHERE status = ' ' ORDER BY data"
         
-        resultado = fetchAll(querysql)
+        self.cursor.execute(querysql)
+        
+        resultado = self.cursor.fetchall()        
         
         return resultado
     
-    def registrarConclusao(self):
+    def registrarDesignacao(self, nodeKey, JobKey):
+        
+        querysql = "UPDATE Queue SET NodeAssigned= %s WHERE QueueJobQueue= %s" %(nodeKey, JobKey)
+        
+        self.cursor.execute(querysql)
+        
+    
+    def registrarConclusao(self, JobKey):
         
         import clientQuery
         
-        querysql = "UPDATE queue SET status='completo' WHERE id= %d" %(self.ident)
+        querysql = "UPDATE Queue SET status='completo' WHERE id= %s" %(JobKey)
         
         self.cursor.execute(querysql)
     

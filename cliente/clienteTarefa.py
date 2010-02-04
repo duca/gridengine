@@ -9,18 +9,18 @@ Este módulo mantém as funções básicas para efetuar o trabalho.
 
 class Tarefa:
     
-    ident = None
+    JobKey = None
     programa = None
     nucleos = 0
     
     
-    def __init__(self, ident, programa):
+    def __init__(self, JobKey, programa):
         
-        self.ident = ident
+        self.JobKey = JobKey
         self.programa = programa
         self.nucleos
         
-    #def descompactar(self, ident):
+    #def descompactar(self, JobKey):
         
         #import clientePastas
         #import zlib
@@ -29,9 +29,10 @@ class Tarefa:
         #from clienteErros import registrar
     
         #diretorios = clientePastas.listar()
-        #resultados = diretorios[4] + '/' + usuario + '/' + self.ident + '.zip'
-        
-    def executar(self,ident):
+        #resultados = diretorios[4] + '/' + usuario + '/' + self.JobKey + '.zip'
+    
+    
+    def executar(self,JobKey):
         
         import commands
         import clienteErros
@@ -41,14 +42,14 @@ class Tarefa:
          
             otimizacao = "gaussian ... "
         else:
-            mensagem = "A tarefa %s exigiu o programa %s e este ainda nao e suportado" %(self.ident, self.programa)
+            mensagem = "A tarefa %s exigiu o programa %s e este ainda nao e suportado" %(self.JobKey, self.programa)
             clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
 
         try:             
             out = commands.getoutput(otimizacao)
         except:
             
-            mensagem = "A Tarefa %s (fase de otimizacao) nao pode ser executada" %(self.ident)
+            mensagem = "A Tarefa %s (fase de otimizacao) nao pode ser executada" %(self.JobKey)
             clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
         
         #etapa de simulacao
@@ -58,18 +59,18 @@ class Tarefa:
          
             simulacao = "gaussian ... "
         else:
-            mensagem = "A tarefa %s exigiu o programa %s e este ainda nao e suportado" %(self.ident, self.programa)
+            mensagem = "A tarefa %s exigiu o programa %s e este ainda nao e suportado" %(self.JobKey, self.programa)
             clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
 
         try:             
             out = commands.getoutput(simulacao)
         except:
             
-            mensagem = "A Tarefa %s (fase de simulacao) nao pode ser executada" %(self.ident)
+            mensagem = "A Tarefa %s (fase de simulacao) nao pode ser executada" %(self.JobKey)
             clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
         
     #def otimizar(self, 
-    #def compactar(self, ident):
+    #def compactar(self, JobKey):
         
         #du = ' '
     

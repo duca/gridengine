@@ -50,7 +50,7 @@ def cadastrar():
     
 def queue():
     
-    
+    du = ' '
 
 def descadastrar():
     
