@@ -135,11 +135,12 @@ def normal():
     import base64
     import sys
     
+    caminho = clientePastas.listar()[1] + '/servidor.dll'
     try:
-        caminho = clientePastas.listar()[1] + '/servidor.dll'
+        
         arquivo = open('servidor.dll', 'rb')
     except:
-        mensagem = 'Nao foi possivel encontrar o arquivo %s ou o mesmo esta corrompido' %(caminho)
+        mensagem = u'Não foi possível encontrar o arquivo %s ou o mesmo está corrompido' %(caminho)
         clienteErros.registrar('clienteData.normal', mensagem)
         sys.exit()   
         
@@ -202,9 +203,21 @@ def persistencia(dados):
         
     except:
         
-        mensagem = 'Nao foi possivel encontrar o arquivo %s ou o mesmo esta corrompido' %(caminho)
+        mensagem = u'Não foi possível encontrar o arquivo %s ou o mesmo está corrompido' %(caminho)
         clienteErros.registrar('clienteData.persistencia', mensagem)
         sys.exit()  
         
+def HeartBeat():
+    
+    from clienteTarefa import pegarKey
+    
+    load = Carga()
+    cores = nucleos()
+    chave = pegarKey()
+    
+    pulso = {'load': load, 'cores' : cores, 'chave' : chave}
+    
+    
+    
     
     

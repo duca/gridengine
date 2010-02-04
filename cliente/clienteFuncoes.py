@@ -18,7 +18,7 @@ def cadastrar():
     import clientePastas
     import sys
 
-    message = 'Seu workstation ja esta cadastrado'
+    message = u'Seu workstation já está cadastrado'
     try:
         caminho = clientePastas.listar()[1] + '/cliente.dll'
         arquivo = open(caminho, 'rb')
@@ -35,7 +35,7 @@ def cadastrar():
             sys.stderr.write(message)
             clienteErros('clienteFuncoes.cadastrar', message)
             sys.exit()
-        else if status == 0:
+        elif status == 0:
             clienteData.persistencia(sumario)
             dados = sbp()
             servidor = clienteDB.banco(dados[0], dados[1], dados[2])
@@ -43,15 +43,12 @@ def cadastrar():
                 servidor.conectar()
                 servidor.registrarWorstation(sumario)
             except: 
-                mensagem = "Nao foi possivel conectar ao servidor. Verifique a conexao e tente mais tarde"
+                mensagem = u"Não foi possível conectar ao servidor. Verifique a conexão e tente mais tarde"
                 clienteErros.registrar('clienteDB.conectar', mensagem)
                 sys.exit()
+            
 
     
-def queue():
-    
-    du = ' '
-
 def descadastrar():
     
     du = ' '
@@ -65,3 +62,11 @@ def preparar():
 def versao(argumentos):
     
     print "Versao 0.0.1"
+    
+def iniciar():
+    
+    import clienteIniciar
+    
+    clienteIniciar.loopPrincipal()
+
+    

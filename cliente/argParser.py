@@ -8,7 +8,7 @@ Este módulo é o responsável por processar a lista de argumentos
 
 def Padrao(argumentos):
   
-  print argumentos[0] "\n"
+  print argumentos[0] + "\n"
   print "O uso correto do programa é: \n python main.py --função \n \n Para obter a lista completa de opções use a opção --ajuda "
   
   
@@ -29,26 +29,30 @@ def Processar(argumentos):
 
   Check(argumentos)
       
-  argumento = argumentos[1][3:]
-  if arumento == "iniciar":
+  argumento = argumentos[1][2:]
+  
+  if argumento == "iniciar":
     return True
-  else if argumento == "cadastrar":
+  elif argumento == "cadastrar":
     clienteFuncoes.cadastrar()
     return False
-  else if argumento == "descadastrar":
+  elif argumento == "descadastrar":
     clienteFuncoes.descadastrar()
     return False
-  else if argumento == "preparar":
+  elif argumento == "preparar":
     clienteFuncoes.preparar()
     return False
-  else if argumento == "remover":
+  elif argumento == "remover":
     clienteFuncoes.remover()
     return False
-  else if argumento == "ajuda":
+  elif argumento == "ajuda":
     Ajuda(argumentos)
     return False
-  else if argumento == "versao":
+  elif argumento == "versao":
     clienteFuncoes.versao(argumentos)
+    return False
+  else:
+    Padrao(argumentos)
     return False
       
 def Check(argumentos):
@@ -59,12 +63,12 @@ def Check(argumentos):
     Padrao(argumentos)
     sys.exit()
     
-  for i in range (len(argumentos)):
-    
+  for i in range (1,(len(argumentos))):
     if argumentos[i][0:2] != "--":
       
       Padrao(argumentos)
       sys.exit()
+      
     
 
       

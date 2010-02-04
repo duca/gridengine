@@ -20,7 +20,7 @@ def listar():
     sistema = caminhoraiz+'/bin'
     calculo = caminhoraiz+'/calculos'
     
-    diretorios = [nome, caminhoraiz, logs, sistema, calculos]
+    diretorios = [nome, caminhoraiz, logs, sistema, calculo]
     
     return diretorios
     

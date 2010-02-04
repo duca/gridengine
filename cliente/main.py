@@ -7,14 +7,16 @@
 import sys
 import argParser
 import clienteTarefa
-  
+
+import sys
+
 status = argParser.Processar(sys.argv)
 
 if status == False: #Não iniciar o serviço
     
     sys.exit()
     
-else if status == True: #Iniciar o serviço
+elif status == True: #Iniciar o serviço
     #início do loop principal
     
     

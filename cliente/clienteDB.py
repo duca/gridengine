@@ -16,6 +16,7 @@ class banco:
     def __init__(self, usuario, senha, servidor):
         import MySQLdb
         import clienteErros
+        import time
         import sys
         
         self.usuario = usuario
@@ -29,8 +30,11 @@ class banco:
                         
         except:
             
-            mensagem = "Nao foi possivel conectar ao servidor. Verifique a conexao e tente mais tarde"
+            mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente"
             clienteErros.registrar('clienteDB.conectar', mensagem)
+            time.sleep(60)
+            #tentativa de conectar novamente
+            Reconectar()
             sys.exit()
         con.select_db("grid")
         self.cursor = con.cursor()
@@ -47,7 +51,7 @@ class banco:
                         
         except:
             
-            mensagem = "Nao foi possivel conectar ao servidor. Verifique a conexao e tente mais tarde"
+            mensagem = u"Não foi possível conectar ao servidor. Verifique a conexão e tente mais tarde"
             clienteErros.registrar('clienteDB.conectar', mensagem)
             sys.exit()
         con.select_db("grid")
@@ -100,9 +104,17 @@ class banco:
     
     def registrarConclusao(self, JobKey):
         
-        import clientQuery
-        
+               
         querysql = "UPDATE Queue SET status='completo' WHERE id= %s" %(JobKey)
         
+        self.cursor.execute(querysql)
+        
+    def HeartBeat(self, NodeKey):
+        
+        from clienteData import HeartBeat
+          
+        pulso = HeartBeat()
+        
+        querysql = "UPDATE NodeLoad SET nodeLoad= %d WHERE nodeKey=%s" %(pulso['load'], pulso['key'])
         self.cursor.execute(querysql)
     

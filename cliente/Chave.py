@@ -19,7 +19,7 @@ def gerar(tamanho):
     populacao = string.uppercase + string.lowercase + string.digits
     
         
-    for i in range(1,tamanho):
+    for i in range(0,tamanho):
         
         amostra = random.choice(populacao)
         
@@ -38,7 +38,7 @@ def interpretar(nome):
     return final
 
 def padrao():
-    
+    '''Retorna o sumario da maquina'''
     import clienteData
     import pickle
     import bz2
@@ -49,7 +49,7 @@ def padrao():
     
     return resultado
 
-def encode(dados):
+def codificar(dados):
     
     import base64
     import bz2
