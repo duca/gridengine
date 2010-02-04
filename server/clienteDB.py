@@ -89,9 +89,5 @@ class banco:
     
     def registrarConclusao(self):
         
-        import clientQuery
         
-        querysql = "UPDATE queue SET status='completo' WHERE id= %d" %(self.ident)
         
-        self.cursor.execute(querysql)
-    

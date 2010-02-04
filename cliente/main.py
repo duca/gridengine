@@ -6,6 +6,7 @@
 
 import sys
 import argParser
+import clienteTarefa
   
 status = argParser.Processar(sys.argv)
 
@@ -15,6 +16,9 @@ if status == False: #Não iniciar o serviço
     
 else if status == True: #Iniciar o serviço
     #início do loop principal
-      
+    
+    
+    clienteTarefa.Iniciar()
+    
 
 

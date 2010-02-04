@@ -20,16 +20,16 @@ class Tarefa:
         self.programa = programa
         self.nucleos
         
-    def descompactar(self, ident):
+    #def descompactar(self, ident):
         
-        import clientePastas
-        import zlib
-        import commands
-        import sys
-        from clienteErros import registrar
+        #import clientePastas
+        #import zlib
+        #import commands
+        #import sys
+        #from clienteErros import registrar
     
-        diretorios = clientePastas.listar()
-        resultados = diretorios[4] + '/' + usuario + '/' + self.ident + '.zip'
+        #diretorios = clientePastas.listar()
+        #resultados = diretorios[4] + '/' + usuario + '/' + self.ident + '.zip'
         
     def executar(self,ident):
         
@@ -37,7 +37,7 @@ class Tarefa:
         import clienteErros
         
         #etapa de otimização        
-        if self.programa == 'gaussian':
+        if self.programa == 'pcgamess':
          
             otimizacao = "gaussian ... "
         else:
@@ -68,7 +68,11 @@ class Tarefa:
             mensagem = "A Tarefa %s (fase de simulacao) nao pode ser executada" %(self.ident)
             clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
         
-    def compactar(self, ident):
+    #def otimizar(self, 
+    #def compactar(self, ident):
         
-        du = ' '
+        #du = ' '
+    
+    
 
+       
