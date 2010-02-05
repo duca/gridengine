@@ -38,7 +38,7 @@ def cadastrar():
         elif status == 0:
             clienteData.persistencia(sumario)
             dados = sbp()
-            servidor = clienteDB.banco(dados[0], dados[1], dados[2])
+            servidor = clienteDB.banco('qnint', '5471102', '192.168.56.101')
             try: 
                 servidor.conectar()
                 servidor.registrarWorstation(sumario)
@@ -51,7 +51,9 @@ def cadastrar():
     
 def descadastrar():
     
-    du = ' '
+    import clientePastas
+    
+    clientePastas.remover()
 
 def preparar():
     

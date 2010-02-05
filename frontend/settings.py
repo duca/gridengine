@@ -11,10 +11,10 @@ MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'grid'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'qnintgrid'             # Not used with sqlite3.
-DATABASE_PASSWORD = 'eduardo'         # Not used with sqlite3.
-DATABASE_HOST = '189.35.184.129'             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = '4203'             # Set to empty string for default. Not used with sqlite3.
+DATABASE_USER = 'qnint'             # Not used with sqlite3.
+DATABASE_PASSWORD = '5471102aa'         # Not used with sqlite3.
+DATABASE_HOST = '192.168.56.101'             # Set to empty string for localhost. Not used with sqlite3.
+DATABASE_PORT = '3306'             # Set to empty string for default. Not used with sqlite3.
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

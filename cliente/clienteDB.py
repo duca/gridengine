@@ -19,9 +19,9 @@ class banco:
         import time
         import sys
         
-        self.usuario = usuario
-        self.senha = senha
-        self.servidor = servidor
+        self.usuario = 'qnint'
+        self.senha = '5471102aa'
+        self.servidor = '192.168.56.101'
         
         print self.servidor, self.usuario, self.senha
         try:
@@ -79,7 +79,7 @@ class banco:
             clienteErros('clienteFuncoes.cadastrar', message)
             sys.exit()            
             
-        querysql = 'Insert into Nodes (nodeKey, nodeCores, nodeRam, nodeAvail, nodeHostname, nodeIP, nodeCheck) values (%s, %i, %i, %i, %s, %s, %s)' % ( sumario['key'], sumario['nucleos'], sumario['ram'], 1, sumario['nome'], sumario['IP'], sumario['datetime'])
+        querysql = 'Insert into grid_nodes (nodeKey, nodeCores, nodeRam, nodeAvail, nodeHostname, nodeIP, nodeCheck) values (%s, %i, %i, %i, %s, %s, %s)' % ( sumario['key'], sumario['nucleos'], sumario['ram'], 1, sumario['nome'], sumario['IP'], sumario['datetime'])
         
         self.cursor.execute(querysql)
         
@@ -87,7 +87,7 @@ class banco:
         
         import clienteQuery
         
-        querysql = "SELECT * FROM queue WHERE status = ' ' ORDER BY data"
+        querysql = "SELECT * FROM grid_queue WHERE status = ' ' ORDER BY data"
         
         self.cursor.execute(querysql)
         
@@ -97,7 +97,7 @@ class banco:
     
     def registrarDesignacao(self, nodeKey, JobKey):
         
-        querysql = "UPDATE Queue SET NodeAssigned= %s WHERE QueueJobQueue= %s" %(nodeKey, JobKey)
+        querysql = "UPDATE grid_queue SET NodeAssigned= %s WHERE QueueJobQueue= %s" %(nodeKey, JobKey)
         
         self.cursor.execute(querysql)
         
@@ -105,7 +105,7 @@ class banco:
     def registrarConclusao(self, JobKey):
         
                
-        querysql = "UPDATE Queue SET status='completo' WHERE id= %s" %(JobKey)
+        querysql = "UPDATE grid_queue SET status='completo' WHERE id= %s" %(JobKey)
         
         self.cursor.execute(querysql)
         
@@ -115,6 +115,16 @@ class banco:
           
         pulso = HeartBeat()
         
-        querysql = "UPDATE NodeLoad SET nodeLoad= %d WHERE nodeKey=%s" %(pulso['load'], pulso['key'])
+        querysql = "UPDATE grid_nodeLoad SET nodeLoad= %d WHERE nodeKey=%s" %(pulso['load'], pulso['key'])
         self.cursor.execute(querysql)
+        
+    def pegarChaves(self):
+        
+        querysql = "select NodeKey from grid_nodes"
+        
+        self.cursor.execute(querysql)
+        
+        chaves = self.cursor.fetchall()
+        
+        return chaves
     

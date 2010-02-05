@@ -153,7 +153,8 @@ def sbp():
     
     import Chave
     
-    dado = Chave.padrao()
+    #dado = Chave.padrao()
+    dado = Chave.gerar(5)
     
     return dado
     
@@ -161,31 +162,41 @@ def sbp():
 def verificarKey(chave):
     
     import clienteDB
+    import clientePastas
     
-    querysql = "select NodeKey from Nodes"
+    caminho = clientePastas.listar()[1] + '/servidor.dll'
+    try:
+        
+        arquivo = open('servidor.dll', 'rb')
+        
+        dados = sbp()
+        servidor = clienteDB.banco('qnint', '5471102', '192.168.56.101')
+        chaves = servidor.pegarChaves()
+        print chaves
+        
+        servidor.Desconectar()
+        
+        for results in chaves: #loop por toda a lista de resultadods
             
-    dados = sbp()
-    servidor = clienteDB.banco(dados[0], dados[1], dados[2])
-    servidor.conectar()
+            
+            if chave == chaves:
+                
+                confere = 1
+                
+                return confere
+            
+            else:            
+              
+                confere = 0
+                return confere
 
-    chaves = servidor.fetchAll(querysql)
-    servidor.Desconectar()
-    
-    for results in chaves: #loop por toda a lista de resultadods
+    except:
         
+        confere = 0
         
-        if chave == chaves:
-            
-            confere = 'sim'
-            
-            break
-        
-        else:            
-          
-            confere = 'nao'
+        return confere
+
                     
-    return confere 
-
 def persistencia(dados):
     
     import clientePastas

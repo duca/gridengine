@@ -45,9 +45,12 @@ def padrao():
     try:        
         os.mkdir(logs)
         os.mkdir(sistema)
+        os.mkdir(calculos)
+        
+        print u' \n Seu sistema já contém as pastas necessárias, agora pode cadastrá-lo no grid e começar a contribuir \n'
         
     except:
-        mensagem = 'Nao foi possivel criar as sub-pastas necessarias, por favor remova as pasts %s e %s \n' %(logs, systema)
+        mensagem = 'Nao foi possivel criar as sub-pastas necessarias, por favor remova as pasts %s e %s \n' %(logs, sistema)
         sys.stderr.write(mensagem)
 
         
