@@ -1,0 +1,4 @@
+[console_scripts]
+bootstrap-learn = learn.command:bootstrap
+start-learn = learn.command:start
+
