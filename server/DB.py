@@ -19,7 +19,7 @@ class banco:
         self.senha = senha
         self.servidor = servidor
         
-    def Conectar(self):
+    def Conectar(self, banco):
         
         import MySQLdb
         import clienteErros
@@ -32,10 +32,13 @@ class banco:
         except:
             
             mensagem = "Nao foi possivel conectar ao servidor. Verifique a conexao e tente mais tarde"
-            clienteErros.registrar('clienteDB.conectar', mensagem)
-            sys.exit()
-        con.select_db("grid")
+            print mensagem
+            #clienteErros.registrar('clienteDB.conectar', mensagem)
+            #sys.exit()
+        con.select_db(banco)
         self.cursor = con.cursor()
+        
+        return self.cursor
         
         
         
@@ -54,40 +57,10 @@ class banco:
     def Desconectar(self):
         
         self.cursor.close()
-        
-
-
-    def registrarWorkstation(self, sumario ):
-        
-        import clienteData
-        import clienteErros
-        import sys
-        
-        dados = clienteData.sbp()
-       
-        status = verificarKey(sumario['key'])
-        
-        if status == 1:
-            message = 'Seu workstation ja esta cadastrado'
-            sys.stderr.write(message)
-            clienteErros('clienteFuncoes.cadastrar', message)
-            sys.exit()            
-            
-        querysql = 'Insert into Nodes (nodeKey, nodeCores, nodeRam, nodeAvail, nodeHostname, nodeIP, nodeCheck) values (%s, %i, %i, %i, %s, %s, %s)' % ( sumario['key'], sumario['nucleos'], sumario['ram'], 1, sumario['nome'], sumario['IP'], sumario['datetime'])
-        
         self.cursor.execute(querysql)
         
-    def pegarTarefas(self):
+
         
-        import clienteQuery
-        
-        querysql = "SELECT * FROM queue WHERE status = ' ' ORDER BY data"
-        
-        resultado = fetchAll(querysql)
-        
-        return resultado
     
-    def registrarConclusao(self):
-        
-        
+     
         
