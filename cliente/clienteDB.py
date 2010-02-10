@@ -83,29 +83,42 @@ class banco:
         
         self.cursor.execute(querysql)
         
-    def pegarTarefas(self):
+    def pegarTarefas(self,nodeKey):
         
-        import clienteQuery
         
-        querysql = "SELECT * FROM grid_queue WHERE status = ' ' ORDER BY data"
+        designadosSQL = "SELECT queuenodeassigned FROM grid_queue WHERE status = '0'"
+        tarefasSQL = "SELECT queuejob FROM grid_queue WHERE status = '0'"
         
-        self.cursor.execute(querysql)
+        #pega a lista das designações
+        self.cursor.execute(designadosSQL)
+        designados = self.cursor.fetchall()
         
-        resultado = self.cursor.fetchall()        
-        
-        return resultado
+        #pega a lista das tarefas
+        self.cursor.execute(tarefasSQL)
+        tarefas = self.cursor.fetchall()
     
-    def registrarDesignacao(self, nodeKey, JobKey):
+        aprovados = []
         
-        querysql = "UPDATE grid_queue SET NodeAssigned= %s WHERE QueueJobQueue= %s" %(nodeKey, JobKey)
+        for i in range (0, len(tarefas)):
+            
+            if tarefas[i] == nodeKey:
+                
+                aprovados.append(tarefas[i])
         
-        self.cursor.execute(querysql)
+        
+        return aprovados
+    
+#    def registrarDesignacao(self, nodeKey, JobKey): #funcao desabilitada pois a designação é feita pelo servidor
+#        
+#        querysql = "UPDATE grid_queue SET NodeAssigned= %s WHERE QueueJobQueue= %s" %(nodeKey, JobKey)
+#        
+#        self.cursor.execute(querysql)
         
     
-    def registrarConclusao(self, JobKey):
+    def registrarConclusao(self, Job):
         
                
-        querysql = "UPDATE grid_queue SET status='completo' WHERE id= %s" %(JobKey)
+        querysql = "UPDATE grid_queue SET queuestatus='1' WHERE queuejob= %s" %(Job)
         
         self.cursor.execute(querysql)
         

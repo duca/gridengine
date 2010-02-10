@@ -26,10 +26,9 @@ class NodeLoad(models.Model):
 
 class Queue(models.Model):
     
-    QueueJobKey = models.CharField('Id do Trabalho', max_length = 10)
-    QueueDataPath = models.CharField('Caminho para o arquivo', max_length = 100)
+    QueueJob = models.CharField('Nome do Trabalho', max_length = 20)
     QueueNodeAssigned = models.CharField('Nodo Alocado', max_length = 5)
-    QueueDate = models.DateTimeField('Registro da Atividade')
+    QueueDuration = models.Integer('Duração da Atividade')
     QueueStatus = models.IntegerField('Status da atividade')
     
 class Job(models.Model):
