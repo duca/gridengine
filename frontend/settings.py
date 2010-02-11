@@ -13,7 +13,7 @@ DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysq
 DATABASE_NAME = 'grid'             # Or path to database file if using sqlite3.
 DATABASE_USER = 'qnint'             # Not used with sqlite3.
 DATABASE_PASSWORD = '5471102aa'         # Not used with sqlite3.
-DATABASE_HOST = '192.168.56.101'             # Set to empty string for localhost. Not used with sqlite3.
+DATABASE_HOST = '200.136.224.70'             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = '3306'             # Set to empty string for default. Not used with sqlite3.
 
 # Local time zone for this installation. Choices can be found here:
@@ -35,7 +35,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '/var/qnint/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).

@@ -28,7 +28,7 @@ class Queue(models.Model):
     
     QueueJob = models.CharField('Nome do Trabalho', max_length = 20)
     QueueNodeAssigned = models.CharField('Nodo Alocado', max_length = 5)
-    QueueDuration = models.Integer('Duração da Atividade')
+    QueueDuration = models.IntegerField('Duracao da Atividade')
     QueueStatus = models.IntegerField('Status da atividade')
     
 class Job(models.Model):

@@ -4,8 +4,9 @@
 Este script faz as interligações básicas com os servidores local e remoto e retém as operações básicas.
 
 '''
+import DB
 
-class Local(banco):
+class Local(DB.banco):
     
     def __init__(self):
         
@@ -17,6 +18,8 @@ class Local(banco):
         self.srv = DB.banco(servidor, usuario, senha)
         
         self.grid = self.srv.Conectar("grid")
+        
+        return self.grid
         
     def Reconectar(self):
         
@@ -82,6 +85,7 @@ class Local(banco):
                 Reconectar()
                 
                 self.grid.execute(designarSQL)
+
                 
 
                     

@@ -19,7 +19,7 @@ class banco:
         self.senha = senha
         self.servidor = servidor
         
-    def Conectar(self, banco):
+    def Conectar(self, db):
         
         import MySQLdb
         import clienteErros
@@ -27,7 +27,10 @@ class banco:
         print self.servidor, self.usuario, self.senha
         try:
             con = MySQLdb.connect(self.servidor, self.usuario, self.senha)
+            con.select_db(db)
+            self.cursor = con.cursor()
             print self.servidor, self.usuario, self.senha
+            return self.cursor
                         
         except:
             
@@ -35,11 +38,10 @@ class banco:
             print mensagem
             #clienteErros.registrar('clienteDB.conectar', mensagem)
             #sys.exit()
-        con.select_db(banco)
-        self.cursor = con.cursor()
         
-        return self.cursor
         
+        
+             
         
         
     def fetchAll(querysql):
