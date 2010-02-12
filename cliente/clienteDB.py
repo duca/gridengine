@@ -43,7 +43,7 @@ class banco:
         print self.servidor, self.usuario, self.senha
         try:
             con = MySQLdb.connect(self.servidor, self.usuario, self.senha)
-            print self.servidor, self.usuario, self.senha
+            print 'Sucesso em reconectar'
                         
         except:
             
@@ -63,16 +63,20 @@ class banco:
         
         import clienteData
         import clienteErros
-        
-        print sumario
-        
+        import sys
+                
         one = 1
 
         carga = clienteData.Carga()
-        self.cursor.execute ("""INSERT INTO grid_nodes (nodeKey, nodeCores, nodeRam, nodeAvail, nodeHostname, nodeIP) VALUES ( %s, %s, %s, %s, %s, %s)""", ( sumario['key'], sumario['nucleos'], sumario['ram'], one, sumario['nome'], sumario['IP']))
-        self.cursor.execute ("""INSERT INTO grid_nodeload (nodeKey, nodeCores, nodeLoad) VALUES ( %s, %s, %s)""", ( sumario['key'], sumario['nucleos'], carga))
-
-
+        try:
+            self.cursor.execute ("""INSERT INTO grid_nodes (nodeKey, nodeCores, nodeRam, nodeAvail, nodeHostname, nodeIP) VALUES ( %s, %s, %s, %s, %s, %s)""", ( sumario['key'], sumario['nucleos'], sumario['ram'], one, sumario['nome'], sumario['IP']))
+            self.cursor.execute ("""INSERT INTO grid_nodeload (nodeKey, nodeCores, nodeLoad) VALUES ( %s, %s, %s)""", ( sumario['key'], sumario['nucleos'], carga))
+            print "Sucesso em cadastrar seu workstation com a chave: ", sumario['key'], "Anote pois precisaremos desse valor em caso de necessidade de descadastro do workstation."
+            
+        except:
+            mensagem = u"Não foi possível conectar ao servidor. Verifique a conexão e tente mais tarde"
+            clienteErros.registrar('clienteDB.registrarWorkstation', mensagem)
+            sys.exit()
         
     def pegarTarefas(self,nodeKey):
         
@@ -127,11 +131,13 @@ class banco:
         import clienteData
           
         pulso = clienteData.HeartBeat()
+        print pulso
         try:
             self.cursor.execute( "UPDATE grid_nodeload SET nodeload= %s WHERE nodeKey=%s",(pulso['load'], pulso['key']))
         except:
             Reconectar()
             self.cursor.execute( "UPDATE grid_nodeload SET nodeload= %s WHERE nodeKey=%s",(pulso['load'], pulso['key']))
+            
    
         
     def pegarChaves(self):

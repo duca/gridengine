@@ -113,7 +113,7 @@ def iniciar():
                 
         aprovadas = grid.pegarTarefas(chave)
         
-        grid.
+        #grid.
         
             
         

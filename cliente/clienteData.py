@@ -30,6 +30,11 @@ def Carga():
     try:
         output = os.getloadavg()
         carga = output[2]
+        
+        #if carga < 1:
+            #c = 1
+            #carga = c
+            
         return carga
     except:
         mensagem = 'impossivel obter a carga de uso em seu equipamento. Ele nao podera ser incluido no Grid-QNInt ate resolvermos esse problema. \n'
@@ -233,7 +238,6 @@ def HeartBeat():
     chave = sumario['key']
     load = Carga()
     cores = nucleos()
-       
     
     pulso = {'load': load, 'cores' : cores, 'key' : chave}
     

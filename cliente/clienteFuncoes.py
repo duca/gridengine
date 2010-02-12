@@ -42,6 +42,7 @@ def cadastrar():
             try: 
                 servidor = clienteDB.banco()
                 servidor.registrarWorkstation(sumario)
+                servidor.HeartBeat()
             except: 
                 mensagem = u"Nao foi possivel conectar ao servidor. Verifique a conexao e tente mais tarde"
                 clienteErros.registrar('clienteDB.reconectar', mensagem)

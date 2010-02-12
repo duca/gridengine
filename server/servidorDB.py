@@ -49,17 +49,13 @@ class Remoto(DB.banco):
         n = self.qnint.fetchall()
         nomes = interpretar(n)
         
-        #print nomes
+        print nomes
         
         self.qnint.execute(arquivoSql)
         arquivos = self.qnint.fetchall()
 #        a = self.qnint.fetchall()
 #        arquivos = interpretar(a)
-        
-        #remapeando a tupla para algo mais legível
-        n= reduce(lambda x, y:x + ',' + y, map(lambda x: x[0],nomes))
-        nomes = n.split(',')
-        print len(arquivos), nomes, type(nomes)
+    
         #Criação dos arquivos
         pdb = {}
         for i in range (0, len(nomes)):
@@ -156,27 +152,30 @@ class Local(DB.banco):
         ''' Um rotina bem braçal para checar por novas tarefas. Ainda preciso instalar as rotinas de checagem e registro de erros'''
         
         
-        listarNodos = "SELECT nodeKey from grid_nodeload ORDER BY nodeload"
-        listarCargas = "SELECT nodeload from grid_nodeload ORDER BY nodeload"
-        listarTarefas = "SELECT queuejob from grid_queue WHERE queuenodeassigned=''"
+        listarNodos = "SELECT nodeKey from grid_nodeload"
+        listarCargas = "SELECT nodeLoad from grid_nodeload"
+        listarTarefas = "SELECT queueJob from grid_queue"
         
         #executa uma reconecção para garantir o sucesso da operação
         #self.Reconectar()
         self.grid.execute(listarNodos)
-        n = self.grid.fetchall()
-        nodos = interpretar(n)
+        nodos = self.grid.fetchall()
+        if len(nodos) > 0:
+            n = nodos
+            nodos = interpretar(n)
+        print "nodos = ", nodos
 
         self.grid.execute(listarCargas)
-        cargas = self.grid.fetchall()
-#        #cargas = interpretar(c)
-        print cargas
-
+        c = self.grid.fetchall()
+        cargas = interpretarNum(c)
         
         self.grid.execute(listarTarefas)
         tarefas = self.grid.fetchall()
-#        #tarefas = interpretar(t)
+        if len(tarefas) > 0:
+            t = tarefas
+            tarefas = interpretar(t)
 
-        print tarefas
+        print "tarefas = ", tarefas
         
         #checa quais tarefas ainda não foram designadas
         aprovados = []
@@ -188,23 +187,34 @@ class Local(DB.banco):
                 if nomes[i] == tarefas[j]:
                     #se estiver na fila, adiciona 1 ao contador
                     contador = contador + 1
-                    print contador , " \t contador"
             #se contador = 0, então a tarefa em questão é nova        
             if contador == 0:
                 
                 aprovados.append(nomes[i])
-                print nomes[i] , " \t aprovados"
+            print aprovados
+                
         
         for i in range(0, len(cargas)):
             
             if cargas[i] <= 2:
-          
-                Reconectar()
                 
-                self.grid.execute("INSERT into grid_queue(QueueJob, QueueNodeAssigned, QueueDuration, QueueStatus) values (%s, %s, '0', '0')",(aprovados[i], nodos[i]))
+                if i < len(aprovados):
+                    
+                    self.grid.execute("INSERT into grid_queue(QueueJob, QueueNodeAssigned, QueueDuration, QueueStatus) values (%s, %s, '0', '0')",(aprovados[i], nodos[i]))
                 
 def interpretar(dado):
     n= reduce(lambda x, y:x + ',' + y, map(lambda x: x[0],dado))
     resultado = n.split(',')
-    
     return resultado
+
+def interpretarNum(dado):
+    
+    tmp = []    
+    for i in dado:
+        
+        tmp.append(int(i[0]))
+        
+    return tmp
+        
+        
+    
