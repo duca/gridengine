@@ -9,11 +9,8 @@ Este módulo contém as funções que registram, no banco de dados, as informaç
 
 class banco:
     
-    usuario = None
-    senha = None
-    servidor = None
-    
-    def __init__(self, usuario, senha, servidor):
+ 
+    def __init__(self):
         import MySQLdb
         import clienteErros
         import time
@@ -21,23 +18,24 @@ class banco:
         
         self.usuario = 'qnint'
         self.senha = '5471102aa'
-        self.servidor = '192.168.56.101'
+        self.servidor = '200.136.224.70'
         
-        print self.servidor, self.usuario, self.senha
         try:
             con = MySQLdb.connect(self.servidor, self.usuario, self.senha)
-            print self.servidor, self.usuario, self.senha
+            print "Sucesso em conectar ao banco do GRID"
+            con.select_db("grid")
+            self.cursor = con.cursor()
                         
         except:
             
             mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente"
-            clienteErros.registrar('clienteDB.conectar', mensagem)
+            clienteErros.registrar('clienteDB.__init__', mensagem)
             time.sleep(60)
             #tentativa de conectar novamente
             Reconectar()
             sys.exit()
-        con.select_db("grid")
-        self.cursor = con.cursor()
+        
+        
         
     def Reconectar(self):
         
@@ -52,7 +50,7 @@ class banco:
         except:
             
             mensagem = u"Não foi possível conectar ao servidor. Verifique a conexão e tente mais tarde"
-            clienteErros.registrar('clienteDB.conectar', mensagem)
+            clienteErros.registrar('clienteDB.reconectar', mensagem)
             sys.exit()
         con.select_db("grid")
         self.cursor = con.cursor()
@@ -67,21 +65,16 @@ class banco:
         
         import clienteData
         import clienteErros
-        import sys
         
-        dados = clienteData.sbp()
-       
-        status = verificarKey(sumario['key'])
+        print sumario
         
-        if status == 1:
-            message = 'Seu workstation ja esta cadastrado'
-            sys.stderr.write(message)
-            clienteErros('clienteFuncoes.cadastrar', message)
-            sys.exit()            
-            
-        querysql = 'Insert into grid_nodes (nodeKey, nodeCores, nodeRam, nodeAvail, nodeHostname, nodeIP, nodeCheck) values (%s, %i, %i, %i, %s, %s, %s)' % ( sumario['key'], sumario['nucleos'], sumario['ram'], 1, sumario['nome'], sumario['IP'], sumario['datetime'])
-        
-        self.cursor.execute(querysql)
+        one = 1
+
+        carga = clienteData.Carga()
+        self.cursor.execute ("""INSERT INTO grid_nodes (nodeKey, nodeCores, nodeRam, nodeAvail, nodeHostname, nodeIP) VALUES ( %s, %s, %s, %s, %s, %s)""", ( sumario['key'], sumario['nucleos'], sumario['ram'], one, sumario['nome'], sumario['IP']))
+        self.cursor.execute ("""INSERT INTO grid_nodeLoad (nodeKey, nodeCores, nodeLoad) VALUES ( %s, %s, %s)""", ( sumario['key'], sumario['nucleos'], carga))
+
+
         
     def pegarTarefas(self,nodeKey):
         
@@ -139,5 +132,13 @@ class banco:
         
         chaves = self.cursor.fetchall()
         
-        return chaves
+        return interpretar(chaves)
+    
+    def interpretar(self, dado):
+        n= reduce(lambda x, y:x + ',' + y, map(lambda x: x[0],dado))
+        resultado = n.split(',')
+        
+        return resultado
+        
+
     

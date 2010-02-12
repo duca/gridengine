@@ -5,11 +5,11 @@ Este arquivo contém o looping principal
 
 '''
 
-def Principal():
+def Loop():
         
     import servidorDB
-    import localDB
     import servidorPastas
+    import time
     
     #PID
     
@@ -19,10 +19,18 @@ def Principal():
     
     pidStatus = 1
     
+    qnint = servidorDB.Remoto()
+    grid = servidorDB.Local()
+    
     while pidStatus == 1:
         
-        qnint = servidorDB.Remoto()
-        grid = servidorDB.Local()
+        
+        
+        
+        #checar por novas tarefas
+        
+        qnint.pegarTarefas()
+        
         
         
         #Checar para ver se o arquivo ainda existe, caso contrário termina a execução do programa
@@ -31,3 +39,12 @@ def Principal():
             pid.close()
         except:
             pidStatus = 0
+            
+        
+        time.sleep(10)
+        
+        
+    
+
+            
+            

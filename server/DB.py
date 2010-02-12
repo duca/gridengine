@@ -24,12 +24,10 @@ class banco:
         import MySQLdb
         import clienteErros
         import sys
-        print self.servidor, self.usuario, self.senha
         try:
             con = MySQLdb.connect(self.servidor, self.usuario, self.senha)
             con.select_db(db)
             self.cursor = con.cursor()
-            print self.servidor, self.usuario, self.senha
             return self.cursor
                         
         except:
@@ -59,7 +57,6 @@ class banco:
     def Desconectar(self):
         
         self.cursor.close()
-        self.cursor.execute(querysql)
         
 
         

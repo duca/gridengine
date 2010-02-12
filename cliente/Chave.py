@@ -32,8 +32,10 @@ def gerar(tamanho):
 def interpretar(nome):
     
     import bz2
+    import base64
     
-    final = bz2.decompress(nome)
+    conteudo = base64.urlsafe_b64decode(nome)
+    final = bz2.decompress(conteudo)
     
     return final
 
@@ -43,11 +45,15 @@ def padrao():
     import pickle
     import bz2
     
-    dado = interpretar(clienteData.normal())
-    
-    resultado = pickle.loads(bz2.decompress(dado))
-    
-    return resultado
+    info = clienteData.normal()
+
+    if info == 0:
+        falhou = 0
+        return falhou
+    else:
+        dado = interpretar(info)
+        resultado = pickle.loads(dado)
+        return resultado
 
 def codificar(dados):
     
@@ -56,9 +62,21 @@ def codificar(dados):
     import pickle 
     
     pickled = pickle.dumps(dados)
-    codificado = base64.b64encode(bz2.compress(pickled))
+    codificado = base64.urlsafe_b64encode(bz2.compress(pickled))
     
     return codificado
+
+def coderSimples(dados):
+    
+    import base64
+    import bz2
+
+    
+    #codificado = bz2.compress(dados)
+    codificado = base64.b32encode(bz2.compress(dados))
+    
+    return codificado
+    
     
         
         

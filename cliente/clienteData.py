@@ -39,6 +39,7 @@ def Carga():
 def hostname():
     '''Esta funcao detecta o hostname do pc'''
     import commands
+    import Chave
     
     nome = 'NomePadrao'
     
@@ -55,6 +56,9 @@ def hostname():
         except:
             
             nome = os.getoutput('/sbin/uname -a')
+            
+    
+    #return Chave.coderSimples(nome)
     return nome
 
 def pegarIP():
@@ -73,10 +77,11 @@ def pegarIP():
         fim = linha.find('</') 
         inicio = inicio + 2 #acerto dos caracteres
         ip = linha[inicio:fim]
+        
 
+
+        #return Chave.coderSimples(ip)    
         return ip
-
-    
     except:
         #escreve a mensagem de erro na saida de erro padrao
         mensagem = 'sem conexao com a internet. Seu equipamento nao podera ser acessado pelo GRID-QNInt ate resolver esse problema. \n'
@@ -128,6 +133,12 @@ def sumario():
     
     return tudo
 
+def sbp():
+    
+    import Chave
+    
+    return Chave.padrao()
+
 def normal():
     
     import clientePastas
@@ -135,65 +146,59 @@ def normal():
     import base64
     import sys
     
-    caminho = clientePastas.listar()[1] + '/servidor.dll'
+    raiz = clientePastas.listar()
+    caminho = raiz[1] + '/cliente.dll'
+
     try:
         
-        arquivo = open('servidor.dll', 'rb')
-    except:
-        mensagem = u'Não foi possível encontrar o arquivo %s ou o mesmo está corrompido' %(caminho)
-        clienteErros.registrar('clienteData.normal', mensagem)
-        sys.exit()   
+        arquivo = open(caminho, 'rb')
         
-    
-    conteudo = base64.b64decode(arquivo.read())
-    
-    return conteudo
+        return arquivo.read()
+    except:
+        mensagem = u'Nao foi possivel encontrar o arquivo %s ou o mesmo esta corrompido' %(caminho)
+        clienteErros.registrar('clienteData.normal', mensagem)
+        falhou = 0
+        return falhou
 
-def sbp():
-    
-    import Chave
-    
-    #dado = Chave.padrao()
-    dado = Chave.gerar(5)
-    
-    return dado
-    
 
 def verificarKey(chave):
     
     import clienteDB
     import clientePastas
     
-    caminho = clientePastas.listar()[1] + '/servidor.dll'
+    caminho = clientePastas.listar()[1] + '/cliente.dll'
     try:
         
-        arquivo = open('servidor.dll', 'rb')
+        arquivo = open(caminho, 'rb')
         
         dados = sbp()
-        servidor = clienteDB.banco('qnint', '5471102', '192.168.56.101')
-        chaves = servidor.pegarChaves()
-        print chaves
         
-        servidor.Desconectar()
+        if dados == 0:
+            confere = 0
+            return confere
         
-        for results in chaves: #loop por toda a lista de resultadods
+        else:
             
-            
-            if chave == chaves:
+            servidor = clienteDB.banco()
+            chaves = servidor.pegarChaves()
+            print chaves
+       
+            for results in chaves: #loop por toda a lista de resultadods
                 
-                confere = 1
                 
-                return confere
-            
-            else:            
-              
-                confere = 0
-                return confere
-
+                if chave == chaves:
+                    
+                    confere = 1
+                    
+                    return confere
+                
+                else:            
+                  
+                    confere = 0
+                    return confere
+    
     except:
-        
         confere = 0
-        
         return confere
 
                     
@@ -220,7 +225,7 @@ def persistencia(dados):
         
 def HeartBeat():
     
-    from clienteTarefa import pegarKey
+    import clienteTarefa
     
     load = Carga()
     cores = nucleos()

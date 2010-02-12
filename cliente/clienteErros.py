@@ -36,6 +36,7 @@ def registrar(nomeDaFuncao, mensagem):
     
     try:
         registro.write(mensagem)
+        sys.stderr.write(mensagem)
         
     except:
         
@@ -45,11 +46,14 @@ def registrar(nomeDaFuncao, mensagem):
         try:
             registro.write(mensagem)
         except:
-            erro = horario + "Nao foi possivel registrar o evento de erro " + erro + ", entretanto o programa tentara seguir assim mesmo \n"
-            sys.stderr.write(mensagem)
-
-        
+            erro = horario + u"Nao foi possivel registrar o evento de erro " 
+            sys.stderr.write(erro)
+            erro = mensagem 
+            sys.stderr.write(erro)
+            erro = u", entretanto o programa tentara seguir assim mesmo."
+            sys.stderr.write(erro)  
     
-    
+            
+    #print tracking_error
     
     

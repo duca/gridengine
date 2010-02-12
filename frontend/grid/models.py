@@ -15,9 +15,8 @@ class Nodes(models.Model):
     nodeCores = models.IntegerField('Num. de Nucleos')
     nodeRam = models.IntegerField('Memoria do sistema')
     nodeAvail = models.IntegerField('Ativo (sim:1 ou nao:0)')
-    nodeHostname = models.CharField('Hostname', max_length = 100)
+    nodeHostname = models.CharField('Hostname', max_length = 300)
     nodeIP = models.CharField('IP do Nodo', max_length = 15)
-    nodeDate = models.CharField('Data de Registro', max_length = 30)
     
 class NodeLoad(models.Model):
     nodeKey = models.CharField('Id do Nodo', max_length = 5)
@@ -37,6 +36,6 @@ class Job(models.Model):
     JobUser = models.CharField('Usuario associado', max_length = 10)
     JobDate = models.DateTimeField('Data de Inicio')
     JobDuration = models.IntegerField('Duracao da Tarefa')
-    JobDataPath = models.CharField('Caminho do arquivo', max_length = 100)
+    JobDataPath = models.CharField('Caminho do arquivo', max_length = 300)
     
     

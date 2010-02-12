@@ -8,7 +8,7 @@ Este módulo é o responsável por processar a lista de argumentos
 
 def Padrao(argumentos):
   
-  print argumentos[0] "\n"
+  print argumentos[0] + "\n"
   print "O uso correto do programa é: \n python main.py --função \n \n Para obter a lista completa de opções use a opção --ajuda "
   
   
@@ -17,7 +17,6 @@ def Ajuda(argumentos):
   arquivo = open('help.dat', 'r')
   
   texto = arquivo.readlines()
-  print argumentos[0]
   for linhas in texto:
     print linhas
   arquivo.close()
@@ -25,46 +24,42 @@ def Ajuda(argumentos):
 def Processar(argumentos):
   '''Função principal de processamento de argumentos'''
   
-  import clienteFuncoes
+  import servidorFuncoes
+  print type(argumentos)
 
   Check(argumentos)
       
-  argumento = argumentos[1][3:]
-  if arumento == "iniciar":
+  argumento = argumentos[1][2:]
+  if argumento == "iniciar":
+    print "Iniciando..."
     return True
-  else if argumento == "cadastrar":
-    clienteFuncoes.cadastrar()
+  elif argumento == "preparar":
+    print "Preparando..."
+    servidorFuncoes.preparar()
     return False
-  else if argumento == "descadastrar":
-    clienteFuncoes.descadastrar()
+  elif argumento == "remover":
+    print "Removendo..."
+    servidorFuncoes.remover()
     return False
-  else if argumento == "preparar":
-    clienteFuncoes.preparar()
-    return False
-  else if argumento == "remover":
-    clienteFuncoes.remover()
-    return False
-  else if argumento == "ajuda":
+  elif argumento == "ajuda":
+    print "Ajudando..."
     Ajuda(argumentos)
     return False
-  else if argumento == "versao":
-    clienteFuncoes.versao(argumentos)
+  elif argumento == "versao":
+    servidorFuncoes.versao(argumentos)
     return False
       
 def Check(argumentos):
   '''Fecha o programa se houver argumento inválido'''
   import sys
-  
   if len(argumentos) != 2 : #checa quantidade de argumentos 
     Padrao(argumentos)
     sys.exit()
-    
-  for i in range (len(argumentos)):
-    
-    if argumentos[i][0:2] != "--":
-      
-      Padrao(argumentos)
-      sys.exit()
+ 
+  if argumentos[1][0:2] != "--":
+    print argumentos[1][0:2]  
+    Padrao(argumentos)
+    sys.exit()
     
 
       

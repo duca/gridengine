@@ -25,50 +25,21 @@ def listar():
     return diretorios
     
 
-def padrao():
+def criar():
     ''' Gera as pastas padrão que devem haver no cliente. Lembrando que ficam dentro de uma pasta raiz escondida'''
     import os
     import sys
 
     diretorios = listar()
-    caminhoraiz = diretorios[1]
-    logs = diretorios[2]
-    sistema = diretorios[3]
-    calculos = diretorios[4]
-
-    try:
-        os.mkdir(caminhoraiz)
-    except:
-        mensagem = 'Possivelmente ja existe a pasta %s e nao ha necessidade de apagar seu conteudo neste momento \n' %(caminhoraiz)
-        sys.stderr.write(mensagem)
-    
-    try:        
-        os.mkdir(logs)
-        os.mkdir(sistema)
-        os.mkdir(calculos)
         
-        print u' \n Seu sistema já contém as pastas necessárias, agora pode cadastrá-lo no grid e começar a contribuir \n'
+    for pastas in diretorios:
         
-    except:
-        mensagem = 'Nao foi possivel criar as sub-pastas necessarias, por favor remova as pasts %s e %s \n' %(logs, sistema)
-        sys.stderr.write(mensagem)
-
+        try:
+            os.mkdir(pastas)
+        except:
+            mensagem = 'Possivelmente ja existe a pasta %s e nao ha necessidade de apagar seu conteudo neste momento \n' %(pastas)
+            sys.stderr.write(mensagem)
         
-def criar(usuario):
-    '''Essa função cria a pasta que conterá os dados da simulação e seu resultado.'''
-    import os
-    import clienteErros
-    
-    diretorios = listar()
-    calculos = diretorios[4]    
-    
-    resultados = calculos + '/' + usuario
-    
-    try:
-        os.mkdir(resultados)
-    except: 
-        mensagem = 'nao foi possivel criar a pasta para o usuario %s' %(usuario)
-        clienteErros.registrar('clientePastas.criar', mensagem)
         
 def remover():
     '''Remove todas as pastas criadas no cliente.'''

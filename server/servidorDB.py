@@ -17,9 +17,9 @@ class Remoto(DB.banco):
         self.senha = "_qn09pw"
         self.sql = "qnint"
         
-        srv = DB.banco(self.usuario, self.senha, self.servidor)
+        self.srv = DB.banco(self.usuario, self.senha, self.servidor)
         
-        self.qnint = srv.Conectar(self.sql)
+        self.qnint = self.srv.Conectar(self.sql)
         
     def Reconectar(self):
         
@@ -27,10 +27,13 @@ class Remoto(DB.banco):
         
         self.srv.Conectar(self.sql)
         
+    def Desconectar(self):
+        
+        self.qnint.close()
+        
     def pegarTarefas(self):
         
         import servidorPastas
-        import localDB
         #Pastas
         
         pastas = servidorPastas.listar()
@@ -39,24 +42,29 @@ class Remoto(DB.banco):
         
         #Queries e acesso ao banco       
         nomeSql = "SELECT nome FROM moleculas2 WHERE log = '' ORDER BY tamanho, tempo"
-        arquivoSql = "SELECT arquivo FROM moleculas2 WHERE log = ' ' ORDER BY tamanho, tempo"
+        arquivoSql = "SELECT arquivo FROM moleculas2 WHERE log = '' ORDER BY tamanho, tempo"
         
         
         self.qnint.execute(nomeSql)
         nomes = self.qnint.fetchall()
         
-        print nomes
+        #print nomes
         
         self.qnint.execute(arquivoSql)
         arquivos = self.qnint.fetchall()
+
         
+        #remapeando a tupla para algo mais legível
+        n= reduce(lambda x, y:x + ',' + y, map(lambda x: x[0],nomes))
+        nomes = n.split(',')
+        print len(arquivos), nomes, type(nomes)
         #Criação dos arquivos
         pdb = {}
         for i in range (0, len(nomes)):
             
             #escreve os arquivos pdb na pasta /var/qnint
-            
-            caminho = dirPdb+'/'+str(nomes[i])+'.pdb'
+            #print str(nomes[i])
+            caminho = dirPdb+'/'+nomes[i]+'.pdb'
             arquivo = open(caminho,'w')            
             arquivo.writelines(arquivos[i])
             
@@ -64,7 +72,8 @@ class Remoto(DB.banco):
             pdbs = {nomes[i] : arquivos[i]}
  
         #Cadastra os trabalhos localmente e já os designa    
-        grid = localDB.Local()        
+        
+        grid = Local()        
         grid.cadastrarTarefas(nomes)        
         grid.Desconectar()
     
@@ -72,11 +81,10 @@ class Remoto(DB.banco):
     def cadastrarResultado(self):
         
         import servidorPastas
-        import localDB
         
         #checagem dos concluidos
         
-        grid = localDB.Locao()
+        grid = Local()
         concluidos = grid.checarConcluido()
         grid.Desconectar()
         
@@ -109,6 +117,10 @@ class Local(DB.banco):
         
         self.srv.Conectar("grid")
         
+    def Desconectar(self):
+        
+        self.srv.Desconectar()
+        
     
     def checarConcluidos(self):
         
@@ -118,7 +130,7 @@ class Local(DB.banco):
             self.grid.execute(checkSQL)
             
         except:
-            Reconectar()
+            self.Reconectar()
             self.grid.execute(checkSQL)
         concluidos = self.grid.fetchall()
         
@@ -128,20 +140,23 @@ class Local(DB.banco):
         ''' Um rotina bem braçal para checar por novas tarefas. Ainda preciso instalar as rotinas de checagem e registro de erros'''
         
         
-        listarNodos = "SELECT nodeKey from grid_nodes ORDER BY nodeLoad"
-        listarCargas = "SELECT nodeLoad from grid_nodes ORDER BY nodeLoad"
-        listarTarefas = "SELECT queuejob from grid_queue WHERE nodeassigned=''"
+        listarNodos = "SELECT nodeKey from grid_nodeload ORDER BY nodeload"
+        listarCargas = "SELECT nodeLoad from grid_nodeload ORDER BY nodeload"
+        listarTarefas = "SELECT queuejob from grid_queue WHERE queuenodeassigned=''"
         
         #executa uma reconecção para garantir o sucesso da operação
-        Reconectar()
+        #self.Reconectar()
         self.grid.execute(listarNodos)
         nodos = self.grid.fetchall()
+        print nodos
 
-        self.grid.execute(listaCargas)
+        self.grid.execute(listarCargas)
         cargas = self.grid.fetchall()
+        print cargas
         
         self.grid.execute(listarTarefas)
         tarefas = self.grid.fetchall()
+        print tarefas
         
         #checa quais tarefas ainda não foram designadas
         aprovados = []
