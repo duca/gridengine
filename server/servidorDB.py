@@ -46,13 +46,15 @@ class Remoto(DB.banco):
         
         
         self.qnint.execute(nomeSql)
-        nomes = self.qnint.fetchall()
+        n = self.qnint.fetchall()
+        nomes = interpretar(n)
         
         #print nomes
         
         self.qnint.execute(arquivoSql)
         arquivos = self.qnint.fetchall()
-
+#        a = self.qnint.fetchall()
+#        arquivos = interpretar(a)
         
         #remapeando a tupla para algo mais legível
         n= reduce(lambda x, y:x + ',' + y, map(lambda x: x[0],nomes))
@@ -121,6 +123,20 @@ class Local(DB.banco):
         
         self.srv.Desconectar()
         
+    def limparBanco(self):
+        
+        #limpando nodeload
+        
+        self.grid.execute("DELETE FROM grid_nodeload WHERE id >= 1")
+        
+        #limpando nodes
+        
+        self.grid.execute("DELETE FROM grid_nodes WHERE id >= 1")
+        
+        #limpando grid queue
+        
+        self.grid.execute("DELETE FROM grid_queue WHERE id >= 1")
+        
     
     def checarConcluidos(self):
         
@@ -141,21 +157,25 @@ class Local(DB.banco):
         
         
         listarNodos = "SELECT nodeKey from grid_nodeload ORDER BY nodeload"
-        listarCargas = "SELECT nodeLoad from grid_nodeload ORDER BY nodeload"
+        listarCargas = "SELECT nodeload from grid_nodeload ORDER BY nodeload"
         listarTarefas = "SELECT queuejob from grid_queue WHERE queuenodeassigned=''"
         
         #executa uma reconecção para garantir o sucesso da operação
         #self.Reconectar()
         self.grid.execute(listarNodos)
-        nodos = self.grid.fetchall()
-        print nodos
+        n = self.grid.fetchall()
+        nodos = interpretar(n)
 
         self.grid.execute(listarCargas)
         cargas = self.grid.fetchall()
+#        #cargas = interpretar(c)
         print cargas
+
         
         self.grid.execute(listarTarefas)
         tarefas = self.grid.fetchall()
+#        #tarefas = interpretar(t)
+
         print tarefas
         
         #checa quais tarefas ainda não foram designadas
@@ -168,17 +188,23 @@ class Local(DB.banco):
                 if nomes[i] == tarefas[j]:
                     #se estiver na fila, adiciona 1 ao contador
                     contador = contador + 1
+                    print contador , " \t contador"
             #se contador = 0, então a tarefa em questão é nova        
             if contador == 0:
                 
                 aprovados.append(nomes[i])
+                print nomes[i] , " \t aprovados"
         
         for i in range(0, len(cargas)):
             
             if cargas[i] <= 2:
-                
-                designarSQL = "INSERT into grid_queue(QueueJob, QueueNodeAssigned, QueueDuration, QueueStatus) values (%s, %s, '0', '0')  " %(aprovados[i], nodos[i])
-                
+          
                 Reconectar()
                 
-                self.grid.execute(designarSQL)
+                self.grid.execute("INSERT into grid_queue(QueueJob, QueueNodeAssigned, QueueDuration, QueueStatus) values (%s, %s, '0', '0')",(aprovados[i], nodos[i]))
+                
+def interpretar(dado):
+    n= reduce(lambda x, y:x + ',' + y, map(lambda x: x[0],dado))
+    resultado = n.split(',')
+    
+    return resultado

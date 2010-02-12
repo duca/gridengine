@@ -83,12 +83,55 @@ def sumario():
     
     return tudo
 
-def pegarKey():
+def iniciar():
+    
+    import clienteDB
+    import clienteData
+    import clienteErros
     
     tudo = sumario()
+    chave = tudo['key']
+    # ####################################################
+    # Main loop
+    pidStatus = 1
     
-    chave = sumario['key']
+    grid = clienteDB.banco()
     
-    return chave
+    while pidStatus == 1:
+        
+        try:
+            grid.HeartBeat()
+        except:
+            
+            grid.Reconectar()
+            
+            try:
+                grid.HeartBeat()
+            except:
+                clienteErros.registrar("clienteTarefa.iniciar (sessao HearBeat)", "Provavelmente seu workstation nao foi cadastrado ou esta sem acesso a internet")
+         
+                
+        aprovadas = grid.pegarTarefas(chave)
+        
+        grid.
+        
+            
+        
+        
+            
+    
+    
+    
+    
+    #Checar para ver se o arquivo ainda existe, caso contrário termina a execução do programa
+    try:
+        pid = open('/var/run/qnint-grid.pid', 'r')
+        pid.close()
+    except:
+        pidStatus = 0
+        
+    
+    time.sleep(10)
+    
 
        

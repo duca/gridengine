@@ -37,10 +37,10 @@ def cadastrar():
         elif status == 0:
 
             clienteData.persistencia(sumario)
-            servidor = clienteDB.banco()
-            servidor.registrarWorkstation(sumario)
+            
 
             try: 
+                servidor = clienteDB.banco()
                 servidor.registrarWorkstation(sumario)
             except: 
                 mensagem = u"Nao foi possivel conectar ao servidor. Verifique a conexao e tente mais tarde"

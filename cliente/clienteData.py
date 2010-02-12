@@ -225,14 +225,19 @@ def persistencia(dados):
         
 def HeartBeat():
     
-    import clienteTarefa
+    import Chave
     
+    sumario = Chave.padrao()
+    
+
+    chave = sumario['key']
     load = Carga()
     cores = nucleos()
-    chave = pegarKey()
+       
     
-    pulso = {'load': load, 'cores' : cores, 'chave' : chave}
+    pulso = {'load': load, 'cores' : cores, 'key' : chave}
     
+    return pulso
     
     
     
