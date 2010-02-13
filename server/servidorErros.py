@@ -10,19 +10,19 @@ Este modulo cuida do registro dos logs do programa e está divido em funcoes par
 def registrar(nomeDaFuncao, mensagem):
     
     from datetime import datetime
-    import clientePastas
+    import servidorPastas
     import sys
     
     
-    diretorios = clientePastas.listar()
-    sisLog = diretorios[2]+'/erros.log'
+    diretorios = servidorPastas.listar()
+    sisLog = diretorios[1]+'/erros.log'
     
     try:
         registro = open(sisLog, 'a')
 
     except:
         
-        clientePastas.criar()
+        servidorPastas.criar()
 
     
     timestamp = datetime.now()
@@ -39,8 +39,8 @@ def registrar(nomeDaFuncao, mensagem):
         
     except:
         
-        clientePastas.remover()
-        clientePastas.criar()
+        servidorPastas.remover()
+        servidorPastas.criar()
         
         try:
             registro.write(mensagem)

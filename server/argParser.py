@@ -25,8 +25,7 @@ def Processar(argumentos):
   '''Função principal de processamento de argumentos'''
   
   import servidorFuncoes
-  print type(argumentos)
-
+  
   Check(argumentos)
       
   argumento = argumentos[1][2:]

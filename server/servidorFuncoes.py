@@ -9,9 +9,16 @@ Este módulo contém as funções básicas do programa. Está fora do main por q
 
 def preparar():
     
-    import clientePastas
+    import servidorPastas
     
-    servidorPastas.padrao()
+    servidorPastas.criar()
+
+def remover():
+
+    import servidorPastas
+    
+    servidorPastas.remover()
+
 
 def versao(argumentos):
     

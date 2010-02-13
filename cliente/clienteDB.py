@@ -47,7 +47,7 @@ class banco:
                         
         except:
             
-            mensagem = u"Não foi possível conectar ao servidor. Verifique a conexão e tente mais tarde"
+            mensagem = u"Não foi possível conectar ao servidor. Verifique a conexão e tente mais tarde. Erro 0050L"
             clienteErros.registrar('clienteDB.reconectar', mensagem)
             sys.exit()
         con.select_db("grid")
@@ -71,10 +71,10 @@ class banco:
         try:
             self.cursor.execute ("""INSERT INTO grid_nodes (nodeKey, nodeCores, nodeRam, nodeAvail, nodeHostname, nodeIP) VALUES ( %s, %s, %s, %s, %s, %s)""", ( sumario['key'], sumario['nucleos'], sumario['ram'], one, sumario['nome'], sumario['IP']))
             self.cursor.execute ("""INSERT INTO grid_nodeload (nodeKey, nodeCores, nodeLoad) VALUES ( %s, %s, %s)""", ( sumario['key'], sumario['nucleos'], carga))
-            print "Sucesso em cadastrar seu workstation com a chave: ", sumario['key'], "Anote pois precisaremos desse valor em caso de necessidade de descadastro do workstation."
+            print "Sucesso em cadastrar seu workstation com a chave: ", sumario['key'], "Anote pois precisaremos desse valor em caso de necessidade de descadastro do workstation ou resoluções de erros."
             
         except:
-            mensagem = u"Não foi possível conectar ao servidor. Verifique a conexão e tente mais tarde"
+            mensagem = u"Não foi possível executar as query's sql. Verifique a conexão e tente mais tarde. Erro 0077L"
             clienteErros.registrar('clienteDB.registrarWorkstation', mensagem)
             sys.exit()
         
@@ -183,7 +183,7 @@ class banco:
                            
         except:
             
-            mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente"
+            mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente. Erro 0186L"
             clienteErros.registrar('clienteDB.sftp', mensagem)
 
 
