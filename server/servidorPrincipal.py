@@ -25,10 +25,7 @@ def Loop():
     grid = servidorDB.Local()
     
     while pidStatus == 1:
-        
-        
-        
-        
+               
         #checar por novas tarefas
         try:
             qnint.pegarTarefas()
@@ -39,12 +36,12 @@ def Loop():
         time.sleep(10)
         
         #Colocar como dono dos arquivos, o usuário qnint
-        comando = "chown -R qnint " + servidorPastas.listar()[1]
+        comando = "chgrp -R users " + servidorPastas.listar()[1]
         try:
             commands.getoutput(comando)
         
         except:
-            mensagem = u'Nao foi possivel trocar o dono do diretorio %s, pode ser que os nodos nao consigam mover os dados. Erro 0042L'
+            mensagem = u'Nao foi possivel trocar o grupo detentor do diretorio %s, pode ser que os nodos nao consigam mover os dados. Erro 0042L'
             servidorErros.registrar('servidorPrincipal.Loop(chown)', mensagem)
             
         
