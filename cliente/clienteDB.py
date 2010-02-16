@@ -81,35 +81,39 @@ class banco:
     def pegarTarefas(self,nodeKey):
         
         import clienteErros
-        
-        designadosSQL = "SELECT queuenodeassigned FROM grid_queue WHERE queuestatus = '0'"
-        tarefasSQL = "SELECT queuejob FROM grid_queue WHERE queuestatus = '0'"
+        print "Pegando as designações..."
+        designadosSQL = "SELECT QueueNodeAssigned FROM grid_queue WHERE QueueStatus = '0'"
+        tarefasSQL = "SELECT QueueJob FROM grid_queue WHERE QueueStatus = '0'"
         
         #pega a lista das designações
         self.cursor.execute(designadosSQL)
-        designados = self.cursor.fetchall()
+        d = self.cursor.fetchall()
+        designados = interpretar(d)
         
         #pega a lista das tarefas
         self.cursor.execute(tarefasSQL)
-        tarefas = self.cursor.fetchall()
+        t = self.cursor.fetchall()
+        tarefas = interpretar(t)
     
         self.aprovados = []
-        
+
         for i in range (0, len(tarefas)):
+
+            if designados[i] == nodeKey:
             
-            if tarefas[i] == nodeKey:
-                
                 self.aprovados.append(tarefas[i])
-        try:            
-            #self.gridSSH = ssh.Connection('200.136.224.70', username='grid', password='grid**00')
             
-            for i in aprovados:
-                sftp("download", i)
-        except:
-            mensagem = u"Nao foi possivel conectar ao servidor."
-            clienteErros.registrar('clienteDB.pegarTarefas(sessao ssh)', mensagem)
-                        
-            
+        print "Pegando os arquivos:"
+        for i in self.aprovados:
+        
+            try:
+                print i
+                getPdb(i)
+        #self.gridSSH = ssh.Connection('200.136.224.70', username='grid', password='grid**00')
+        
+            except:
+                mensagem = u"Nao foi possivel conectar ao servidor."
+                clienteErros.registrar('clienteDB.pegarTarefas(sessao ssh)', mensagem)
         return self.aprovados
     
 #    def registrarDesignacao(self, nodeKey, JobKey): #funcao desabilitada pois a designação é feita pelo servidor
@@ -122,8 +126,8 @@ class banco:
     def registrarConclusao(self, Job):
         
                
-        querysql = "UPDATE grid_queue SET queuestatus='1' WHERE queuejob= %s" %(Job)
-        
+        querysql = "UPDATE grid_queue SET QueueStatus='1' WHERE QueueJob= %s" %(Job)
+        putLog(Job)
         self.cursor.execute(querysql)
         
     def HeartBeat(self):
@@ -131,32 +135,25 @@ class banco:
         import clienteData
           
         pulso = clienteData.HeartBeat()
-        print pulso
         try:
-            self.cursor.execute( "UPDATE grid_nodeload SET nodeload= %s WHERE nodeKey=%s",(pulso['load'], pulso['key']))
+            self.cursor.execute( "UPDATE grid_nodeload SET nodeLoad= %s WHERE nodeKey=%s",(pulso['load'], pulso['key']))
         except:
             Reconectar()
-            self.cursor.execute( "UPDATE grid_nodeload SET nodeload= %s WHERE nodeKey=%s",(pulso['load'], pulso['key']))
+            self.cursor.execute( "UPDATE grid_nodeload SET nodeLoad= %s WHERE nodeKey=%s",(pulso['load'], pulso['key']))
             
    
         
     def pegarChaves(self):
         
-        querysql = "select NodeKey from grid_nodes"
+        querysql = "select nodeKey from grid_nodes"
         
         self.cursor.execute(querysql)
         
         chaves = self.cursor.fetchall()
         
         return interpretar(chaves)
-    
-    def interpretar(self, dado):
-        n= reduce(lambda x, y:x + ',' + y, map(lambda x: x[0],dado))
-        resultado = n.split(',')
-        
-        return resultado
-    
-    def sftp(self, atividade, nome):
+   
+    def getPdb(self, nome):
         
         import ssh
         import clientePastas
@@ -164,22 +161,34 @@ class banco:
         
         pastas = clientePastas.listar()
         pdbLocal = pastas(4) + "/" + nome  
-        pdbRemoto = "/opt/qnint/pdb/" + nome
-        logLocal = pastas(4) + "/" + nome
-        logRemoto = "/opt/qnint/logs/"  + nome
+        pdbRemoto = "/opt/qnint/calculos/" + nome
    
         try:
+            #'200.136.224.70'
+            self.gridSSH = ssh.Connection('127.0.0.1', username='qnint', password='grid**00')
+            print "Conectado via ssh"
+            self.gridSSH.get(pdbRemoto, pdbLocal)
+        except:
             
-            gridSSH = ssh.Connection('200.136.224.70', username='grid', password='grid**00')
-         
-            if atividade == "download":
+            mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente. Erro 0186L"
+            clienteErros.registrar('clienteDB.sftp', mensagem)
+        
+    def putLog(self, nome):
+        import ssh
+        import clientePastas
+        import clienteErros
+        
+        logLocal = pastas(4) + "/" + nome
+        logRemoto = "/opt/qnint/logs/"  + nome
+
+        
+        try:
+            self.gridSSH = ssh.Connection('127.0.0.1', username='qnint', password='grid**00')
+            print "Conectado via ssh"
+
+            self.gridSSH.put(logLocal, logRemoto)
                 
-                self.gridSSH.get(pdbRemoto, pdbLocal)
-                
-            if atividade == "upload" :
-                self.gridSSH.put(logLocal, logRemoto)
-                
-            gridSSH.close()
+            gridSSH.close()        
                            
         except:
             
@@ -187,4 +196,7 @@ class banco:
             clienteErros.registrar('clienteDB.sftp', mensagem)
 
 
-    
+def interpretar(dado):
+    n= reduce(lambda x, y:x + ',' + y, map(lambda x: x[0],dado))
+    resultado = n.split(',')
+    return resultado

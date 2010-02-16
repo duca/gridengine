@@ -19,7 +19,7 @@ class Tarefa:
         self.JobKey = JobKey
         self.programa = programa
         self.nucleos
-        
+        print 'Tarefa %s cadastrada com sucesso.' % (JobKey)
     #def descompactar(self, JobKey):
         
         #import clientePastas
@@ -29,10 +29,13 @@ class Tarefa:
         #from clienteErros import registrar
     
         #diretorios = clientePastas.listar()
-        #resultados = diretorios[4] + '/' + usuario + '/' + self.JobKey + '.zip'
-    
-    
-    def executar(self,JobKey):
+        #resultados = diretorios[4] + '/' + usuario + '/' + self.JobKey + '.zip
+    def babelPCGamess(self):
+        
+        import commands
+        
+        job = self.JobKey
+    def executar(self):
         
         import commands
         import clienteErros
@@ -55,7 +58,7 @@ class Tarefa:
         #etapa de simulacao
     
      
-        if self.programa == 'gaussian':
+        if self.programa == 'pcgamess':
          
             simulacao = "gaussian ... "
         else:
@@ -83,7 +86,7 @@ def sumario():
     
     return tudo
 
-def iniciar():
+def Iniciar():
     
     import clienteDB
     import clienteData
@@ -91,6 +94,7 @@ def iniciar():
     
     tudo = sumario()
     chave = tudo['key']
+    print chave
     # ####################################################
     # Main loop
     pidStatus = 1
@@ -114,7 +118,9 @@ def iniciar():
         aprovadas = grid.pegarTarefas(chave)
         
         #grid.
-        
+        for job in aprovadas:
+            
+            atividade = Tarefa(job, 'pcgamess')
             
         
         

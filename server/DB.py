@@ -22,7 +22,7 @@ class banco:
     def Conectar(self, db):
         
         import MySQLdb
-        import clienteErros
+        import servidorErros
         import sys
         try:
             con = MySQLdb.connect(self.servidor, self.usuario, self.senha)

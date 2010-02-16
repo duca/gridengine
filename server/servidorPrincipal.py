@@ -14,8 +14,8 @@ def Loop():
     import commands
     
     #PID
-    
-    pid = open('/var/run/qnint-grid.pid', 'w')
+    pidPath = servidorPastas.listar()[1] + '/qnint-grid.pid'
+    pid = open(pidPath, 'w')
     pid.write(str(1))
     pid.close()
     
@@ -55,7 +55,7 @@ def Loop():
         
         #Checar para ver se o arquivo ainda existe, caso contrário termina a execução do programa
         try:
-            pid = open('/var/run/qnint-grid.pid', 'r')
+            pid = open(pidPath, 'r')
             pid.close()
         except:
             pidStatus = 0
