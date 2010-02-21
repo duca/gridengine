@@ -1,0 +1,31 @@
+! EXAM23.
+!   semiempirical calculation, using the MOPAC/GAMESS combo
+!   AM1 gets the geometry disasterously wrong!
+!
+!   initial geometry,            MNDO       AM1         PM3
+!   FINAL HEAT OF FORMATION   105.14088   93.45997   46.89387
+!   RMS gradient              0.0818157  0.1008587  0.0366232
+!   final geometry (# steps),      8         11         10
+!   FINAL HEAT OF FORMATION    46.45649   -1.81716   -2.79647
+!   RMS gradient              0.0000270  0.0000294  0.0000015
+!   r(SiH)                      1.42119    1.45813    1.52104
+!   a(HSiH)                     101.956    120.000     96.280
+!
+!   At the final PM3 geometry, the charge on Silicon is -.4681,
+!   and the dipole moment is 2.345322 Debye.
+!
+ $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE COORD=ZMT ICHARG=-1 $END
+ $SYSTEM TIMLIM=5 MEMORY=2000000 $END
+ $BASIS  GBASIS=PM3 $END
+ $DATA
+Silyl anion...comparison of semiempirical models
+Cnv 3
+
+Si
+H  1  rSiH
+H  1  rSiH  2 aHSiH
+H  1  rSiH  2 aHSiH  3   aHSiH  -1
+
+rSiH=1.15
+aHSiH=110.0
+ $END

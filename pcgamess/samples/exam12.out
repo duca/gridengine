@@ -1,0 +1,1771 @@
+          ******************************************************
+          *PC GAMESS version 7.1.F (Firefly), build number 5211*
+          *   Compiled on    Tuesday,   17-02-2009, 16:27:05   *
+          *Code development and Intel/AMD specific optimization*
+          *  Copyright (c) 1994, 2009 by  Alex A. Granovsky,   *
+          *              Department of Chemistry,              *
+          *      Moscow State University, Moscow, Russia.      *
+          *   Some parts of this program include code due to   *
+          * work of Jim Kress, Peter Burger, and Robert Ponec. *
+          ******************************************************
+          *                PC GAMESS homepage:                 *
+          * http://classic.chem.msu.su/gran/gamess/index.html  *
+          *                      e-mail:                       *
+          *               gran@classic.chem.msu.su             *
+          *   This program may not be redistributed without    *
+          * the specific, written permission of its developers.*
+          ******************************************************
+
+          ******************************************************
+          * PARTIALLY BASED ON GAMESS (US) VERSION 6 JUN 1999, *
+          *  GAMESS (US) VERSIONS  6 SEP 2001 AND 12 DEC 2003  *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          ******************************************************
+
+
+ AMD Opteron/ Win32  PC GAMESS version running under Windows NT
+ Running on AMD CPU  :  CPU Generation 15, Family 15, Model   5, Stepping  8
+ CPU Brand String    :  AMD Opteron(tm) Processor 144                   
+ CPU Features        :  CMOV, MMX, SSE, SSE2, AMD64
+ Data cache size     :  L1 64 KB, L2 1024 KB, L3     0 KB
+ Operating System successfully passed SSE support test.
+
+
+ EXECUTION OF PC GAMESS BEGUN 16:29:57 LT  17-FEB-2009
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD>! EXAM 12.                                                                      
+ INPUT CARD>!   This job illustrates linear bends, for acetylene.                           
+ INPUT CARD>!   The optimal RHF/STO-2G geometry is located.                                 
+ INPUT CARD>!                                                                               
+ INPUT CARD>!   At the input geometry,                                                      
+ INPUT CARD>!   the FINAL E= -73.5036974734 after 7 iterations,                             
+ INPUT CARD>!   and the RMS gradient is 0.1506891.                                          
+ INPUT CARD>!                                                                               
+ INPUT CARD>!   At the final geometry, 7 steps later,                                       
+ INPUT CARD>!   the FINAL E= -73.6046483165, RMS gradient=0.0000028,                        
+ INPUT CARD>!   R(CC)=1.1777007 and R(CH)=1.0749435.                                        
+ INPUT CARD>!                                                                               
+ INPUT CARD> $CONTRL SCFTYP=RHF RUNTYP=OPTIMIZE NZVAR=5 $END                                
+ INPUT CARD> $SYSTEM TIMLIM=6 MEMORY=1000000 $END                                           
+ INPUT CARD> $BASIS  GBASIS=STO NGAUSS=2 $END                                               
+ INPUT CARD> $GUESS  GUESS=HUCKEL $END                                                      
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>Acetylene geometry optimization in internal coordinates                         
+ INPUT CARD>Dnh      4                                                                      
+ INPUT CARD>                                                                                
+ INPUT CARD>CARBON      6.0    0.0  0.0  0.70                                               
+ INPUT CARD>HYDROGEN    1.0    0.0  0.0  1.78                                               
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $ZMAT  IZMAT(1)=1,1,2,   1,1,3,   1,2,4,                                       
+ INPUT CARD>                 5,1,2,4,    5,2,1,3  $END                                      
+ INPUT CARD>------- XZ is 1st plane for both bends -------                                  
+ INPUT CARD> $LIBE  APTS(1)=1.0,0.0,0.0,1.0,0.0,0.0 $END                                    
+    1000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=STO          IGAUSS=       2      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F
+
+
+     RUN TITLE
+     ---------
+ Acetylene geometry optimization in internal coordinates                         
+
+ THE POINT GROUP OF THE MOLECULE IS DNH     
+ THE ORDER OF THE PRINCIPAL AXIS IS     4
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ CARBON      6.0     0.0000000000        0.0000000000       -1.3228081914
+ CARBON      6.0     0.0000000000        0.0000000000        1.3228081914
+ HYDROGEN    1.0     0.0000000000        0.0000000000       -3.3637122581
+ HYDROGEN    1.0     0.0000000000        0.0000000000        3.3637122581
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    CARBON         CARBON         HYDROGEN       HYDROGEN  
+
+  1  CARBON          0.0000000      1.4000000 *    1.0800000 *    2.4800000 *  
+  2  CARBON          1.4000000 *    0.0000000      2.4800000 *    1.0800000 *  
+  3  HYDROGEN        1.0800000 *    2.4800000 *    0.0000000      3.5600000    
+  4  HYDROGEN        2.4800000 *    1.0800000 *    3.5600000      0.0000000    
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+ SHELL TYPE PRIM    EXPONENT          CONTRACTION COEFFICIENTS
+
+ CARBON    
+
+   3   S    1      27.385033    3.669807 (  0.430128) 
+   3   S    2       4.874522    1.587353 (  0.678914) 
+
+   4   L    3       1.136748    0.038816 (  0.049472)     0.855856 (  0.511541) 
+   4   L    4       0.288309    0.270261 (  0.963782)     0.184542 (  0.612820) 
+
+ HYDROGEN  
+
+   6   S    5       1.309756    0.375320 (  0.430128) 
+   6   S    6       0.233136    0.162342 (  0.678914) 
+
+ TOTAL NUMBER OF SHELLS              =    6
+ TOTAL NUMBER OF BASIS FUNCTIONS     =   12
+ NUMBER OF ELECTRONS                 =   14
+ CHARGE OF MOLECULE                  =    0
+ STATE MULTIPLICITY                  =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA) =    7
+ NUMBER OF OCCUPIED ORBITALS (BETA ) =    7
+ TOTAL NUMBER OF ATOMS               =    4
+ THE NUCLEAR REPULSION ENERGY IS       22.1963425659
+
+ THIS MOLECULE IS RECOGNIZED AS BEING LINEAR.
+
+     $CONTRL OPTIONS
+     ---------------
+     SCFTYP=RHF          RUNTYP=OPTIMIZE     EXETYP=RUN     
+     MPLEVL=       0     LOCAL =NONE         UNITS =ANGS    
+     MULT  =       1     ICHARG=       0     MAXIT =      30
+     NPRINT=       7     IREST =       0     COORD =UNIQUE  
+     ECP   =NONE         NORMF =       0     NORMP =       0
+     ITOL  =      20     ICUT  =       9     NZVAR =       5
+     NOSYM =       0     INTTYP=POPLE        GEOM  =INPUT   
+     PLTORB=       F     MOLPLT=       F     RPAC  =       F
+     AIMPAC=       F     FRIEND=             CITYP =NONE    
+     DFTTYP=NONE    
+
+     $SYSTEM OPTIONS
+     ---------------
+     KDIAG =       0     MEMORY=  1000000     TIMLIM=      360.0 SEC.
+     COREFL=       F     PTIME =        F     XDR   =       F
+     BALTYP=LOOP    
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+
+          EXTRAPOLATION IN EFFECT
+          SOSCF IN EFFECT
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+ ATTENTION! AO INTEGRALS WILL BE PACKED.
+ THRESHOLD FOR PACKING PKTHR =  0.10000000D-01
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =       0     CUTTRF = 1.0E-09
+     MPTRAN =       0     DIRTRF =       F
+     AOINTS =DUP          IREST  =       0
+
+   --- ENCODED Z MATRIX ---
+ COORD    TYPE     I    J    K    L    M    N
+     1       1     1    2
+     2       1     1    3
+     3       1     2    4
+     4       5     1    2    4
+     5       5     2    1    3
+
+ THE DETERMINANT OF THE G MATRIX IS 10**(    -3)
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.6456164       1.4000000
+     2 STRETCH     1    3                           2.0409041       1.0800000
+     3 STRETCH     2    4                           2.0409041       1.0800000
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+     ------------------------------------------
+     THE POINT GROUP IS DNH, NAXIS= 4, ORDER=16
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A1G =   4      A1U =   0      B1G =   0      B1U =   0      A2G =   0
+ A2U =   4      B2G =   0      B2U =   0      EG  =   1      EU  =   1
+
+ ..... DONE SETTING UP THE RUN .....
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    131.66%,  TOTAL =     263.29%
+
+
+          -----------------------------
+          STATIONARY POINT LOCATION RUN
+          -----------------------------
+
+ OBTAINING INITIAL HESSIAN, HESS=GUESS   
+ DIAGONAL GUESS HESSIAN IN INTERNAL COORDS IS
+     1  0.4727     2  0.3532     3  0.3532     4  0.2500     5  0.2500
+     6  0.2500     7  0.2500
+
+          PARAMETERS CONTROLLING GEOMETRY SEARCH ARE
+          METHOD =GDIIS               UPHESS =BFGS    
+          NNEG   =         0          NFRZ   =         0
+          NSTEP  =        20          IFOLOW =         1
+          HESS   =GUESS               RESTAR =         F
+          IHREP  =         0          HSSEND =         F
+          NPRT   =         0          NPUN   =         0
+          OPTTOL = 1.000E-04          RMIN   = 1.500E-03
+          RMAX   = 1.000E-01          RLIM   = 7.000E-02
+          DXMAX  = 3.000E-01          PURIFY =         F
+          MOVIE  =         F          TRUPD  =         T
+          TRMAX  = 5.000E-01          TRMIN  = 5.000E-02
+          ITBMAT =        10          STPT   =         F
+          STSTEP = 1.000E-02          PROJCT=          T
+          MAXDII =        20          NSKIP  =         2
+1NSERCH=   0
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000   0.7000000000
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.7800000000
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000  -0.7000000000
+ CARBON      6.0   0.0000000000   0.0000000000   0.7000000000
+ HYDROGEN    1.0   0.0000000000   0.0000000000  -1.7800000000
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.7800000000
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.6456164       1.4000000
+     2 STRETCH     1    3                           2.0409041       1.0800000
+     3 STRETCH     2    4                           2.0409041       1.0800000
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     243.30%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          SYMDEN=       F
+          TOLZ  = 0.0E+00          TOLE  = 0.0E+00
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES      4072 WORDS.
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     7 ORBITALS ARE OCCUPIED (    2 CORE ORBITALS).
+     3=A1G      4=A2U      5=A1G      6=EU       7=EU       8=EG       9=EG  
+    10=A2U     11=A1G     12=A2U 
+ ...... END OF INITIAL ORBITAL SELECTION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     221.59%
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING    4998 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   34429 WORDS OF MEMORY.
+ SCHWARZ INEQUALITY OVERHEAD:        78 INTEGRALS, T=        0.00
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =    4
+ II,JST,KST,LST =  5  1  1  1 NREC =         1 INTLOC =  305
+ II,JST,KST,LST =  6  1  1  1 NREC =         1 INTLOC =  305
+ SCHWARZ INEQUALITY TEST SKIPPED         3 INTEGRAL BLOCKS.
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 634
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     176.03%
+
+          -------------------
+          RHF SCF CALCULATION
+          -------------------
+
+     NUCLEAR ENERGY =        22.1963425659
+     MAXIT =   30     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=T
+     DENSITY CONV=  1.00E-05
+     SOSCF WILL OPTIMIZE      35 ORBITAL ROTATIONS, SOGTOL=   0.250
+     MEMORY REQUIRED FOR RHF STEP=      8873 WORDS.
+
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE     ORB. GRAD
+   1  0  0   -73.449308983   -73.449308983   0.109062893   0.000000000
+          ---------------START SECOND ORDER SCF---------------
+   2  1  0   -73.503292358    -0.053983375   0.019984178   0.019966228
+   3  2  0   -73.503682556    -0.000390198   0.005214516   0.002167205
+   4  3  0   -73.503697280    -0.000014724   0.000326607   0.000370510
+   5  4  0   -73.503697469    -0.000000189   0.000048832   0.000059139
+   6  5  0   -73.503697472    -0.000000004   0.000002035   0.000002013
+   7  6  0   -73.503697472     0.000000000   0.000000387   0.000000210
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL ENERGY IS      -73.5036974723 AFTER   7 ITERATIONS
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                  -10.5911   -10.5897    -0.8499    -0.6785    -0.5528
+                     A2U        A1G        A1G        A2U        A1G 
+    1  C   1  S   0.694565   0.696395  -0.207795  -0.140682  -0.020381
+    2  C   1  S   0.054894   0.035829   0.525338   0.359296   0.038641
+    3  C   1  X   0.000000   0.000000   0.000000   0.000000   0.000000
+    4  C   1  Y   0.000000   0.000000   0.000000   0.000000   0.000000
+    5  C   1  Z   0.009198  -0.006212   0.089835  -0.233197   0.435859
+    6  C   2  S  -0.694565   0.696395  -0.207795   0.140682  -0.020381
+    7  C   2  S  -0.054894   0.035829   0.525338  -0.359296   0.038641
+    8  C   2  X   0.000000   0.000000   0.000000   0.000000   0.000000
+    9  C   2  Y   0.000000   0.000000   0.000000   0.000000   0.000000
+   10  C   2  Z   0.009198   0.006212  -0.089835  -0.233197  -0.435859
+   11  H   3  S  -0.009768  -0.010735   0.165634   0.352692  -0.348969
+   12  H   4  S   0.009768  -0.010735   0.165634  -0.352692  -0.348969
+
+                      6          7          8          9         10
+                   -0.2516    -0.2516     0.3618     0.3618     0.4782
+                     EU         EU         EG         EG         A2U 
+    1  C   1  S   0.000000   0.000000   0.000000   0.000000  -0.227829
+    2  C   1  S   0.000000   0.000000   0.000000   0.000000   1.062588
+    3  C   1  X   0.641670   0.000000   0.797760   0.000000   0.000000
+    4  C   1  Y   0.000000   0.641670   0.000000   0.797760   0.000000
+    5  C   1  Z   0.000000   0.000000   0.000000   0.000000   0.091147
+    6  C   2  S   0.000000   0.000000   0.000000   0.000000   0.227829
+    7  C   2  S   0.000000   0.000000   0.000000   0.000000  -1.062588
+    8  C   2  X   0.641670   0.000000  -0.797760   0.000000   0.000000
+    9  C   2  Y   0.000000   0.641670   0.000000  -0.797760   0.000000
+   10  C   2  Z   0.000000   0.000000   0.000000   0.000000   0.091147
+   11  H   3  S   0.000000   0.000000   0.000000   0.000000  -0.700408
+   12  H   4  S   0.000000   0.000000   0.000000   0.000000   0.700408
+
+                     11         12
+                    0.7498     1.3028
+                     A1G        A2U 
+    1  C   1  S   0.120331  -0.074450
+    2  C   1  S  -0.666863   0.461626
+    3  C   1  X   0.000000   0.000000
+    4  C   1  Y   0.000000   0.000000
+    5  C   1  Z   0.647908   1.219721
+    6  C   2  S   0.120331   0.074450
+    7  C   2  S  -0.666863  -0.461626
+    8  C   2  X   0.000000   0.000000
+    9  C   2  Y   0.000000   0.000000
+   10  C   2  Z  -0.647908   1.219721
+   11  H   3  S   0.897733   0.589874
+   12  H   4  S   0.897733  -0.589874
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    335.92%,  TOTAL =     209.22%
+
+
+                         ------------------------------
+                         properties for the RHF density
+                         ------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =    -143.8697110570
+                TWO ELECTRON ENERGY =      48.1696710187
+           NUCLEAR REPULSION ENERGY =      22.1963425659
+                                      ------------------
+                       TOTAL ENERGY =     -73.5036974723
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =      48.1696710187
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =    -216.0280545140
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =      22.1963425659
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =    -145.6620409293
+               TOTAL KINETIC ENERGY =      72.1583434570
+                 VIRIAL RATIO (V/T) =       2.0186444692
+
+  ...... PI ENERGY ANALYSIS ......
+
+ ENERGY ANALYSIS:
+            FOCK ENERGY=    -47.5303690870
+          BARE H ENERGY=   -143.8697110570
+     ELECTRONIC ENERGY =    -95.7000400720
+         KINETIC ENERGY=     72.1583434570
+          N-N REPULSION=     22.1963425659
+           TOTAL ENERGY=    -73.5036975061
+        SIGMA PART(1+2)=    -82.4325227136
+               (K,V1,2)=     67.1785217856   -185.5195470405     35.9085025413
+           PI PART(1+2)=    -13.2675173584
+               (K,V1,2)=      4.9798216714    -30.5085074735     12.2611684437
+  SIGMA SKELETON, ERROR=    -60.2361801476      0.0000000000
+             MIXED PART= 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ ...... END OF PI ENERGY ANALYSIS ......
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+     MULLIKEN ATOMIC POPULATION IN EACH MOLECULAR ORBITAL
+
+                      1          2          3          4          5
+
+                  2.000000   2.000000   2.000000   2.000000   2.000000
+
+    1             1.001016   1.001165   0.868223   0.554377   0.645686
+    2             1.001016   1.001165   0.868223   0.554377   0.645686
+    3            -0.001016  -0.001165   0.131777   0.445623   0.354314
+    4            -0.001016  -0.001165   0.131777   0.445623   0.354314
+
+                      6          7
+
+                  2.000000   2.000000
+
+    1             1.000000   1.000000
+    2             1.000000   1.000000
+    3             0.000000   0.000000
+    4             0.000000   0.000000
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  C   1  S     1.98375     1.97631
+              2  C   1  S     1.17763     1.10745
+              3  C   1  X     1.00000     1.00000
+              4  C   1  Y     1.00000     1.00000
+              5  C   1  Z     0.90909     0.95938
+              6  C   2  S     1.98375     1.97631
+              7  C   2  S     1.17763     1.10745
+              8  C   2  X     1.00000     1.00000
+              9  C   2  Y     1.00000     1.00000
+             10  C   2  Z     0.90909     0.95938
+             11  H   3  S     0.92953     0.95686
+             12  H   4  S     0.92953     0.95686
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2           3           4
+
+    1    4.9300951
+    2    0.7585908   4.9300951
+    3    0.3930396  -0.0112588   0.5476331
+    4   -0.0112588   0.3930396   0.0001194   0.5476331
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 CARBON        6.070467   -0.070467         6.043141   -0.043141
+    2 CARBON        6.070467   -0.070467         6.043141   -0.043141
+    3 HYDROGEN      0.929533    0.070467         0.956859    0.043141
+    4 HYDROGEN      0.929533    0.070467         0.956859    0.043141
+
+          -------------------------------
+          BOND ORDER AND VALENCE ANALYSIS     BOND ORDER THRESHOLD=0.050
+          -------------------------------
+
+                   BOND                       BOND                       BOND
+  ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER
+    1   2  1.400  2.970        1   3  1.080  0.979        2   4  1.080  0.979
+
+                       TOTAL       BONDED        FREE
+      ATOM            VALENCE     VALENCE     VALENCE
+    1 CARBON            3.963       3.963       0.000
+    2 CARBON            3.963       3.963       0.000
+    3 HYDROGEN          0.995       0.995       0.000
+    4 HYDROGEN          0.995       0.995       0.000
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.000000    0.000000    0.000000    0.000000
+ ...... END OF PROPERTY EVALUATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     200.30%
+ ......END OF NBO ANALYSIS......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     192.09%
+
+ BEGINNING ONE ELECTRON GRADIENT...
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     180.88%
+
+          ----------------------
+          GRADIENT OF THE ENERGY
+          ----------------------
+ SCHWARZ SCREENING SKIPPED          4 BLOCKS, COMPUTED        112 BLOCKS
+
+ ...... END OF 2-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     155.45%
+
+          NSERCH=  0     ENERGY=     -73.5036975
+
+                                 -----------------------
+                                 GRADIENT (HARTREE/BOHR)
+                                 -----------------------
+        ATOM     ZNUC       DE/DX         DE/DY         DE/DZ
+ --------------------------------------------------------------
+  1  CARBON       6.0     0.0000000     0.0000000    -0.3975936
+  2  CARBON       6.0     0.0000000     0.0000000     0.3975936
+  3  HYDROGEN     1.0     0.0000000     0.0000000    -0.0010894
+  4  HYDROGEN     1.0     0.0000000     0.0000000     0.0010894
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -            COORDINATE        GRADIENT
+ NO.     TYPE      I    J    K    L    M    N       (ANG,DEG)     (H/B,H/RAD)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           1.4000000       0.3986830
+     2 STRETCH     1    3                           1.0800000       0.0010894
+     3 STRETCH     2    4                           1.0800000       0.0010894
+     4 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     5 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     6 LIN.BEND    2    1    3                    180.0000000       0.0000000
+     7 LIN.BEND    2    1    3                    180.0000000       0.0000000
+
+          MAXIMUM GRADIENT =  0.3986830    RMS GRADIENT = 0.1506891
+          FORCE CONSTANT MATRIX NOT UPDATED --- TAKING FIRST STEP
+          MIN SEARCH, CORRECT HESSIAN, TRYING PURE NR STEP
+               NR STEP HAS LENGTH         =   0.843360
+          TRIM/QA LAMBDA FOR NON-TS MODES =  -0.85621714
+          TRIM/QA STEP HAS LENGTH         =   0.300000
+          RADIUS OF STEP TAKEN=   0.30000  CURRENT TRUST RADIUS=   0.30000
+          TRANSFORMING DISPLACEMENT FROM INTERNALS TO CARTESIANS
+          THE ROOT MEAN SQUARE ERROR IN ITERATION   1 IS   0.00000000
+          MAX PRIMITIVE INTERNAL COORDINATE DEVIATION IS   0.00000000
+          INTERNAL COORDINATES SELF-INCONSISTENCY     IS   0.00000000
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     149.30%
+
+1NSERCH=   1
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000   0.6206241283
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.7001474454
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000  -0.6206241283
+ CARBON      6.0   0.0000000000   0.0000000000   0.6206241283
+ HYDROGEN    1.0   0.0000000000   0.0000000000  -1.7001474454
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.7001474454
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.3456191       1.2412483
+     2 STRETCH     1    3                           2.0400033       1.0795233
+     3 STRETCH     2    4                           2.0400033       1.0795233
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    CARBON         CARBON         HYDROGEN       HYDROGEN  
+
+  1  CARBON          0.0000000      1.2412483 *    1.0795233 *    2.3207716 *  
+  2  CARBON          1.2412483 *    0.0000000      2.3207716 *    1.0795233 *  
+  3  HYDROGEN        1.0795233 *    2.3207716 *    0.0000000      3.4002949    
+  4  HYDROGEN        2.3207716 *    1.0795233 *    3.4002949      0.0000000    
+
+  * ... LESS THAN  3.000
+
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     146.68%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 636
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    234.80%,  TOTAL =     161.87%
+
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0   -73.591291154   -73.591291154   0.042997188   0.039546796
+   2  1  0   -73.593943136    -0.002651982   0.010283463   0.003864606
+   3  2  0   -73.594016683    -0.000073547   0.000399582   0.000488367
+   4  3  0   -73.594016993    -0.000000310   0.000026436   0.000054355
+   5  4  0   -73.594016995    -0.000000002   0.000000603   0.000000541
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL ENERGY IS      -73.5940169953 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     150.01%
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     144.94%
+
+ ...... END OF 2-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     131.97%
+
+          NSERCH=  1     ENERGY=     -73.5940170
+
+                                 -----------------------
+                                 GRADIENT (HARTREE/BOHR)
+                                 -----------------------
+        ATOM     ZNUC       DE/DX         DE/DY         DE/DZ
+ --------------------------------------------------------------
+  1  CARBON       6.0     0.0000000     0.0000000    -0.1642137
+  2  CARBON       6.0     0.0000000     0.0000000     0.1642137
+  3  HYDROGEN     1.0     0.0000000     0.0000000    -0.0031594
+  4  HYDROGEN     1.0     0.0000000     0.0000000     0.0031594
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -            COORDINATE        GRADIENT
+ NO.     TYPE      I    J    K    L    M    N       (ANG,DEG)     (H/B,H/RAD)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           1.2412483       0.1673731
+     2 STRETCH     1    3                           1.0795233       0.0031594
+     3 STRETCH     2    4                           1.0795233       0.0031594
+     4 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     5 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     6 LIN.BEND    2    1    3                    180.0000000       0.0000000
+     7 LIN.BEND    2    1    3                    180.0000000       0.0000000
+
+          MAXIMUM GRADIENT =  0.1673731    RMS GRADIENT = 0.0632836
+          HESSIAN UPDATED USING THE BFGS FORMULA
+             ACTUAL ENERGY CHANGE WAS  -0.0903195230
+          PREDICTED ENERGY CHANGE WAS  -0.0983326647 RATIO=  0.919
+          MIN SEARCH, CORRECT HESSIAN, TRYING PURE NR STEP
+               NR STEP HAS LENGTH         =   0.218226
+          RADIUS OF STEP TAKEN=   0.21823  CURRENT TRUST RADIUS=   0.50000
+          TRANSFORMING DISPLACEMENT FROM INTERNALS TO CARTESIANS
+          THE ROOT MEAN SQUARE ERROR IN ITERATION   1 IS   0.00000000
+          MAX PRIMITIVE INTERNAL COORDINATE DEVIATION IS   0.00000000
+          INTERNAL COORDINATES SELF-INCONSISTENCY     IS   0.00000000
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     129.15%
+
+1NSERCH=   2
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000   0.5631166227
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6353157415
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000  -0.5631166227
+ CARBON      6.0   0.0000000000   0.0000000000   0.5631166227
+ HYDROGEN    1.0   0.0000000000   0.0000000000  -1.6353157415
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6353157415
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.1282722       1.1262332
+     2 STRETCH     1    3                           2.0261625       1.0721991
+     3 STRETCH     2    4                           2.0261625       1.0721991
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    CARBON         CARBON         HYDROGEN       HYDROGEN  
+
+  1  CARBON          0.0000000      1.1262332 *    1.0721991 *    2.1984324 *  
+  2  CARBON          1.1262332 *    0.0000000      2.1984324 *    1.0721991 *  
+  3  HYDROGEN        1.0721991 *    2.1984324 *    0.0000000      3.2706315    
+  4  HYDROGEN        2.1984324 *    1.0721991 *    3.2706315      0.0000000    
+
+  * ... LESS THAN  3.000
+
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     127.82%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 636
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    261.43%,  TOTAL =     142.38%
+
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0   -73.593819886   -73.593819886   0.043429874   0.033632738
+   2  1  0   -73.596122717    -0.002302831   0.009399652   0.004110784
+   3  2  0   -73.596184365    -0.000061647   0.000366145   0.000386785
+   4  3  0   -73.596184656    -0.000000292   0.000027508   0.000040661
+   5  4  0   -73.596184659    -0.000000002   0.000000754   0.000000684
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL ENERGY IS      -73.5961846585 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     134.67%
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     131.43%
+
+ ...... END OF 2-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     122.83%
+
+          NSERCH=  2     ENERGY=     -73.5961847
+
+                                 -----------------------
+                                 GRADIENT (HARTREE/BOHR)
+                                 -----------------------
+        ATOM     ZNUC       DE/DX         DE/DY         DE/DZ
+ --------------------------------------------------------------
+  1  CARBON       6.0     0.0000000     0.0000000     0.1803572
+  2  CARBON       6.0     0.0000000     0.0000000    -0.1803572
+  3  HYDROGEN     1.0     0.0000000     0.0000000     0.0013949
+  4  HYDROGEN     1.0     0.0000000     0.0000000    -0.0013949
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -            COORDINATE        GRADIENT
+ NO.     TYPE      I    J    K    L    M    N       (ANG,DEG)     (H/B,H/RAD)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           1.1262332      -0.1817521
+     2 STRETCH     1    3                           1.0721991      -0.0013949
+     3 STRETCH     2    4                           1.0721991      -0.0013949
+     4 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     5 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     6 LIN.BEND    2    1    3                    180.0000000       0.0000000
+     7 LIN.BEND    2    1    3                    180.0000000       0.0000000
+
+          MAXIMUM GRADIENT =  0.1817521    RMS GRADIENT = 0.0686999
+          HESSIAN UPDATED USING THE BFGS FORMULA
+             ACTUAL ENERGY CHANGE WAS  -0.0021676632
+          PREDICTED ENERGY CHANGE WAS  -0.0182327398 RATIO=  0.119
+               NR STEP HAS LENGTH         =   0.113318
+          RADIUS OF STEP TAKEN=   0.11332  CURRENT TRUST RADIUS=   0.50000
+          TRANSFORMING DISPLACEMENT FROM INTERNALS TO CARTESIANS
+          THE ROOT MEAN SQUARE ERROR IN ITERATION   1 IS   0.00000000
+          MAX PRIMITIVE INTERNAL COORDINATE DEVIATION IS   0.00000000
+          INTERNAL COORDINATES SELF-INCONSISTENCY     IS   0.00000000
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     120.80%
+
+1NSERCH=   3
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000   0.5930532166
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6676032151
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000  -0.5930532166
+ CARBON      6.0   0.0000000000   0.0000000000   0.5930532166
+ HYDROGEN    1.0   0.0000000000   0.0000000000  -1.6676032151
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6676032151
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.2414162       1.1861064
+     2 STRETCH     1    3                           2.0306051       1.0745500
+     3 STRETCH     2    4                           2.0306051       1.0745500
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    CARBON         CARBON         HYDROGEN       HYDROGEN  
+
+  1  CARBON          0.0000000      1.1861064 *    1.0745500 *    2.2606564 *  
+  2  CARBON          1.1861064 *    0.0000000      2.2606564 *    1.0745500 *  
+  3  HYDROGEN        1.0745500 *    2.2606564 *    0.0000000      3.3352064    
+  4  HYDROGEN        2.2606564 *    1.0745500 *    3.3352064      0.0000000    
+
+  * ... LESS THAN  3.000
+
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =   3034.75%,  TOTAL =     143.82%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 636
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     131.60%
+
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0   -73.603706493   -73.603706493   0.020756601   0.019371415
+   2  1  0   -73.604405350    -0.000698857   0.007716453   0.003088521
+   3  2  0   -73.604443817    -0.000038467   0.000352207   0.000381054
+   4  3  0   -73.604443960    -0.000000143   0.000033441   0.000041682
+   5  4  0   -73.604443963    -0.000000002   0.000001371   0.000001579
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL ENERGY IS      -73.6044439625 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     126.22%
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     123.84%
+
+ ...... END OF 2-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     117.40%
+
+          NSERCH=  3     ENERGY=     -73.6044440
+
+                                 -----------------------
+                                 GRADIENT (HARTREE/BOHR)
+                                 -----------------------
+        ATOM     ZNUC       DE/DX         DE/DY         DE/DZ
+ --------------------------------------------------------------
+  1  CARBON       6.0     0.0000000     0.0000000    -0.0260843
+  2  CARBON       6.0     0.0000000     0.0000000     0.0260843
+  3  HYDROGEN     1.0     0.0000000     0.0000000     0.0006012
+  4  HYDROGEN     1.0     0.0000000     0.0000000    -0.0006012
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -            COORDINATE        GRADIENT
+ NO.     TYPE      I    J    K    L    M    N       (ANG,DEG)     (H/B,H/RAD)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           1.1861064       0.0254830
+     2 STRETCH     1    3                           1.0745500      -0.0006012
+     3 STRETCH     2    4                           1.0745500      -0.0006012
+     4 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     5 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     6 LIN.BEND    2    1    3                    180.0000000       0.0000000
+     7 LIN.BEND    2    1    3                    180.0000000       0.0000000
+
+          MAXIMUM GRADIENT =  0.0254830    RMS GRADIENT = 0.0096370
+          HESSIAN UPDATED USING THE BFGS FORMULA
+             ACTUAL ENERGY CHANGE WAS  -0.0082593040
+          PREDICTED ENERGY CHANGE WAS  -0.0102882699 RATIO=  0.803
+            GDIIS STEP HAS LENGTH         =   0.014045
+          RADIUS OF STEP TAKEN=   0.01405  CURRENT TRUST RADIUS=   0.50000
+          TRANSFORMING DISPLACEMENT FROM INTERNALS TO CARTESIANS
+          THE ROOT MEAN SQUARE ERROR IN ITERATION   1 IS   0.00000000
+          MAX PRIMITIVE INTERNAL COORDINATE DEVIATION IS   0.00000000
+          INTERNAL COORDINATES SELF-INCONSISTENCY     IS   0.00000000
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =   1386.13%,  TOTAL =     135.06%
+
+1NSERCH=   4
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000   0.5893759273
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6646841535
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000  -0.5893759273
+ CARBON      6.0   0.0000000000   0.0000000000   0.5893759273
+ HYDROGEN    1.0   0.0000000000   0.0000000000  -1.6646841535
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6646841535
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.2275180       1.1787519
+     2 STRETCH     1    3                           2.0320379       1.0753082
+     3 STRETCH     2    4                           2.0320379       1.0753082
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    CARBON         CARBON         HYDROGEN       HYDROGEN  
+
+  1  CARBON          0.0000000      1.1787519 *    1.0753082 *    2.2540601 *  
+  2  CARBON          1.1787519 *    0.0000000      2.2540601 *    1.0753082 *  
+  3  HYDROGEN        1.0753082 *    2.2540601 *    0.0000000      3.3293683    
+  4  HYDROGEN        2.2540601 *    1.0753082 *    3.3293683      0.0000000    
+
+  * ... LESS THAN  3.000
+
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     134.25%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 636
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     124.97%
+
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0   -73.604636248   -73.604636248   0.002257750   0.002078926
+   2  1  0   -73.604644517    -0.000008269   0.000716463   0.000294594
+   3  2  0   -73.604644857    -0.000000340   0.000035764   0.000031201
+   4  3  0   -73.604644858    -0.000000002   0.000003326   0.000003938
+   5  4  0   -73.604644859     0.000000000   0.000000128   0.000000152
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL ENERGY IS      -73.6046448585 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     120.79%
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     118.91%
+
+ ...... END OF 2-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     113.78%
+
+          NSERCH=  4     ENERGY=     -73.6046449
+
+                                 -----------------------
+                                 GRADIENT (HARTREE/BOHR)
+                                 -----------------------
+        ATOM     ZNUC       DE/DX         DE/DY         DE/DZ
+ --------------------------------------------------------------
+  1  CARBON       6.0     0.0000000     0.0000000    -0.0028922
+  2  CARBON       6.0     0.0000000     0.0000000     0.0028922
+  3  HYDROGEN     1.0     0.0000000     0.0000000    -0.0003410
+  4  HYDROGEN     1.0     0.0000000     0.0000000     0.0003410
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -            COORDINATE        GRADIENT
+ NO.     TYPE      I    J    K    L    M    N       (ANG,DEG)     (H/B,H/RAD)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           1.1787519       0.0032332
+     2 STRETCH     1    3                           1.0753082       0.0003410
+     3 STRETCH     2    4                           1.0753082       0.0003410
+     4 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     5 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     6 LIN.BEND    2    1    3                    180.0000000       0.0000000
+     7 LIN.BEND    2    1    3                    180.0000000       0.0000000
+
+          MAXIMUM GRADIENT =  0.0032332    RMS GRADIENT = 0.0012356
+          HESSIAN UPDATED USING THE BFGS FORMULA
+             ACTUAL ENERGY CHANGE WAS  -0.0002008960
+          PREDICTED ENERGY CHANGE WAS  -0.0001779448 RATIO=  1.129
+            GDIIS STEP HAS LENGTH         =   0.001542
+          RADIUS OF STEP TAKEN=   0.00154  CURRENT TRUST RADIUS=   0.50000
+          TRANSFORMING DISPLACEMENT FROM INTERNALS TO CARTESIANS
+          THE ROOT MEAN SQUARE ERROR IN ITERATION   1 IS   0.00000000
+          MAX PRIMITIVE INTERNAL COORDINATE DEVIATION IS   0.00000000
+          INTERNAL COORDINATES SELF-INCONSISTENCY     IS   0.00000000
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =   1337.41%,  TOTAL =     128.47%
+
+1NSERCH=   5
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000   0.5890570046
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6640053040
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000  -0.5890570046
+ CARBON      6.0   0.0000000000   0.0000000000   0.5890570046
+ HYDROGEN    1.0   0.0000000000   0.0000000000  -1.6640053040
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6640053040
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.2263127       1.1781140
+     2 STRETCH     1    3                           2.0313577       1.0749483
+     3 STRETCH     2    4                           2.0313577       1.0749483
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    CARBON         CARBON         HYDROGEN       HYDROGEN  
+
+  1  CARBON          0.0000000      1.1781140 *    1.0749483 *    2.2530623 *  
+  2  CARBON          1.1781140 *    0.0000000      2.2530623 *    1.0749483 *  
+  3  HYDROGEN        1.0749483 *    2.2530623 *    0.0000000      3.3280106    
+  4  HYDROGEN        2.2530623 *    1.0749483 *    3.3280106      0.0000000    
+
+  * ... LESS THAN  3.000
+
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     127.78%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 636
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     120.46%
+
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0   -73.604647687   -73.604647687   0.000301794   0.000259200
+   2  1  0   -73.604647805    -0.000000117   0.000095845   0.000036466
+   3  2  0   -73.604647810    -0.000000006   0.000002751   0.000003928
+   4  3  0   -73.604647810     0.000000000   0.000000346   0.000000374
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL ENERGY IS      -73.6046478103 AFTER   4 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     117.60%
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     116.05%
+
+ ...... END OF 2-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    285.39%,  TOTAL =     124.24%
+
+          NSERCH=  5     ENERGY=     -73.6046478
+
+                                 -----------------------
+                                 GRADIENT (HARTREE/BOHR)
+                                 -----------------------
+        ATOM     ZNUC       DE/DX         DE/DY         DE/DZ
+ --------------------------------------------------------------
+  1  CARBON       6.0     0.0000000     0.0000000    -0.0012902
+  2  CARBON       6.0     0.0000000     0.0000000     0.0012902
+  3  HYDROGEN     1.0     0.0000000     0.0000000     0.0000055
+  4  HYDROGEN     1.0     0.0000000     0.0000000    -0.0000055
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -            COORDINATE        GRADIENT
+ NO.     TYPE      I    J    K    L    M    N       (ANG,DEG)     (H/B,H/RAD)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           1.1781140       0.0012847
+     2 STRETCH     1    3                           1.0749483      -0.0000055
+     3 STRETCH     2    4                           1.0749483      -0.0000055
+     4 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     5 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     6 LIN.BEND    2    1    3                    180.0000000       0.0000000
+     7 LIN.BEND    2    1    3                    180.0000000       0.0000000
+
+          MAXIMUM GRADIENT =  0.0012847    RMS GRADIENT = 0.0004856
+          HESSIAN UPDATED USING THE BFGS FORMULA
+             ACTUAL ENERGY CHANGE WAS  -0.0000029518
+          PREDICTED ENERGY CHANGE WAS  -0.0000030885 RATIO=  0.956
+            GDIIS STEP HAS LENGTH         =   0.000251
+          RADIUS OF STEP TAKEN=   0.00025  CURRENT TRUST RADIUS=   0.50000
+          TRANSFORMING DISPLACEMENT FROM INTERNALS TO CARTESIANS
+          THE ROOT MEAN SQUARE ERROR IN ITERATION   1 IS   0.00000000
+          MAX PRIMITIVE INTERNAL COORDINATE DEVIATION IS   0.00000000
+          INTERNAL COORDINATES SELF-INCONSISTENCY     IS   0.00000000
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     122.92%
+
+1NSERCH=   6
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000   0.5889905730
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6639373683
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000  -0.5889905730
+ CARBON      6.0   0.0000000000   0.0000000000   0.5889905730
+ HYDROGEN    1.0   0.0000000000   0.0000000000  -1.6639373683
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6639373683
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.2260616       1.1779811
+     2 STRETCH     1    3                           2.0313549       1.0749468
+     3 STRETCH     2    4                           2.0313549       1.0749468
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    CARBON         CARBON         HYDROGEN       HYDROGEN  
+
+  1  CARBON          0.0000000      1.1779811 *    1.0749468 *    2.2529279 *  
+  2  CARBON          1.1779811 *    0.0000000      2.2529279 *    1.0749468 *  
+  3  HYDROGEN        1.0749468 *    2.2529279 *    0.0000000      3.3278747    
+  4  HYDROGEN        2.2529279 *    1.0749468 *    3.3278747      0.0000000    
+
+  * ... LESS THAN  3.000
+
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     122.18%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 636
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     112.98%
+
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0   -73.604648078   -73.604648078   0.000044803   0.000040568
+   2  1  0   -73.604648081    -0.000000003   0.000014399   0.000005793
+   3  2  0   -73.604648081     0.000000000   0.000000632   0.000000626
+   4  3  0   -73.604648081     0.000000000   0.000000060   0.000000067
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL ENERGY IS      -73.6046480814 AFTER   4 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    461.62%,  TOTAL =     122.21%
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     120.85%
+
+ ...... END OF 2-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     117.05%
+
+          NSERCH=  6     ENERGY=     -73.6046481
+
+                                 -----------------------
+                                 GRADIENT (HARTREE/BOHR)
+                                 -----------------------
+        ATOM     ZNUC       DE/DX         DE/DY         DE/DZ
+ --------------------------------------------------------------
+  1  CARBON       6.0     0.0000000     0.0000000    -0.0008782
+  2  CARBON       6.0     0.0000000     0.0000000     0.0008782
+  3  HYDROGEN     1.0     0.0000000     0.0000000     0.0000038
+  4  HYDROGEN     1.0     0.0000000     0.0000000    -0.0000038
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -            COORDINATE        GRADIENT
+ NO.     TYPE      I    J    K    L    M    N       (ANG,DEG)     (H/B,H/RAD)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           1.1779811       0.0008744
+     2 STRETCH     1    3                           1.0749468      -0.0000038
+     3 STRETCH     2    4                           1.0749468      -0.0000038
+     4 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     5 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     6 LIN.BEND    2    1    3                    180.0000000       0.0000000
+     7 LIN.BEND    2    1    3                    180.0000000       0.0000000
+
+          MAXIMUM GRADIENT =  0.0008744    RMS GRADIENT = 0.0003305
+          HESSIAN UPDATED USING THE BFGS FORMULA
+             ACTUAL ENERGY CHANGE WAS  -0.0000002711
+          PREDICTED ENERGY CHANGE WAS  -0.0000002735 RATIO=  0.991
+            GDIIS STEP HAS LENGTH         =   0.000547
+          RADIUS OF STEP TAKEN=   0.00055  CURRENT TRUST RADIUS=   0.50000
+          TRANSFORMING DISPLACEMENT FROM INTERNALS TO CARTESIANS
+          THE ROOT MEAN SQUARE ERROR IN ITERATION   1 IS   0.00000000
+          MAX PRIMITIVE INTERNAL COORDINATE DEVIATION IS   0.00000000
+          INTERNAL COORDINATES SELF-INCONSISTENCY     IS   0.00000000
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     116.06%
+
+1NSERCH=   7
+
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000   0.5888457374
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6637892585
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000  -0.5888457374
+ CARBON      6.0   0.0000000000   0.0000000000   0.5888457374
+ HYDROGEN    1.0   0.0000000000   0.0000000000  -1.6637892585
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6637892585
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.2255142       1.1776915
+     2 STRETCH     1    3                           2.0313487       1.0749435
+     3 STRETCH     2    4                           2.0313487       1.0749435
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    CARBON         CARBON         HYDROGEN       HYDROGEN  
+
+  1  CARBON          0.0000000      1.1776915 *    1.0749435 *    2.2526350 *  
+  2  CARBON          1.1776915 *    0.0000000      2.2526350 *    1.0749435 *  
+  3  HYDROGEN        1.0749435 *    2.2526350 *    0.0000000      3.3275785    
+  4  HYDROGEN        2.2526350 *    1.0749435 *    3.3275785      0.0000000    
+
+  * ... LESS THAN  3.000
+
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     115.64%
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                 636
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     110.71%
+
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE     ORB. GRAD
+          ---------------START SECOND ORDER SCF---------------
+   1  0  0   -73.604648300   -73.604648300   0.000097706   0.000088482
+   2  1  0   -73.604648314    -0.000000015   0.000031375   0.000012624
+   3  2  0   -73.604648315    -0.000000001   0.000001380   0.000001363
+   4  3  0   -73.604648315     0.000000000   0.000000131   0.000000145
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL ENERGY IS      -73.6046483150 AFTER   4 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    610.59%,  TOTAL =     119.62%
+ ..... END OF 1-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     118.44%
+
+ ...... END OF 2-ELECTRON GRADIENT ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     115.12%
+
+          NSERCH=  7     ENERGY=     -73.6046483
+
+                                 -----------------------
+                                 GRADIENT (HARTREE/BOHR)
+                                 -----------------------
+        ATOM     ZNUC       DE/DX         DE/DY         DE/DZ
+ --------------------------------------------------------------
+  1  CARBON       6.0     0.0000000     0.0000000     0.0000211
+  2  CARBON       6.0     0.0000000     0.0000000    -0.0000211
+  3  HYDROGEN     1.0     0.0000000     0.0000000    -0.0000001
+  4  HYDROGEN     1.0     0.0000000     0.0000000     0.0000001
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -            COORDINATE        GRADIENT
+ NO.     TYPE      I    J    K    L    M    N       (ANG,DEG)     (H/B,H/RAD)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           1.1776915      -0.0000211
+     2 STRETCH     1    3                           1.0749435       0.0000001
+     3 STRETCH     2    4                           1.0749435       0.0000001
+     4 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     5 LIN.BEND    1    2    4                    180.0000000       0.0000000
+     6 LIN.BEND    2    1    3                    180.0000000       0.0000000
+     7 LIN.BEND    2    1    3                    180.0000000       0.0000000
+
+          MAXIMUM GRADIENT =  0.0000211    RMS GRADIENT = 0.0000080
+1     ***** EQUILIBRIUM GEOMETRY LOCATED *****
+
+ Acetylene geometry optimization in internal coordinates                         
+ COORDINATES OF SYMMETRY UNIQUE ATOMS (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000   0.5888457374
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6637892585
+
+ COORDINATES OF ALL ATOMS ARE (ANGS)
+   ATOM   CHARGE       X              Y              Z
+ ------------------------------------------------------------
+ CARBON      6.0   0.0000000000   0.0000000000  -0.5888457374
+ CARBON      6.0   0.0000000000   0.0000000000   0.5888457374
+ HYDROGEN    1.0   0.0000000000   0.0000000000  -1.6637892585
+ HYDROGEN    1.0   0.0000000000   0.0000000000   1.6637892585
+
+
+                     --------------------
+                     INTERNAL COORDINATES
+                     --------------------
+
+                          - - ATOMS - -              COORDINATE      COORDINATE
+ NO.     TYPE      I    J    K    L    M    N        (BOHR,RAD)       (ANG,DEG)
+ ------------------------------------------------------------------------------
+     1 STRETCH     1    2                           2.2255142       1.1776915
+     2 STRETCH     1    3                           2.0313487       1.0749435
+     3 STRETCH     2    4                           2.0313487       1.0749435
+     4 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     5 LIN.BEND    1    2    4                      3.1415927     180.0000000
+     6 LIN.BEND    2    1    3                      3.1415927     180.0000000
+     7 LIN.BEND    2    1    3                      3.1415927     180.0000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    CARBON         CARBON         HYDROGEN       HYDROGEN  
+
+  1  CARBON          0.0000000      1.1776915 *    1.0749435 *    2.2526350 *  
+  2  CARBON          1.1776915 *    0.0000000      2.2526350 *    1.0749435 *  
+  3  HYDROGEN        1.0749435 *    2.2526350 *    0.0000000      3.3275785    
+  4  HYDROGEN        2.2526350 *    1.0749435 *    3.3275785      0.0000000    
+
+  * ... LESS THAN  3.000
+
+
+          NUCLEAR ENERGY    =       25.0614473882
+          ELECTRONIC ENERGY =      -98.6660957032
+          TOTAL ENERGY      =      -73.6046483150
+
+          ------------------
+          MOLECULAR ORBITALS
+          ------------------
+
+                      1          2          3          4          5
+                  -10.6116   -10.6091    -0.9304    -0.6757    -0.5880
+                     A1G        A2U        A1G        A2U        A1G 
+    1  C   1  S   0.695522   0.694586  -0.220394  -0.134163  -0.000041
+    2  C   1  S   0.034586   0.066095   0.483767   0.324039  -0.065444
+    3  C   1  X   0.000000   0.000000   0.000000   0.000000   0.000000
+    4  C   1  Y   0.000000   0.000000   0.000000   0.000000   0.000000
+    5  C   1  Z  -0.002464   0.013467   0.171679  -0.258637   0.440249
+    6  C   2  S   0.695522  -0.694586  -0.220394   0.134163  -0.000041
+    7  C   2  S   0.034586  -0.066095   0.483767  -0.324039  -0.065444
+    8  C   2  X   0.000000   0.000000   0.000000   0.000000   0.000000
+    9  C   2  Y   0.000000   0.000000   0.000000   0.000000   0.000000
+   10  C   2  Z   0.002464   0.013467  -0.171679  -0.258637  -0.440249
+   11  H   3  S  -0.009030  -0.010675   0.129636   0.356497  -0.354979
+   12  H   4  S  -0.009030   0.010675   0.129636  -0.356497  -0.354979
+
+                      6          7          8          9         10
+                   -0.3377    -0.3377     0.4484     0.4484     0.5674
+                     EU         EU         EG         EG         A2U 
+    1  C   1  S   0.000000   0.000000   0.000000   0.000000  -0.220767
+    2  C   1  S   0.000000   0.000000   0.000000   0.000000   1.156162
+    3  C   1  X   0.616461   0.000000   0.854799   0.000000   0.000000
+    4  C   1  Y   0.000000   0.616461   0.000000   0.854799   0.000000
+    5  C   1  Z   0.000000   0.000000   0.000000   0.000000  -0.026796
+    6  C   2  S   0.000000   0.000000   0.000000   0.000000   0.220767
+    7  C   2  S   0.000000   0.000000   0.000000   0.000000  -1.156162
+    8  C   2  X   0.616461   0.000000  -0.854799   0.000000   0.000000
+    9  C   2  Y   0.000000   0.616461   0.000000  -0.854799   0.000000
+   10  C   2  Z   0.000000   0.000000   0.000000   0.000000  -0.026796
+   11  H   3  S   0.000000   0.000000   0.000000   0.000000  -0.788765
+   12  H   4  S   0.000000   0.000000   0.000000   0.000000   0.788765
+
+                     11         12
+                    0.7503     1.6599
+                     A1G        A2U 
+    1  C   1  S   0.113966  -0.126629
+    2  C   1  S  -0.682166   1.146533
+    3  C   1  X   0.000000   0.000000
+    4  C   1  Y   0.000000   0.000000
+    5  C   1  Z   0.659270   1.491842
+    6  C   2  S   0.113966   0.126629
+    7  C   2  S  -0.682166  -1.146533
+    8  C   2  X   0.000000   0.000000
+    9  C   2  Y   0.000000   0.000000
+   10  C   2  Z  -0.659270   1.491842
+   11  H   3  S   0.906345   0.476356
+   12  H   4  S   0.906345  -0.476356
+
+
+                         ------------------------------
+                         properties for the RHF density
+                         ------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =    -149.1516813980
+                TWO ELECTRON ENERGY =      50.4855856948
+           NUCLEAR REPULSION ENERGY =      25.0614473882
+                                      ------------------
+                       TOTAL ENERGY =     -73.6046483150
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =      50.4855856948
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =    -221.6240110510
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =      25.0614473882
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =    -146.0769779680
+               TOTAL KINETIC ENERGY =      72.4723296529
+                 VIRIAL RATIO (V/T) =       2.0156241516
+
+  ...... PI ENERGY ANALYSIS ......
+
+ ENERGY ANALYSIS:
+            FOCK ENERGY=    -48.1805096533
+          BARE H ENERGY=   -149.1516813980
+     ELECTRONIC ENERGY =    -98.6660955257
+         KINETIC ENERGY=     72.4723296529
+          N-N REPULSION=     25.0614473882
+           TOTAL ENERGY=    -73.6046481375
+        SIGMA PART(1+2)=    -84.4763068447
+               (K,V1,2)=     67.6285034678   -189.7513513098     37.6465409974
+           PI PART(1+2)=    -14.1897886809
+               (K,V1,2)=      4.8438261852    -31.8726597411     12.8390448750
+  SIGMA SKELETON, ERROR=    -59.4148594565      0.0000000000
+             MIXED PART= 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ ...... END OF PI ENERGY ANALYSIS ......
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+     MULLIKEN ATOMIC POPULATION IN EACH MOLECULAR ORBITAL
+
+                      1          2          3          4          5
+
+                  2.000000   2.000000   2.000000   2.000000   2.000000
+
+    1             1.001014   1.001094   0.915508   0.547299   0.604448
+    2             1.001014   1.001094   0.915508   0.547299   0.604448
+    3            -0.001014  -0.001094   0.084492   0.452701   0.395552
+    4            -0.001014  -0.001094   0.084492   0.452701   0.395552
+
+                      6          7
+
+                  2.000000   2.000000
+
+    1             1.000000   1.000000
+    2             1.000000   1.000000
+    3             0.000000   0.000000
+    4             0.000000   0.000000
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  C   1  S     1.98383     1.97896
+              2  C   1  S     1.09313     1.02551
+              3  C   1  X     1.00000     1.00000
+              4  C   1  Y     1.00000     1.00000
+              5  C   1  Z     0.99240     1.03834
+              6  C   2  S     1.98383     1.97896
+              7  C   2  S     1.09313     1.02551
+              8  C   2  X     1.00000     1.00000
+              9  C   2  Y     1.00000     1.00000
+             10  C   2  Z     0.99240     1.03834
+             11  H   3  S     0.93064     0.95719
+             12  H   4  S     0.93064     0.95719
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2           3           4
+
+    1    4.7775925
+    2    0.9014834   4.7775925
+    3    0.4025470  -0.0122601   0.5402019
+    4   -0.0122601   0.4025470   0.0001485   0.5402019
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 CARBON        6.069363   -0.069363         6.042812   -0.042812
+    2 CARBON        6.069363   -0.069363         6.042812   -0.042812
+    3 HYDROGEN      0.930637    0.069363         0.957188    0.042812
+    4 HYDROGEN      0.930637    0.069363         0.957188    0.042812
+
+          -------------------------------
+          BOND ORDER AND VALENCE ANALYSIS     BOND ORDER THRESHOLD=0.050
+          -------------------------------
+
+                   BOND                       BOND                       BOND
+  ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER
+    1   2  1.178  2.997        1   3  1.075  0.993        2   4  1.075  0.993
+
+                       TOTAL       BONDED        FREE
+      ATOM            VALENCE     VALENCE     VALENCE
+    1 CARBON            3.992       3.992       0.000
+    2 CARBON            3.992       3.992       0.000
+    3 HYDROGEN          0.995       0.995       0.000
+    4 HYDROGEN          0.995       0.995       0.000
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.000000    0.000000    0.000000    0.000000
+ ...... END OF PROPERTY EVALUATION ......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     113.64%
+ ......END OF NBO ANALYSIS......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     112.92%
+  $VIB   
+          IVIB=   0 IATOM=   0 ICOORD=   0 E=      -73.6046483150
+ -5.461623864E-66 1.329379484E-64 2.114285412E-05-5.461623864E-66 1.329379484E-64
+ -2.114285412E-05 6.508584213E-65-2.089024904E-64-7.060100676E-08 6.508584213E-65
+ -2.089024904E-64 7.060100676E-08
+ -1.686716183E-49 1.686716183E-49 4.515083418E-15
+ ......END OF GEOMETRY SEARCH......
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     112.69%
+
+                         I/O STATISTICS:
+ DATA READ TOTAL =        3.113 MB,  DATA WRITTEN TOTAL =        1.047 MB
+
+      231244 WORDS OF    DYNAMIC MEMORY USED
+ EXECUTION OF PC GAMESS TERMINATED NORMALLY 16:29:58 LT  17-FEB-2009
