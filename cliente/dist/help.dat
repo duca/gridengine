@@ -1,0 +1,22 @@
+# -----------------------   QNInt-GRID    ------------------------ #
+
+Desenvolvido por Eduardo Martins Lopes. 
+Homepage: http://qnint.sbq.org.br
+ 
+Descrição: 
+
+Este programa faz parte da infraestrutura de Grid da Química Nova Interativa  
+
+Com ele é possível habilitar um workstation a funcionar como parte da rede. Qualquer dúvida, acesse o nosso sítio
+ 
+Uso correto: python main.py --opção   (apenas uma função por vez)
+Opções:
+
+--cadastrar      Cadastra a máquina no Grid. É possível que peça senha de superusuário 
+--iniciar        Inicia o serviço, dizendo ao servidor que este nó está ativo
+--descadastrar   Remove a máquina do Grid. 
+--preparar       Cria as pastas padrão (em usuário/.qnint ) e arquivos fundamentais. 
+--repreparar     Remove as pastas padrão e as cria novamente. 
+--remover        Remove as pastas padrão permanentemente 
+--ajuda          Mostra esse texto 
+--versao         Mostra a versão do programa 
