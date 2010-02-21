@@ -55,4 +55,11 @@ def remover():
     except:
         
         sys.stderr.write('Remova manualmente os seguintes diretorios: \n')
-        sys.stderr.write(diretorios)    
+        sys.stderr.write(diretorios)
+        
+
+
+        
+        
+        
+    

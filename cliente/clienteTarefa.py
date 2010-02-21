@@ -67,7 +67,7 @@ class Tarefa:
             
             parseLog(self.logOut)
             
-            outRm = commands.getoutput('rm -f PUNCH DICTNRY AOINTS') 
+            outRm = commands.getoutput('rm -f PUNCH') 
             
             return 1
         except:
