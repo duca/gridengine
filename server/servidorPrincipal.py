@@ -28,6 +28,8 @@ def Loop():
                
         #checar por novas tarefas
         try:
+            qnint = servidorDB.Remoto()
+            grid = servidorDB.Local()
             qnint.pegarTarefas()
         except:
             mensagem = u'Nao foi possivel pegar as tarefas, pode ser um erro do banco ou de conexao. Erro 0035L'
@@ -60,12 +62,7 @@ def Loop():
         except:
             pidStatus = 0
             
-        
-        time.sleep(10)
-        
-        
-    
-
-            
-            
-        
+        qnint.Desconectar()
+        grid.Desconectar()
+        time.sleep(30)
+        print "Fim do loop"

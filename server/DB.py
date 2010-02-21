@@ -25,7 +25,7 @@ class banco:
         import servidorErros
         import sys
         try:
-            con = MySQLdb.connect(self.servidor, self.usuario, self.senha)
+            con = MySQLdb.connect(self.servidor, user=self.usuario, passwd=self.senha, port=3306)
             con.select_db(db)
             self.cursor = con.cursor()
             return self.cursor

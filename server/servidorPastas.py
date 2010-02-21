@@ -78,9 +78,4 @@ def pegarResultado(nome):
     
     except:
         
-        return None
-        
-    
-        
-        
-    
+        return None    

@@ -33,14 +33,12 @@ class banco:
             #tentativa de conectar novamente
             Reconectar()
         
-        
-        
     def Reconectar(self):
         
         import MySQLdb
         import clienteErros
         import sys
-        print self.servidor, self.usuario, self.senha
+        print "Reconectando..."
         try:
             con = MySQLdb.connect(self.servidor, self.usuario, self.senha)
             print 'Sucesso em reconectar'
@@ -56,8 +54,6 @@ class banco:
     def Desconectar(self):
         
         self.cursor.close()
-        
-
 
     def registrarWorkstation(self, sumario ):
         
@@ -81,40 +77,52 @@ class banco:
     def pegarTarefas(self,nodeKey):
         
         import clienteErros
-        print "Pegando as designa√ß√µes..."
         designadosSQL = "SELECT QueueNodeAssigned FROM grid_queue WHERE QueueStatus = '0'"
         tarefasSQL = "SELECT QueueJob FROM grid_queue WHERE QueueStatus = '0'"
+        extSQL = "SELECT extensao FROM grid_queue WHERE QueueStatus = '0'"
         
         #pega a lista das designa√ß√µes
         self.cursor.execute(designadosSQL)
         d = self.cursor.fetchall()
-        designados = interpretar(d)
+        if len(d) < 1:
+            designados = d
+        else:
+            designados = interpretar(d)
+            
+        #pegando a extensao dos arquivos    
+        extensao = ''
+        self.cursor.execute(extSQL)
+        e = self.cursor.fetchall()
+        if len(e) > 1: extensao = interpretar(e)
         
-        #pega a lista das tarefas
+        #pega os arquivos
         self.cursor.execute(tarefasSQL)
         t = self.cursor.fetchall()
-        tarefas = interpretar(t)
+        if len(t) < 1:
+            tarefas = t
+        else:
+            tarefas = interpretar(t)
     
         self.aprovados = []
+        self.ext = [] 
 
         for i in range (0, len(tarefas)):
 
             if designados[i] == nodeKey:
             
                 self.aprovados.append(tarefas[i])
+                self.ext.append(extensao[i])
             
         print "Pegando os arquivos:"
-        for i in self.aprovados:
-        
-            try:
-                print i
-                getPdb(i)
+        for i in range(0,len(self.aprovados)):          
+            self.getPdb(self.aprovados[i], self.ext[i])
         #self.gridSSH = ssh.Connection('200.136.224.70', username='grid', password='grid**00')
         
-            except:
-                mensagem = u"Nao foi possivel conectar ao servidor."
-                clienteErros.registrar('clienteDB.pegarTarefas(sessao ssh)', mensagem)
-        return self.aprovados
+        self.tudo = []
+        self.tudo.append(self.aprovados)
+        self.tudo.append(self.ext)
+
+        return self.tudo
     
 #    def registrarDesignacao(self, nodeKey, JobKey): #funcao desabilitada pois a designa√ß√£o √© feita pelo servidor
 #        
@@ -124,11 +132,8 @@ class banco:
         
     
     def registrarConclusao(self, Job):
-        
-               
-        querysql = "UPDATE grid_queue SET QueueStatus='1' WHERE QueueJob= %s" %(Job)
-        putLog(Job)
-        self.cursor.execute(querysql)
+        self.putLog(Job)
+        self.cursor.execute("UPDATE grid_queue SET QueueStatus='1'  WHERE QueueJob= %s" , (Job))
         
     def HeartBeat(self):
         
@@ -153,14 +158,61 @@ class banco:
         
         return interpretar(chaves)
    
-    def getPdb(self, nome):
+    def getPdb(self,nome, extensao):
+        
+        import clientePastas
+        import clienteErros
+        import commands
+        '''DefiniÁ„o da pasta para salvar os arquivos pdb'''
+        dirPdb= clientePastas.listar()[4]
+        print dirPdb, nome
+        
+        '''Download dos arquivos pdb do banco de dados'''
+        self.cursor.execute("SELECT arquivo FROM grid_queue WHERE QueueJob= %s", (nome))
+        
+        try:
+            arqui = self.cursor.fetchone()           
+        except:
+            clienteErros.registrar('clienteDB.getPdb', 'Nao foi possivel pegar os arquivos PDB, verifique sua conexao com a internet. Erro 0166L')
+            
+        
+        #escreve os arquivos pdb na pasta /var/qnint
+        if extensao == 'pdb':
+            caminho = dirPdb+'/'+nome+'.pdb'
+        elif extensao == 'inp':
+            caminho = dirPdb+'/'+nome+'.inp'
+            
+        print caminho
+        try:
+            arquivo = open(caminho,'w')
+            arquivo.writelines(arqui)
+            arquivo.close()
+        except:
+            clientePastas.criar()
+            arquivo = open(caminho,'w')
+            arquivo.writelines(arqui)
+            arquivo.close()
+            clienteErros.registrar('clienteDB.getPdb', 'Houve um erro ao tentar salvar os arquivos pdb"s, mas foi realizada uma nova tentativa e se nao receber nenhuma outra mensagem de erro antes dessa sobre pastas, funcionou')
+
+        # ##########################
+        # Fazendo a transiÁ„o usando o openbabel
+        if extensao == 'pdb':
+            pdbf = caminho
+            inpf = dirPdb + '/' + nome + '.inp'
+            linha = 'babel  -i pdb %s -o inp %s ' %(pdbf, inpf)
+            erros = commands.getoutput(linha)
+            #clienteErros.registrar('clienteDB.getPdb', erros)
+        
+               
+    def getPdbSSH(self, nome): 
+        '''FunÁ„o atualmente fora de uso pois foi substituido pelo mÈtodo via mysql'''
         
         import ssh
         import clientePastas
         import clienteErros
         
         pastas = clientePastas.listar()
-        pdbLocal = pastas(4) + "/" + nome  
+        pdbLocal = pastas(4) + "/" + nome  + '.log'
         pdbRemoto = "/opt/qnint/calculos/" + nome
    
         try:
@@ -174,6 +226,20 @@ class banco:
             clienteErros.registrar('clienteDB.sftp', mensagem)
         
     def putLog(self, nome):
+        import ssh
+        import clientePastas
+        import clienteErros
+        
+        logLocal = clientePastas.listar()[4] + "/" + nome + '.log'
+        self.logf = open(logLocal,'r')
+        self.log = self.logf.read()
+        
+        # Funcao que fara o parsing do log resultante para evitar problemas
+        #logFinal = logCheck(self.log)
+        
+        self.cursor.execute('UPDATE grid_queue SET log = %s WHERE QueueJob = %s', (self.log, nome))
+
+    def putLogSSH(self, nome):
         import ssh
         import clientePastas
         import clienteErros

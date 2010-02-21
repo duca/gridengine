@@ -31,7 +31,7 @@ if status == False: #Não iniciar o serviço
 elif status == True: #Iniciar o serviço
     #início do loop principal
     
-    mensagem = "Para parar o servidor, remova o arquivo /var/run/qnint.pid ou use os métodos mais tradicionais"
+    mensagem = "Para parar o servidor, remova o arquivo /opt/qnint/qnint.pid ou use os métodos mais tradicionais"
     
     print mensagem
     servidorPrincipal.Loop()

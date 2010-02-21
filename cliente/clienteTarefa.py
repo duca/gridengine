@@ -15,11 +15,20 @@ class Tarefa:
     
     
     def __init__(self, JobKey, programa):
+        import clientePastas
         
         self.JobKey = JobKey
+        nome = JobKey
+
         self.programa = programa
         self.nucleos
         print 'Tarefa %s cadastrada com sucesso.' % (JobKey)
+        
+        #Definindo os caminhos padrao
+        diretorio= clientePastas.listar()[4]
+        self.program = clientePastas.listar()[3] + '/pcgamess'
+        self.inpIn= diretorio + '/' + nome + '.inp'
+        self.logOut = diretorio + '/' + nome + '.log'
     #def descompactar(self, JobKey):
         
         #import clientePastas
@@ -34,6 +43,8 @@ class Tarefa:
         
         import commands
         
+        
+        
         job = self.JobKey
     def executar(self):
         
@@ -41,36 +52,46 @@ class Tarefa:
         import clienteErros
         
         #etapa de otimização        
-        if self.programa == 'pcgamess':
+        print self.programa
+        #if self.programa == 'pcgamess':
          
-            otimizacao = "gaussian ... "
-        else:
-            mensagem = u"A tarefa %s exigiu o programa %s e este ainda não é suportado" %(self.JobKey, self.programa)
-            clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
+        otimizacao = ' %s -i %s -o %s' %(self.program, self.inpIn, self.logOut)
+  
+        print otimizacao
+        #else:
+           # mensagem = u"A tarefa %s exigiu o programa %s e este ainda nao e suportado" %(self.JobKey, self.programa)
+            #clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
 
         try:             
             out = commands.getoutput(otimizacao)
+            
+            parseLog(self.logOut)
+            
+            outRm = commands.getoutput('rm -f PUNCH DICTNRY AOINTS') 
+            
+            return 1
         except:
             
-            mensagem = u"A Tarefa %s (fase de otimizacao) não pode ser executada.Verifique a instalação do programa %s" %(self.JobKey, self.programa)
+            mensagem = u"A Tarefa %s  nao pode ser executada.Verifique a instalacao do programa %s. Mensagem de erro %s" %(self.JobKey, self.programa, out)
             clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
+            return 0
         
         #etapa de simulacao
     
      
-        if self.programa == 'pcgamess':
-         
-            simulacao = "gaussian ... "
-        else:
-            mensagem = u"A tarefa %s exigiu o programa %s e este ainda não é suportado" %(self.JobKey, self.programa)
-            clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
-
-        try:             
-            out = commands.getoutput(simulacao)
-        except:
-            
-            mensagem = u"A Tarefa %s (fase de simulacao) não pode ser executada. Verifique a instalação do programa %s" %(self.JobKey, self.programa)
-            clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
+#        if self.== 'pcgamess':
+#         
+#            simulacao = "gaussian ... "
+#        else:
+#            mensagem = u"A tarefa %s exigiu o programa %s e este ainda não é suportado" %(self.JobKey, self.programa)
+#            clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
+#
+#        try:             
+#            out = commands.getoutput(simulacao)
+#        except:
+#            
+#            mensagem = u"A Tarefa %s (fase de simulacao) não pode ser executada. Verifique a instalação do programa %s" %(self.JobKey, self.programa)
+#            clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
         
     #def otimizar(self, 
     #def compactar(self, JobKey):
@@ -86,23 +107,49 @@ def sumario():
     
     return tudo
 
+def parseLog(nome):
+    
+    logf = open(nome, 'r')
+    t = nome + '.tmp'
+    tmpf = open(t, 'w')
+    
+    
+    
 def Iniciar():
     
     import clienteDB
     import clienteData
     import clienteErros
-    
-    tudo = sumario()
-    chave = tudo['key']
-    print chave
+    import clienteFuncoes
+    import clientePastas
+    import time
+    import Chave
     # ####################################################
     # Main loop
+    
+    # ####################################################
+    #PID stuff
     pidStatus = 1
+    pidPath = clientePastas.listar()[1] + '/grid-nodo.pid'
     
-    grid = clienteDB.banco()
+    pidf = open(pidPath, 'w')
+    pidf.write(str(1))
+    pidf.close()
     
-    while pidStatus == 1:
+    # ####################################################    
+    sumario = Chave.padrao()
+    try:
+        chave = sumario['key']
+    except:
+        clienteFuncoes.cadastrar()
+        sumario = Chave.padrao()
+        chave = sumario['key']
         
+    # ####################################################    
+    grid = clienteDB.banco()
+    # ####################################################    
+    while pidStatus == 1:
+    # ####################################################           
         try:
             grid.HeartBeat()
         except:
@@ -113,31 +160,47 @@ def Iniciar():
                 grid.HeartBeat()
             except:
                 clienteErros.registrar("clienteTarefa.iniciar (sessao HearBeat)", "Provavelmente seu workstation nao foi cadastrado ou esta sem acesso a internet")
-         
-                
-        aprovadas = grid.pegarTarefas(chave)
+     
+    # ####################################################
+        print "chave: ", chave
+        tudo = grid.pegarTarefas(chave)
+        extensao = tudo.pop()
+        aprovadas = tudo.pop()
         
-        #grid.
-        for job in aprovadas:
-            
-            atividade = Tarefa(job, 'pcgamess')
-            
+    # ###############################################################
+    # Loop principal de execucao das tarefas
         
-        
-            
-    
-    
-    
-    
-    #Checar para ver se o arquivo ainda existe, caso contrário termina a execução do programa
-    try:
-        pid = open('/var/run/qnint-grid.pid', 'r')
-        pid.close()
-    except:
-        pidStatus = 0
-        
-    
-    time.sleep(10)
-    
+        for aprovado in aprovadas:
 
-       
+            time.sleep(3)
+            grid = clienteDB.banco()
+            
+            job = Tarefa(aprovado, 'pcgamess')
+            
+            print "Executando..."
+            sucesso = job.executar()
+            
+            if sucesso == 1:
+                grid.registrarConclusao(aprovado)
+            if sucesso == 0:
+                mensagem = "Houve um insucesso ao executar a tarefa %s" %(aprovado)
+                clienteErros.registrar('clienteTarefa.executar', mensagem)
+            
+            print "atividade realizada"
+            
+            # ####################################################    
+            # Desconexao para garantir que nao caiu a conexao com o banco de dados
+            grid.Desconectar()            
+
+        # ####################################################
+        #Checar para ver se o arquivo ainda existe, caso contrário termina a execução do programa
+        try:
+            pid = open(pidPath, 'r')
+            pid.close()
+        except:
+            pidStatus = 0
+            print "O programa sera parado, pois nao foi possivel localizar o arquivo %s" %(pidPath)
+        # ####################################################       
+        mensagem = "Para parar o servidor, remova o arquivo %s ou use os metodos mais tradicionais" %(pidPath)
+        print mensagem
+        time.sleep(5)
