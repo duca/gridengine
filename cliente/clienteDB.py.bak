@@ -201,32 +201,31 @@ class banco:
             inpf = dirPdb + '/' + nome + '.inp'
             linha = 'babel  -i pdb %s -o inp %s ' %(pdbf, inpf)
             erros = commands.getoutput(linha)
-            clienteErros.registrar('clienteDB.getPdb', erros)
+            #clienteErros.registrar('clienteDB.getPdb', erros)
         
                
-    def getPdbSSH(self, nome): 
-        '''Função atualmente fora de uso pois foi substituido pelo método via mysql'''
-        
-        import ssh
-        import clientePastas
-        import clienteErros
-        
-        pastas = clientePastas.listar()
-        pdbLocal = pastas(4) + "/" + nome  + '.log'
-        pdbRemoto = "/opt/qnint/calculos/" + nome
-   
-        try:
-            #'200.136.224.70'
-            self.gridSSH = ssh.Connection('127.0.0.1', username='qnint', password='grid**00')
-            print "Conectado via ssh"
-            self.gridSSH.get(pdbRemoto, pdbLocal)
-        except:
-            
-            mensagem = u"Nao foi possÃ­vel conectar ao servidor. O programa esperarÃ¡ 60 segundos e tentarÃ¡ novamente. Erro 0186L"
-            clienteErros.registrar('clienteDB.sftp', mensagem)
+#    def getPdbSSH(self, nome): 
+#        '''Função atualmente fora de uso pois foi substituido pelo método via mysql'''
+#        
+#        import ssh
+#        import clientePastas
+#        import clienteErros
+#        
+#        pastas = clientePastas.listar()
+#        pdbLocal = pastas(4) + "/" + nome  + '.log'
+#        pdbRemoto = "/opt/qnint/calculos/" + nome
+#   
+#        try:
+#            #'200.136.224.70'
+#            self.gridSSH = ssh.Connection('127.0.0.1', username='qnint', password='grid**00')
+#            print "Conectado via ssh"
+#            self.gridSSH.get(pdbRemoto, pdbLocal)
+#        except:
+#            
+#            mensagem = u"Nao foi possÃ­vel conectar ao servidor. O programa esperarÃ¡ 60 segundos e tentarÃ¡ novamente. Erro 0186L"
+#            clienteErros.registrar('clienteDB.sftp', mensagem)
         
     def putLog(self, nome):
-        import ssh
         import clientePastas
         import clienteErros
         

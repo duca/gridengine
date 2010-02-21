@@ -15,7 +15,7 @@ def listar():
     import sys
 
     nome = os.getenv('LOGNAME') 
-    caminhoraiz = '/home/'+nome+'/.qnint'
+    caminhoraiz = '/home/'+nome+'/qnint'
     logs = caminhoraiz+'/logs'
     sistema = caminhoraiz+'/bin'
     calculo = caminhoraiz+'/calculos'
@@ -55,11 +55,4 @@ def remover():
     except:
         
         sys.stderr.write('Remova manualmente os seguintes diretorios: \n')
-        sys.stderr.write(diretorios)
-        
-
-
-        
-        
-        
-    
+        sys.stderr.write(diretorios)    

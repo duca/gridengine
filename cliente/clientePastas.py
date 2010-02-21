@@ -15,7 +15,7 @@ def listar():
     import sys
 
     nome = os.getenv('LOGNAME') 
-    caminhoraiz = '/home/'+nome+'/.qnint'
+    caminhoraiz = '/home/'+nome+'/qnint'
     logs = caminhoraiz+'/logs'
     sistema = caminhoraiz+'/bin'
     calculo = caminhoraiz+'/calculos'

@@ -204,29 +204,28 @@ class banco:
             #clienteErros.registrar('clienteDB.getPdb', erros)
         
                
-    def getPdbSSH(self, nome): 
-        '''Fun��o atualmente fora de uso pois foi substituido pelo m�todo via mysql'''
-        
-        import ssh
-        import clientePastas
-        import clienteErros
-        
-        pastas = clientePastas.listar()
-        pdbLocal = pastas(4) + "/" + nome  + '.log'
-        pdbRemoto = "/opt/qnint/calculos/" + nome
-   
-        try:
-            #'200.136.224.70'
-            self.gridSSH = ssh.Connection('127.0.0.1', username='qnint', password='grid**00')
-            print "Conectado via ssh"
-            self.gridSSH.get(pdbRemoto, pdbLocal)
-        except:
-            
-            mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente. Erro 0186L"
-            clienteErros.registrar('clienteDB.sftp', mensagem)
+#    def getPdbSSH(self, nome): 
+#        '''Fun��o atualmente fora de uso pois foi substituido pelo m�todo via mysql'''
+#        
+#        import ssh
+#        import clientePastas
+#        import clienteErros
+#        
+#        pastas = clientePastas.listar()
+#        pdbLocal = pastas(4) + "/" + nome  + '.log'
+#        pdbRemoto = "/opt/qnint/calculos/" + nome
+#   
+#        try:
+#            #'200.136.224.70'
+#            self.gridSSH = ssh.Connection('127.0.0.1', username='qnint', password='grid**00')
+#            print "Conectado via ssh"
+#            self.gridSSH.get(pdbRemoto, pdbLocal)
+#        except:
+#            
+#            mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente. Erro 0186L"
+#            clienteErros.registrar('clienteDB.sftp', mensagem)
         
     def putLog(self, nome):
-        import ssh
         import clientePastas
         import clienteErros
         
@@ -239,27 +238,27 @@ class banco:
         
         self.cursor.execute('UPDATE grid_queue SET log = %s WHERE QueueJob = %s', (self.log, nome))
 
-    def putLogSSH(self, nome):
-        import ssh
-        import clientePastas
-        import clienteErros
-        
-        logLocal = pastas(4) + "/" + nome
-        logRemoto = "/opt/qnint/logs/"  + nome
-
-        
-        try:
-            self.gridSSH = ssh.Connection('127.0.0.1', username='qnint', password='grid**00')
-            print "Conectado via ssh"
-
-            self.gridSSH.put(logLocal, logRemoto)
-                
-            gridSSH.close()        
-                           
-        except:
-            
-            mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente. Erro 0186L"
-            clienteErros.registrar('clienteDB.sftp', mensagem)
+#    def putLogSSH(self, nome):
+#        import ssh
+#        import clientePastas
+#        import clienteErros
+#        
+#        logLocal = pastas(4) + "/" + nome
+#        logRemoto = "/opt/qnint/logs/"  + nome
+#
+#        
+#        try:
+#            self.gridSSH = ssh.Connection('127.0.0.1', username='qnint', password='grid**00')
+#            print "Conectado via ssh"
+#
+#            self.gridSSH.put(logLocal, logRemoto)
+#                
+#            gridSSH.close()        
+#                           
+#        except:
+#            
+#            mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente. Erro 0186L"
+#            clienteErros.registrar('clienteDB.sftp', mensagem)
 
 
 def interpretar(dado):
