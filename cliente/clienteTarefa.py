@@ -62,7 +62,9 @@ class Tarefa:
            # mensagem = u"A tarefa %s exigiu o programa %s e este ainda nao e suportado" %(self.JobKey, self.programa)
             #clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
 
-        try:             
+        try:
+            outRm = commands.getoutput('rm -f PUNCH') 
+            
             out = commands.getoutput(otimizacao)
             
             parseLog(self.logOut)
