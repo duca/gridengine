@@ -156,7 +156,7 @@ def normal():
 
     try:
         
-        arquivo = open(caminho, 'rb')
+        arquivo = open(caminho, 'r')
         
         return arquivo.read()
     except:
@@ -224,7 +224,7 @@ def persistencia(dados):
         
     except:
         
-        mensagem = u'Não foi possível encontrar o arquivo %s ou o mesmo está corrompido' %(caminho)
+        mensagem = 'Nao foi possi�vel encontrar o arquivo %s ou o mesmo esta corrompido' %(caminho)
         clienteErros.registrar('clienteData.persistencia', mensagem)
         sys.exit()  
         
@@ -241,8 +241,4 @@ def HeartBeat():
     
     pulso = {'load': load, 'cores' : cores, 'key' : chave}
     
-    return pulso
-    
-    
-    
-    
+    return pulso    

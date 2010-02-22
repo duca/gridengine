@@ -39,8 +39,6 @@ def registrar(nomeDaFuncao, mensagem):
         sys.stderr.write(mensagem)
         
     except:
-        
-        clientePastas.remover()
         clientePastas.criar()
         
         try:
@@ -51,9 +49,4 @@ def registrar(nomeDaFuncao, mensagem):
             erro = mensagem 
             sys.stderr.write(erro)
             erro = u", entretanto o programa tentara seguir assim mesmo."
-            sys.stderr.write(erro)  
-    
-            
-    #print tracking_error
-    
-    
+            sys.stderr.write(erro)      
