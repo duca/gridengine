@@ -65,18 +65,18 @@ class Tarefa:
  
         try:
             rmPunch = 'rm -f %s' &(self.punch)
-            outRm = commands.getoutput('rm -f PUNCH') 
+            outRm = commands.getoutput(rmPunch) 
             
             out = commands.getoutput(otimizacao)
             
             parseLog(self.logOut)
             
-            outRm = commands.getoutput('rm -f PUNCH') 
+            outRm = commands.getoutput(rmPunch) 
             
             return 1
         except:
             
-            mensagem = u"A Tarefa %s  nao pode ser executada.Verifique a instalacao do programa %s. Mensagem de erro %s" %(self.JobKey, self.programa, out)
+            mensagem = u"A Tarefa %s  nao pode ser executada.Verifique a instalacao do programa %s. Mensagem de erro " %(self.JobKey, self.programa)
             clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
             return 0
         

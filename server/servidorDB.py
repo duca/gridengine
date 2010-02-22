@@ -43,7 +43,12 @@ class Remoto(DB.banco):
         #limpando moleculas2        
         self.qnint.execute("DELETE FROM moleculas2 WHERE id >= 1")
         self.qnint.execute("commit")
-
+        
+    def limparLOG(self):
+        l = ''
+        self.qnint.execute('UPDATE moleculas2 SET log=%s WHERE id > 0',(l))
+        self.qnint.execute('commit')
+        
     def pegarTarefas(self):        
         #Queries e acesso ao banco       
         nomeSql = "SELECT nome FROM moleculas2 WHERE log = '' ORDER BY tempo"
