@@ -45,6 +45,9 @@ def Processar(argumentos):
   elif argumento == "remover":
     clienteFuncoes.remover()
     return False
+  elif argumento == "offline":
+    clienteFuncoes.offline()
+    return false
   elif argumento == "ajuda":
     Ajuda(argumentos)
     return False
@@ -68,7 +71,3 @@ def Check(argumentos):
       
       Padrao(argumentos)
       sys.exit()
-      
-    
-
-      

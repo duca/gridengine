@@ -30,11 +30,10 @@ def Loop():
         try:
             qnint = servidorDB.Remoto()
             grid = servidorDB.Local()
-            qnint.pegarTarefas()
         except:
             mensagem = u'Nao foi possivel pegar as tarefas, pode ser um erro do banco ou de conexao. Erro 0035L'
             servidorErros.registrar('servidorPrincipal.Loop(pegarTarefas)', mensagem)
-            
+        qnint.pegarTarefas()    
         time.sleep(10)
         
         #Colocar como dono dos arquivos, o usuário qnint

@@ -61,6 +61,11 @@ def preparar():
     import clientePastas
     
     clientePastas.criar()
+    
+def offline():
+    
+    import clienteDB
+    
 
 def versao(argumentos):
     
@@ -70,6 +75,4 @@ def iniciar():
     
     import clienteIniciar
     
-    clienteIniciar.loopPrincipal()
-
-    
+    clienteIniciar.loopPrincipal()    

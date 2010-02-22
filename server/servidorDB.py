@@ -29,13 +29,15 @@ class Remoto(DB.banco):
         
     def Reconectar(self):
         
-        self.srv.Desconectar()
+        self.Desconectar()
         
-        self.srv.Conectar(self.sql)
+        self.srv = DB.banco(self.usuario, self.senha, self.servidor)        
+        self.qnint = self.srv.Conectar(self.sql)
         
     def Desconectar(self):
         
         self.qnint.close()
+        
     def limparBanco(self):
         
         #limpando moleculas2        
@@ -50,9 +52,14 @@ class Remoto(DB.banco):
         
         nomes = ''
         self.qnint.execute(nomeSql)
-        n = self.qnint.fetchal()
+        n = self.qnint.fetchall()
         if len(n) > 0: nomes = interpretar(n)
+        
+        if len(n) ==0: print "Tarefas encontradas: Nenhuma"
+        else:
+            print "Tarefas encontradas: ", nomes
 
+        extensao = ''
         self.qnint.execute(extSql)
         e = self.qnint.fetchall()
         if len(e) > 0: extensao = interpretar(e)
@@ -95,7 +102,6 @@ class Remoto(DB.banco):
         
         arquivos = concluidos.pop()
         nomes = concluidos.pop()
-        print nomes
         for i in range(0,len(nomes)):
             self.qnint.execute( "UPDATE moleculas2 SET log= %s WHERE nome= %s" ,(arquivos[i],nomes[i]))
             self.qnint.execute("commit")

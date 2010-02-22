@@ -17,6 +17,7 @@ Opções:
 --descadastrar   Remove a máquina do Grid. 
 --preparar       Cria as pastas padrão (em usuário/.qnint ) e arquivos fundamentais. 
 --repreparar     Remove as pastas padrão e as cria novamente. 
---remover        Remove as pastas padrão permanentemente 
+--remover        Remove as pastas padrão permanentemente
+--offline	 Desliga seu Worsktation do Grid (recomendado para reparos, desligamentos e etc). Ao --iniciar, normaliza.  
 --ajuda          Mostra esse texto 
 --versao         Mostra a versão do programa 

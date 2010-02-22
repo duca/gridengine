@@ -31,7 +31,7 @@ class banco:
             clienteErros.registrar('clienteDB.__init__', mensagem)
             time.sleep(60)
             #tentativa de conectar novamente
-            Reconectar()
+            self.Reconectar()
         
     def Reconectar(self):
         
@@ -143,10 +143,18 @@ class banco:
         try:
             self.cursor.execute( "UPDATE grid_nodeload SET nodeLoad= %s WHERE nodeKey=%s",(pulso['load'], pulso['key']))
         except:
-            Reconectar()
+            self.Reconectar()
             self.cursor.execute( "UPDATE grid_nodeload SET nodeLoad= %s WHERE nodeKey=%s",(pulso['load'], pulso['key']))
             
-   
+    def offline(self):
+        import clienteData
+        pulso = clienteData.HeartBeat()
+        
+        try:
+            self.cursor.execute("UPDATE grid_nodeload SET nodeLoad=1 WHERE nodeKey=%s", (pulso['key']))
+        except:
+            self.Reconectar()
+            self.cursor.execute("UPDATE grid_nodeload SET nodeLoad=1 WHERE nodeKey=%s", (pulso['key']))
         
     def pegarChaves(self):
         

@@ -127,7 +127,6 @@ def parseLog(nome):
         #removendo a segunda linha do warning de desatualizado
         if conteudo[i].find('UPDATES') != -1:            
             dummy = conteudo.pop(i)
-        print len(conteudo)
         i = i + 1
     #fechando o arquivo
     logf.close()
