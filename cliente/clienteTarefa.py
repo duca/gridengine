@@ -29,7 +29,7 @@ class Tarefa:
         self.program = clientePastas.listar()[3] + '/pcgamess'
         self.inpIn= diretorio + '/' + nome + '.inp'
         self.logOut = diretorio + '/' + nome + '.log'
-        self.punch = diretorio + '/' + 'PUNCH'
+        self.punch = clientePastas.listar()[3] + '/' + 'PUNCH AOINT CASINT CIINTS CIVECTR DICTNRY DRTFILE JKFILE MOINTS  WORK*'
     #def descompactar(self, JobKey):
         
         #import clientePastas

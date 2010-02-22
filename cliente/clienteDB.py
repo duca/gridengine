@@ -113,7 +113,10 @@ class banco:
                 self.aprovados.append(tarefas[i])
                 self.ext.append(extensao[i])
             
-        print "Pegando os arquivos:"
+        if len(self.aprovados) > 0:
+            print "Pegando os arquivos: ", self.aprovados
+        else:
+            print "Sem arquivos na fila" 
         for i in range(0,len(self.aprovados)):          
             self.getPdb(self.aprovados[i], self.ext[i])
         #self.gridSSH = ssh.Connection('200.136.224.70', username='grid', password='grid**00')
