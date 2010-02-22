@@ -37,19 +37,21 @@ class banco:
         
         import MySQLdb
         import clienteErros
-        import sys
+        import time
         print "Reconectando..."
         try:
             con = MySQLdb.connect(self.servidor, self.usuario, self.senha)
+            con.select_db("grid")
             print 'Sucesso em reconectar'
+            self.cursor = con.cursor()
                         
-        except:
-            
-            mensagem = u"Não foi possível conectar ao servidor. Verifique a conexão e tente mais tarde. Erro 0050L"
+        except:            
+            mensagem = "Nao foi possi�vel conectar ao servidor. Verifique a conexao e tente mais tarde. Erro 0050L"
             clienteErros.registrar('clienteDB.reconectar', mensagem)
-            sys.exit()
-        con.select_db("grid")
-        self.cursor = con.cursor()
+            time.sleep(60)
+            con = MySQLdb.connect(self.servidor, self.usuario, self.senha)
+            con.select_db("grid")
+            self.cursor = con.cursor()
 
     def Desconectar(self):
         
@@ -70,7 +72,7 @@ class banco:
             print "Sucesso em cadastrar seu workstation com a chave: ", sumario['key'], "Anote pois precisaremos desse valor em caso de necessidade de descadastro do workstation ou resoluções de erros."
             
         except:
-            mensagem = u"Não foi possível executar as query's sql. Verifique a conexão e tente mais tarde. Erro 0077L"
+            mensagem = "Nao foi possi�vel executar as querys sql. Verifique a conexao e tente mais tarde. Erro 0077L"
             clienteErros.registrar('clienteDB.registrarWorkstation', mensagem)
             sys.exit()
         
