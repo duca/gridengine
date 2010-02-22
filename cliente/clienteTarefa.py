@@ -114,17 +114,22 @@ def parseLog(nome):
     
     logf = open(nome, 'r')
     conteudo = logf.readlines()
+    print len(conteudo)
     
     #parsing...
-    for i in range(0,len(conteudo)):
-        
+    i = 0
+    for linha in conteudo:
         #removendo a primeira linha do warning de desatualizado
         if conteudo[i].find('OUTDATED') != -1:
             dummy = conteudo.pop(i)
-        
+        i = i + 1
+    i = 0
+    for linha in conteudo:
         #removendo a segunda linha do warning de desatualizado
         if conteudo[i].find('UPDATES') != -1:            
             dummy = conteudo.pop(i)
+        print len(conteudo)
+        i = i + 1
     #fechando o arquivo
     logf.close()
     
