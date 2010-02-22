@@ -106,7 +106,7 @@ class banco:
         self.aprovados = []
         self.ext = [] 
 
-        for i in range (0, len(tarefas)):
+        for i in range (len(tarefas)):
 
             if designados[i] == nodeKey:
             
