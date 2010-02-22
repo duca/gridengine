@@ -43,7 +43,7 @@ def Processar(argumentos):
     clienteFuncoes.preparar()
     return False
   elif argumento == "remover":
-    clienteFuncoes.remover()
+    clienteFuncoes.remover() 
     return False
   elif argumento == "offline":
     clienteFuncoes.offline()

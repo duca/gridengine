@@ -29,6 +29,7 @@ class Tarefa:
         self.program = clientePastas.listar()[3] + '/pcgamess'
         self.inpIn= diretorio + '/' + nome + '.inp'
         self.logOut = diretorio + '/' + nome + '.log'
+        self.punch = diretorio + '/' + 'PUNCH'
     #def descompactar(self, JobKey):
         
         #import clientePastas
@@ -63,6 +64,7 @@ class Tarefa:
             #clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
 
         try:
+            rmPunch = 'rm -f %s' &(self.punch)
             outRm = commands.getoutput('rm -f PUNCH') 
             
             out = commands.getoutput(otimizacao)
@@ -127,7 +129,6 @@ def parseLog(nome):
         #removendo a segunda linha do warning de desatualizado
         if conteudo[i].find('UPDATES') != -1:            
             dummy = conteudo.pop(i)
-        print len(conteudo)
         i = i + 1
     #fechando o arquivo
     logf.close()

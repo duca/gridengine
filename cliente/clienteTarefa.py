@@ -29,6 +29,7 @@ class Tarefa:
         self.program = clientePastas.listar()[3] + '/pcgamess'
         self.inpIn= diretorio + '/' + nome + '.inp'
         self.logOut = diretorio + '/' + nome + '.log'
+        self.punch = diretorio + '/' + 'PUNCH'
     #def descompactar(self, JobKey):
         
         #import clientePastas
@@ -61,8 +62,9 @@ class Tarefa:
         #else:
            # mensagem = u"A tarefa %s exigiu o programa %s e este ainda nao e suportado" %(self.JobKey, self.programa)
             #clienteErros.registrar("Tarefa.executar.otimizacao", mensagem)            
-
+ 
         try:
+            rmPunch = 'rm -f %s' &(self.punch)
             outRm = commands.getoutput('rm -f PUNCH') 
             
             out = commands.getoutput(otimizacao)

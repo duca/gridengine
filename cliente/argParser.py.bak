@@ -71,7 +71,3 @@ def Check(argumentos):
       
       Padrao(argumentos)
       sys.exit()
-      
-    
-
-      

@@ -24,7 +24,7 @@ def Loop():
     qnint = servidorDB.Remoto()
     grid = servidorDB.Local()
     
-    while pidStatus == 1:
+    while pidStatus == 1:   
                
         #checar por novas tarefas
         try:

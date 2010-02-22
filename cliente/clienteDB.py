@@ -129,7 +129,7 @@ class banco:
 #        querysql = "UPDATE grid_queue SET NodeAssigned= %s WHERE QueueJobQueue= %s" %(nodeKey, JobKey)
 #        
 #        self.cursor.execute(querysql)
-        
+          
     
     def registrarConclusao(self, Job):
         self.putLog(Job)

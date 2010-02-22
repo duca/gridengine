@@ -54,7 +54,10 @@ class Remoto(DB.banco):
         self.qnint.execute(nomeSql)
         n = self.qnint.fetchall()
         if len(n) > 0: nomes = interpretar(n)
-        print "Tarefas encontradas: ", nomes
+        
+        if len(n) ==0: print "Tarefas encontradas: Nenhuma"
+        else:
+            print "Tarefas encontradas: ", nomes
 
         extensao = ''
         self.qnint.execute(extSql)

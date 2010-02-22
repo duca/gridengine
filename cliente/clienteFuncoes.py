@@ -53,7 +53,7 @@ def cadastrar():
 def remover():
     
     import clientePastas
-    
+      
     clientePastas.remover()
 
 def preparar():
