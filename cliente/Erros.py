@@ -35,8 +35,7 @@ def registrar(nomeDaFuncao, mensagem):
         registro.write(mensagem)
         
     except:
-        
-        clientePastas.remover()
+
         clientePastas.criar()
         
         try:
