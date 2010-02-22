@@ -93,7 +93,7 @@ class banco:
         extensao = ''
         self.cursor.execute(extSQL)
         e = self.cursor.fetchall()
-        if len(e) > 1: extensao = interpretar(e)
+        if len(e) > 0: extensao = interpretar(e)
         
         #pega os arquivos
         self.cursor.execute(tarefasSQL)

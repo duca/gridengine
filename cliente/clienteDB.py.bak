@@ -93,7 +93,7 @@ class banco:
         extensao = ''
         self.cursor.execute(extSQL)
         e = self.cursor.fetchall()
-        if len(e) > 1: extensao = interpretar(e)
+        if len(e) > 0: extensao = interpretar(e)
         
         #pega os arquivos
         self.cursor.execute(tarefasSQL)
@@ -106,7 +106,7 @@ class banco:
         self.aprovados = []
         self.ext = [] 
 
-        for i in range (0, len(tarefas)):
+        for i in range (len(tarefas)):
 
             if designados[i] == nodeKey:
             
