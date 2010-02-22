@@ -51,12 +51,12 @@ class Remoto(DB.banco):
         nomes = ''
         self.qnint.execute(nomeSql)
         n = self.qnint.fetchall()
-        if len(n) > 1: nomes = interpretar(n)
+        if len(n) > 0: nomes = interpretar(n)
 
         extensao = ''
         self.qnint.execute(extSql)
         e = self.qnint.fetchall()
-        if len(e) > 1: extensao = interpretar(e)
+        if len(e) > 0: extensao = interpretar(e)
         
         self.qnint.execute(arquivoSql)
         arquivos = self.qnint.fetchall()
@@ -189,7 +189,6 @@ class Local(DB.banco):
         if len(nodos) > 0:
             n = nodos
             nodos = interpretar(n)
-        print "nodos = ", nodos
 
         self.grid.execute(listarCargas)
         c = self.grid.fetchall()

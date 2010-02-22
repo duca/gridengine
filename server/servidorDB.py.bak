@@ -51,12 +51,15 @@ class Remoto(DB.banco):
         nomes = ''
         self.qnint.execute(nomeSql)
         n = self.qnint.fetchall()
+        print n
         if len(n) > 1: nomes = interpretar(n)
+        print "nomes: ", nomes
 
         extensao = ''
         self.qnint.execute(extSql)
         e = self.qnint.fetchall()
         if len(e) > 1: extensao = interpretar(e)
+        print "ext: ", extensao
         
         self.qnint.execute(arquivoSql)
         arquivos = self.qnint.fetchall()
@@ -100,7 +103,7 @@ class Remoto(DB.banco):
         nomes = concluidos.pop()
         for i in range(0,len(nomes)):
             self.qnint.execute( "UPDATE moleculas2 SET log= %s WHERE nome= %s" ,(arquivos[i],nomes[i]))
-            self.qnint.execupte("commit")
+            self.qnint.execute("commit")
         
 class Local(DB.banco):
     
