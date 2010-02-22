@@ -18,7 +18,7 @@ def cadastrar():
     import clientePastas
     import sys
 
-    message = u'Seu workstation já está cadastrado'
+    message = 'Seu workstation ja esta cadastrado'
     try:
         caminho = clientePastas.listar()[1] + '/cliente.dll'
         arquivo = open(caminho, 'rb')

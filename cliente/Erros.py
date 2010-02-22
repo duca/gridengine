@@ -3,9 +3,6 @@
 '''
 Este modulo cuida do registro dos logs do programa e está divido em funcoes para criar os arquivos e os preencher
 '''
-
-
-   
     
 def registrar(nomeDaFuncao, mensagem):
     
@@ -46,10 +43,4 @@ def registrar(nomeDaFuncao, mensagem):
             registro.write(mensagem)
         except:
             erro = horario + "Nao foi possivel registrar o evento de erro " + erro + ", entretanto o programa tentara seguir assim mesmo \n"
-            sys.stderr.write(mensagem)
-
-        
-    
-    
-    
-    
+            sys.stderr.write(mensagem)            
