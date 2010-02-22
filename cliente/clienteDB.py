@@ -27,7 +27,7 @@ class banco:
                         
         except:
             
-            mensagem = u"Nao foi possível conectar ao servidor. O programa esperará 60 segundos e tentará novamente"
+            mensagem = "Nao foi possi�vel conectar ao servidor. O programa esperara 60 segundos e tentara novamente"
             clienteErros.registrar('clienteDB.__init__', mensagem)
             time.sleep(60)
             #tentativa de conectar novamente
