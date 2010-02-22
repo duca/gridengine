@@ -110,12 +110,29 @@ def sumario():
     return tudo
 
 def parseLog(nome):
+    import clienteErros
     
     logf = open(nome, 'r')
-    t = nome + '.tmp'
-    tmpf = open(t, 'w')
+    conteudo = logf.readlines()
     
+    #parsing...
+    for i in range(0,len(conteudo)):
+        
+        #removendo a primeira linha do warning de desatualizado
+        if conteudo[i].find('OUTDATED') != -1:
+            dummy = conteudo.pop(i)
+        
+        #removendo a segunda linha do warning de desatualizado
+        if conteudo[i].find('UPDATES') != -1:            
+            dummy = conteudo.pop(i)
+    #fechando o arquivo
+    logf.close()
     
+    try:
+        logf = open(nome,'w')
+        logf.writelines(conteudo)
+    except:
+        clienteErros.registrar('clienteTarefas.parseLog', 'Nao foi possivel gravar o arquivo de log finalizado, o sistema utilizara o original. ERRO: 0135L')    
     
 def Iniciar():
     
