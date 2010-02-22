@@ -50,13 +50,13 @@ class Remoto(DB.banco):
         
         nomes = ''
         self.qnint.execute(nomeSql)
-        n = self.qnint.fetchall()
+        n = self.qnint.fetchal()
         if len(n) > 0: nomes = interpretar(n)
 
-        extensao = ''
         self.qnint.execute(extSql)
         e = self.qnint.fetchall()
         if len(e) > 0: extensao = interpretar(e)
+
         
         self.qnint.execute(arquivoSql)
         arquivos = self.qnint.fetchall()
@@ -85,10 +85,7 @@ class Remoto(DB.banco):
         grid.Desconectar()
     
     
-    def cadastrarResultado(self):
-        
-        import servidorPastas
-        
+    def cadastrarResultado(self):   
         #checagem dos concluidos
         
         grid = Local()
@@ -98,6 +95,7 @@ class Remoto(DB.banco):
         
         arquivos = concluidos.pop()
         nomes = concluidos.pop()
+        print nomes
         for i in range(0,len(nomes)):
             self.qnint.execute( "UPDATE moleculas2 SET log= %s WHERE nome= %s" ,(arquivos[i],nomes[i]))
             self.qnint.execute("commit")
@@ -151,14 +149,13 @@ class Local(DB.banco):
             self.grid.execute(checkSQL)
             c = self.grid.fetchall()
             nomes = interpretar(c)
-       
+             
         except:
             self.Reconectar()
             self.grid.execute(checkSQL)
             c = self.grid.fetchall()
             nomes = interpretar(c)
-
-        
+            
         #pegando os arquivos
         self.grid.execute(logSQL)
         logs = self.grid.fetchall() 
@@ -189,6 +186,7 @@ class Local(DB.banco):
         if len(nodos) > 0:
             n = nodos
             nodos = interpretar(n)
+        print "Workstations no sistema :", nodos
 
         self.grid.execute(listarCargas)
         c = self.grid.fetchall()

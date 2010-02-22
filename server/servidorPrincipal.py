@@ -49,7 +49,7 @@ def Loop():
         
         #Checar tarefas concluídas
         try:
-            qnint.cadastrarResultados()
+            qnint.cadastrarResultado()
         except:
             mensagem = u'Nao foi possivel cadastrar os Resultados. Erro 0052L'
             servidorErros.registrar('servidorPrincipal.Loop(cadastrarResultados)', mensagem)

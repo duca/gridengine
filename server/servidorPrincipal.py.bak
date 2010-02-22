@@ -28,6 +28,7 @@ def Loop():
                
         #checar por novas tarefas
         try:
+            print "Conectando"
             qnint = servidorDB.Remoto()
             grid = servidorDB.Local()
             qnint.pegarTarefas()
@@ -49,7 +50,7 @@ def Loop():
         
         #Checar tarefas concluídas
         try:
-            qnint.cadastrarResultados()
+            qnint.cadastrarResultado()
         except:
             mensagem = u'Nao foi possivel cadastrar os Resultados. Erro 0052L'
             servidorErros.registrar('servidorPrincipal.Loop(cadastrarResultados)', mensagem)
@@ -66,5 +67,3 @@ def Loop():
         grid.Desconectar()
         time.sleep(30)
         print "Fim do loop"
-        #print "Recarregando o servidorDB"
-        #reload(servidorDB)

@@ -114,8 +114,7 @@ def parseLog(nome):
     
     logf = open(nome, 'r')
     conteudo = logf.readlines()
-    print len(conteudo)
-    
+   
     #parsing...
     i = 0
     for linha in conteudo:
