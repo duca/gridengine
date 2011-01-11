@@ -70,7 +70,7 @@ class Tarefa:
             
             parseLog(self.logOut)
             
-#            outRm = commands.getoutput(rmPunch) 
+            outRm = commands.getoutput(rmPunch) 
             
             return 1
         except:

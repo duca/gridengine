@@ -156,10 +156,10 @@ class banco:
         pulso = clienteData.HeartBeat()
         
         try:
-            self.cursor.execute("UPDATE grid_nodeload SET nodeLoad=1 WHERE nodeKey=%s", (pulso['key']))
+            self.cursor.execute("UPDATE grid_nodeload SET nodeLoad=%s WHERE nodeKey=%s", ('1',pulso['key']))
         except:
             self.Reconectar()
-            self.cursor.execute("UPDATE grid_nodeload SET nodeLoad=1 WHERE nodeKey=%s", (pulso['key']))
+            self.cursor.execute("UPDATE grid_nodeload SET nodeLoad=%s WHERE nodeKey=%s", ('1',pulso['key']))
         
     def pegarChaves(self):
         
@@ -194,8 +194,9 @@ class banco:
             caminho = dirPdb+'/'+nome+'.pdb'
         elif extensao == 'inp':
             caminho = dirPdb+'/'+nome+'.inp'
-            
-        print caminho
+        else:            
+            caminho = dirPdb+'/'+nome+'.pdb'            
+        #print caminho
         try:
             arquivo = open(caminho,'w')
             arquivo.writelines(arqui)

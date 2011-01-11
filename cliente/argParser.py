@@ -47,7 +47,7 @@ def Processar(argumentos):
     return False
   elif argumento == "offline":
     clienteFuncoes.offline()
-    return false
+    return False
   elif argumento == "ajuda":
     Ajuda(argumentos)
     return False

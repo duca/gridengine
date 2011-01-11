@@ -1,129 +1,2153 @@
-<type 'list'>
 Iniciando...
-Para parar o servidor, remova o arquivo /var/run/qnint.pid ou use os métodos mais tradicionais
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
-4 ['testeDu', 'teste2', 'sss', 'teste'] <type 'list'>
+Para parar o servidor, remova o arquivo /opt/qnint/qnint.pid ou use os métodos mais tradicionais
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Tarefas encontradas: Nenhuma
+Workstations no sistema : ['Lkisd']
+Fim do loop
+Nao foi possivel conectar ao servidor. Verifique a conexao e tente mais tarde
 Traceback (most recent call last):
-  File "servidor.py", line 25, in <module>
+  File "servidor.py", line 37, in <module>
     servidorPrincipal.Loop()
-  File "/home/eduardo/work/qnint-grid/server/servidorPrincipal.py", line 32, in Loop
-    qnint.pegarTarefas()
-  File "/home/eduardo/work/qnint-grid/server/servidorDB.py", line 48, in pegarTarefas
+  File "/work/dev/python/qnint-grid/server/servidorPrincipal.py", line 36, in Loop
+    qnint.pegarTarefas()    
+  File "/work/dev/python/qnint-grid/server/servidorDB.py", line 59, in pegarTarefas
     self.qnint.execute(nomeSql)
-  File "/usr/lib/python2.6/site-packages/MySQLdb/cursors.py", line 173, in execute
-    self.errorhandler(self, exc, value)
-  File "/usr/lib/python2.6/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
-    raise errorclass, errorvalue
-_mysql_exceptions.OperationalError: (2013, 'Lost connection to MySQL server during query')
+AttributeError: 'NoneType' object has no attribute 'execute'
