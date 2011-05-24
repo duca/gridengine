@@ -1,0 +1,1 @@
+ticker/erros.py

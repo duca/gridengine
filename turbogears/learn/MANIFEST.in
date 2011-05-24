@@ -1,6 +1,0 @@
-include start-learn.py
-include *.cfg
-include learn/config/*.cfg
-recursive-include learn/templates *.html
-recursive-include learn/templates *.kid
-recursive-include learn/static *
