@@ -41,13 +41,14 @@ class cliente:
 		self.fetcher = data.Fetcher(1);
 		self.fetcher.work_start();
 		self.datalogger = True
-		
 	
+	def fetch_work(self, timer):
+		import time;	
 		while len(self.fetcher.summary) == 0:
-			time.sleep(1)
+			time.sleep(timer)
 			self.fetcher.update_data();
 		
-		self.con.root.Machine(self.fetcher.summary["name"], 1, self.fetcher.update_data);
+		self.con.root.Machine(self.fetcher.summary["name"], 10, self.fetcher.update_data);
 		
 
 	
@@ -64,7 +65,13 @@ class cliente:
 		
 
 if __name__ == '__main__':
-	client = cliente("localhost", 1000);
+	
+	from multiprocessing import Process
+	
+	client = cliente("fermi", 8082);
+	
+	fetch_thread = Process(target=client.fetch_work, args=(1,))
+	fetch_thread.start()
 	
 	
 

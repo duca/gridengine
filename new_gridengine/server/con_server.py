@@ -70,5 +70,5 @@ class mainService(rpyc.Service):
 if __name__ == '__main__':
 	from rpyc.utils.server import ThreadedServer
 	
-	ThreadedServer(mainService, port=1000).start()
+	ThreadedServer(mainService, port=8082).start()
 	
