@@ -1,1 +1,1 @@
-ticker/erros.py
+../ticker/erros.py
