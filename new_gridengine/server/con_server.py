@@ -58,7 +58,7 @@ class mainService(rpyc.Service):
 			import time
 			
 			while self.active:				
-				self.machsummary = self.callback();
+				self.machsummary = self.callback();								
 				time.sleep(self.delay);				
 				print self.machsummary;
 				

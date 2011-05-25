@@ -34,13 +34,14 @@ class Fetcher:
 		self.active = True;
 		
 	def fetch(self):
-		import os, erros
+		import os, erros, datetime
 		from multiprocessing import cpu_count
 		
 		load = os.getloadavg()[1];
 		hostname = os.uname()[1];
 		kernel = os.uname()[2];
 		cores = cpu_count();
+		date = datetime.datetime.utcnow()
 		
 		load = load*100/cores;
 		try:
@@ -54,7 +55,7 @@ class Fetcher:
 			free_ = 500;		
 			self.logger.reg("Não foi possível obter os dados de memória ", 3);
 			
-		self.summary = { 'name': hostname, 'load': load, 'kernel': kernel, 'cores': cores, 'total_ram' :total, 'ava_ram':free_ram }
+		self.summary = { 'name': hostname, 'load': load, 'kernel': kernel, 'cores': cores, 'total_ram' :total, 'ava_ram':free_ram, 'time': date}
 		return self.summary
 
 	def fetch_loop(self, delay, pipe):
