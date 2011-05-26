@@ -48,7 +48,7 @@ class cliente:
 			time.sleep(timer)
 			self.fetcher.update_data();
 		
-		self.con.root.Machine(self.fetcher.summary["name"], 10, self.fetcher.update_data);
+		self.con.root.Machine(self.fetcher.summary["name"], 7200, self.fetcher.update_data);
 		
 
 	

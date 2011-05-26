@@ -21,26 +21,27 @@
 #       MA 02110-1301, USA.
 #       
 #       
-import erros, rpyc
+import erros, rpyc, rrdb
 
 class mainService(rpyc.Service):
 	
 	class exposed_Machine(object):
-		def __init__(self, st_name, st_delay, data_callback):
+		def __init__(self, st_name, st_samplespday, data_callback):
 			
 			from multiprocessing import Process, Pipe
 			import rpyc
 			
 			self.machine = st_name;
 			self.machsummary = {};
-			self.delay = st_delay;
+			self.samplespday = st_samplespday;
 			self.active = True;
 			self.callback = data_callback;
 			self.ctrlPipe = Pipe();
 
 			self.errorl = erros.logger("server_erros.log");
-			self.errorl.calee = "Server: mainService(__init__)"
-			
+			self.errorl.calee = "Server: mainService(__init__)";			
+			self.machsummary = self.callback();
+			delay = 24*60*60/samplespday;
 			thrd = Process(target=self.worker());
 			thrd.start();
 		def on_connect(self):
@@ -51,7 +52,7 @@ class mainService(rpyc.Service):
 		def exposed_reg_workstation(self, summary):
 			
 			self.errorl.reg("Registering: ",1)
-			print summary;
+			
 			
 		
 		def worker(self):			
