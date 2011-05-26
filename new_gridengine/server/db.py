@@ -40,16 +40,6 @@ class workstationDB:
 		sa.Column('load',sa.Integer),
 		sa.Column('Name', sa.String(50)),
 		sa.Column('TotalWorks', sa.Integer)		
-		
-	def 
-		
-		
-		
-	
-		
-		
-		
-		
 
 if __name__ == '__main__':
 	

@@ -68,7 +68,7 @@ if __name__ == '__main__':
 	
 	from multiprocessing import Process
 	
-	client = cliente("fermi", 8082);
+	client = cliente("Motorhome", 8082);
 	
 	fetch_thread = Process(target=client.fetch_work, args=(1,))
 	fetch_thread.start()

@@ -23,7 +23,17 @@
 #       
 import erros, rpyc, rrdb
 
+ws_online = {"online":None};
+
 class mainService(rpyc.Service):
+	
+	def on_connect(self):
+		import sys	
+		global ws_online
+		
+		sys.stderr.write("Someone Connected \t")	
+		text = "I have %d workstation(s) online \n" %(len(ws_online))
+		print ws_online
 	
 	class exposed_Machine(object):
 		def __init__(self, st_name, st_samplespday, data_callback):
@@ -41,32 +51,24 @@ class mainService(rpyc.Service):
 			self.errorl = erros.logger("server_erros.log");
 			self.errorl.calee = "Server: mainService(__init__)";			
 			self.machsummary = self.callback();
-			delay = 24*60*60/samplespday;
+			self.delay = 24*60*60/self.samplespday;
 			thrd = Process(target=self.worker());
 			thrd.start();
-		def on_connect(self):
-			
-			self.errorl.reg("Someone Connected",1)			
-			
 			
 		def exposed_reg_workstation(self, summary):
+			import datetime
+			global ws_online
 			
-			self.errorl.reg("Registering: ",1)
+			ws_time = datetime.datetime.utctimetuple(self.summary["time"]);
+			ws_online.update({self.summary["name"]:self.summary["load"]});
+			self.errorl.reg("Registering: ",1);
 			
-			
-		
 		def worker(self):			
 			import time
 			
 			while self.active:				
 				self.machsummary = self.callback();								
 				time.sleep(self.delay);				
-				print self.machsummary;
-				
-				
-				
-	
-	
 
 if __name__ == '__main__':
 	from rpyc.utils.server import ThreadedServer

@@ -37,7 +37,7 @@ class Fetcher:
 		import os, erros, datetime
 		from multiprocessing import cpu_count
 		
-		load = os.getloadavg()[1];
+		load = os.getloadavg()[0];
 		hostname = os.uname()[1];
 		kernel = os.uname()[2];
 		cores = cpu_count();
