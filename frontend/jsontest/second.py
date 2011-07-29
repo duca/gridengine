@@ -3,7 +3,7 @@
 #
 #       sem título.py
 #       
-#       Copyright 2011 Eduardo Martins Lopes <eduardo@Motorhome>
+#       Copyright 2011  <usuario@QNInt>
 #       
 #       This program is free software; you can redistribute it and/or modify
 #       it under the terms of the GNU General Public License as published by
@@ -21,23 +21,29 @@
 #       MA 02110-1301, USA.
 #       
 #       
-import db
-import sqlalchemy as sa
+import os
+from google.appengine.ext import webapp
+from google.appengine.ext.webapp import util
+from google.appengine.ext.webapp import template
 
-class workstationDB:
-	
-	
-	def __init__(filename):
-		
-		self.engine = sa.create_engine('sqlite:///:memory:',echo=True);
-		metamachines = sa.MetaData();
-		machine_table = sa.Table ('workstations', metamachines,
-		sa.Column('id', sa.Integer, primary_key=True),
-		sa.Column('key', sa.Integer), #cada maquina tem uma conexao propria, entao o servidor so precisa criar uma chave e começar a logar
-		sa.Column('Data', sa.String(100))		
+class SecondHandler(webapp.RequestHandler):
+    def get(self):
+        
+        template_values={
+          var1 = "Oi"
+          var2 = "Du"
+          var3 = "Inside dois"
+          }
+    path = os.path.join(os.path.dirname(__file__), "index.html")
+    self.response.out.write(template.render(path, template_values))     
+    
+
+
+def main():
+    app2 = webapp.WSGIApplication([('/dois', SecondHandler)],
+                                  debug=True)
+    util.run_wsgi_app(app2)
 
 if __name__ == '__main__':
-	
-	test = dataService('localhost', 1000)
-	
+	main()
 

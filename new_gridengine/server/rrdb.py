@@ -51,10 +51,18 @@ class rrdb1D:
 
 if __name__ == '__main__':
 
-	test = rrdb1D(10);
+	test = rrdb1D(5);
 	
 	test.zeroer()	
 	for i in range(0,10000):
-		test.insert(i+1)		
+		test.insert(i)
+	print test.dump()
+	
+	j = 10000;
+	for i in range(0, 10000):
+		j = 10000 - i;
+		test.insert(j)
+		
+	print test.dump()	
 	
 
