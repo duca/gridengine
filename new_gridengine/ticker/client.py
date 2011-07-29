@@ -43,7 +43,9 @@ class cliente:
 		self.datalogger = True
 	
 	def fetch_work(self, timer):
-		import time;	
+		import time;
+		if len(self.fetcher.summary) == 0:
+			self.con.root.Machine(self.fetcher.summary["name"], 7200, self.fetcher.fetch)
 		while len(self.fetcher.summary) == 0:
 			time.sleep(timer)
 			self.fetcher.update_data();

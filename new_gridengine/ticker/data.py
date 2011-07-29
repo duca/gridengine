@@ -55,7 +55,7 @@ class Fetcher:
 			free_ = 500;		
 			self.logger.reg("Não foi possível obter os dados de memória ", 3);
 			
-		self.summary = { 'name': hostname, 'load': load, 'kernel': kernel, 'cores': cores, 'total_ram' :total, 'ava_ram':free_ram, 'time': date}
+		self.summary = { 'name': hostname, 'load': load, 'kernel': kernel, 'cores': cores, 'total_ram' :total, 'ava_ram':free_ram, 'time': date, 'key': 0}
 		return self.summary
 
 	def fetch_loop(self, delay, pipe):
@@ -89,8 +89,9 @@ class Fetcher:
 		
 	def update_data(self):
 		
-		self.summary = self.ppipe.recv();		
-		return self.summary;
+		self.summary = self.ppipe.recv();
+		new_data = {'load': self.summary['load'], 'ava_ram': self.summary['ava_ram'], 'time': self.summary['time'], 'key': self.summary['key']}		
+		return new_data;
 	
 	
 	
