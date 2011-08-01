@@ -3,7 +3,7 @@
 #
 #       sem título.py
 #       
-#       Copyright 2011 Eduardo Martins <edumlopes@fermi>
+#       Copyright 2011  <usuario@QNInt>
 #       
 #       This program is free software; you can redistribute it and/or modify
 #       it under the terms of the GNU General Public License as published by
@@ -21,48 +21,14 @@
 #       MA 02110-1301, USA.
 #       
 #       
-class rrdb1D:
-	
-	def __init__(self, nsamples):
-						
-		self.size = nsamples;		
-		self.database = range(self.size);
-		self.zeroer();	
-		self.ndx = 0;
+from twisted.internet.protocol import Protocol
 
-	def insert(self,item):
-		
-		self.database[self.ndx] = item;
-		self.ndx = self.ndx + 1;
-		
-		if self.ndx == self.size: 
-			self.restart();
+class 
 
-	def restart(self):
-		self.ndx = 0; #restart the counter
+def main():
 	
-	def dump(self):		
-		return self.database;
-	
-	def zeroer(self):
-		
-		for i in range(0,len(self.database)):
-			self.database[i] = 0;	
+	return 0
 
 if __name__ == '__main__':
-
-	test = rrdb1D(10000);
-	
-	test.zeroer()	
-	for i in range(0,10000):
-		test.insert(i)
-	print test.dump()
-	
-	j = 10000;
-	for i in range(0, 10000):
-		j = 10000 - i;
-		test.insert(j)
-		
-	print test.dump()	
-	
+	main()
 
