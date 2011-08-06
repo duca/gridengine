@@ -3,7 +3,7 @@
 #
 #       sem título.py
 #       
-#       Copyright 2011  <usuario@QNInt>
+#       Copyright 2011 Eduardo Martins <edumlopes@fermi>
 #       
 #       This program is free software; you can redistribute it and/or modify
 #       it under the terms of the GNU General Public License as published by
@@ -21,31 +21,48 @@
 #       MA 02110-1301, USA.
 #       
 #       
-from twisted.internet import reactor
-from twisted.internet.protocol import Protocol, Factory
-from twisted.protocols import basic
-import sys
-from twisted.internet.endpoints import TCP4ServerEndpoint
-import json
-
-class Listen(Protocol):
-	def connectionMade(self):
-		print "Made"
-	def dataReceived(self,data):
-		#sys.stdout.write(data)
-		dado = json.loads(data)
-		print dado["nome"]
-		print dado["curso"]
-
-def main():
+class rrdb1D:
 	
-	factory = Factory()
-	factory.protocol = Listen
-	endpoint = TCP4ServerEndpoint(reactor,1090)
-	endpoint.listen(factory)
-	reactor.run()
-	return 0
+	def __init__(self, nsamples):
+						
+		self.size = nsamples;		
+		self.database = range(self.size);
+		self.zeroer();	
+		self.ndx = 0;
+
+	def insert(self,item):
+		
+		self.database[self.ndx] = item;
+		self.ndx = self.ndx + 1;
+		
+		if self.ndx == self.size: 
+			self.restart();
+
+	def restart(self):
+		self.ndx = 0; #restart the counter
+	
+	def dump(self):		
+		return self.database;
+	
+	def zeroer(self):
+		
+		for i in range(0,len(self.database)):
+			self.database[i] = 0;	
 
 if __name__ == '__main__':
-	main()
+
+	test = rrdb1D(10000);
+	
+	test.zeroer()	
+	for i in range(0,10000):
+		test.insert(i)
+	print test.dump()
+	
+	j = 10000;
+	for i in range(0, 10000):
+		j = 10000 - i;
+		test.insert(j)
+		
+	print test.dump()	
+	
 

@@ -22,36 +22,65 @@
 #       
 #       
 from twisted.internet.protocol import Factory, Protocol
-from twisted.internet import reactor
+from twisted.protocols import basic
+from twisted.internet import reactor,task
 from twisted.internet.endpoints import TCP4ClientEndpoint
 import json
+import data
 
-class JSONClient(Protocol):
+class JSONClient(basic.LineOnlyReceiver):
 	#def startedConnecting(self, connector):
 		#print "Connecting"
 	
 	def sendmsg(self):
+		from time import sleep
+		workstation = data.Fetcher(2)
+		ws_data = workstation.fetch()	
+		print ws_data
+		string = json.dumps(ws_data)
+		print type(string)
+		self.sendLine(string)
+		#sleep(10)
+		#self.repeatmsg()
 		
-		string = json.dumps({'nome':'eduardo martins', "curso":"eng. fisica"})
-		self.transport.write(string)
-		print "sent message", string, type(string)
-	#def clientConnectionLost(self,connector, reason):
-		#print "Lost connection", reason
-def gotProtocol(proto):
-	proto.sendmsg()
+	def repeatmsg(self):
+		self.sendmsg()
+		
+
+class Con(Protocol):
+	""" Class doc """
+	
+	def __init__ (self):
+		""" Class initialiser """
+		self.lc = task.LoopingCall(self.tick)
+		#pass
+	def makeFactory(self):
+		self.factory = Factory()
+		self.factory.protocol = JSONClient
+		return self.factory
+	
+	def gotProto(self, proto):
+		self.proto = proto
+		
+		self.lc.start(2)
+		
+	def tick(self):
+		self.proto.sendmsg()
+	
+	def connect(self):
+		
+		factory=self.makeFactory()
+		point = TCP4ClientEndpoint(reactor, "localhost", 1089)
+		d = point.connect(factory)
+		d.addCallback(self.gotProto)
+		reactor.run()
 	
 def main():
 	#reactor.connectTCP("localhost",1079, JSONClientFactory())
 	
-	factory = Factory()
-	factory.protocol = JSONClient
-	point = TCP4ClientEndpoint(reactor, "localhost", 1090)
-	d = point.connect(factory)
-	d.addCallback(gotProtocol)
-	reactor.run()
-	reactor.stop()
-	reactor.run()
-	reactor.stop()
+	cliente = Con()
+	
+	cliente.connect()
 	return 0
 
 if __name__ == '__main__':

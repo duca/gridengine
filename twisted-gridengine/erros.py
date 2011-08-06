@@ -3,7 +3,7 @@
 #
 #       sem título.py
 #       
-#       Copyright 2011  <usuario@QNInt>
+#       Copyright 2011 Eduardo Martins Lopes <eduardo@Motorhome>
 #       
 #       This program is free software; you can redistribute it and/or modify
 #       it under the terms of the GNU General Public License as published by
@@ -21,14 +21,26 @@
 #       MA 02110-1301, USA.
 #       
 #       
-from twisted.internet.protocol import Protocol
+import logging, sys;
+class logger:
 
-class 
-
-def main():
+	calee = None;
 	
-	return 0
-
-if __name__ == '__main__':
-	main()
+	def __init__(self,fname):
+		
+		logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s ', filename=fname, level=logging.CRITICAL);	
+	
+	def reg(self, message, level):		
+		if level == 0:
+			logging.warning(message)
+		elif level == 1:
+			logging.error(message)
+		elif level == 2:
+			logging.critical(message)
+		else:
+			logging.critical(message)
+		sys.stderr.write(message+"\n")
+		
+	
+	
 
