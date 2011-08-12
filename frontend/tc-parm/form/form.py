@@ -21,55 +21,41 @@
 #       MA 02110-1301, USA.
 #       
 #       
-from twisted.internet import reactor
-from twisted.internet.protocol import Protocol, Factory
-from twisted.protocols import basic
-import sys
-from twisted.internet.endpoints import TCP4ServerEndpoint
-import json
+from google.appengine.api import users
+from google.appengine.ext import webapp
+from google.appengine.ext.webapp.util import run_wsgi_app
 
-class Listen(basic.LineOnlyReceiver):
+class MainPage(webapp.RequestHandler):
+	""" Class doc """
 	
-	def connectionMade(self):
-		print self.transport.client, "\t Conectou"
-		factory.clients.append(client)
+	def get(self):
+		""" Function doc """
+		self.response.out.write("""
+			<html>
+				<body>
+					<form action="/sign" method="post">
+						<div><textarea name="content" rows="3" cols="60"></textarea></div>
+						<div><input type="submit" value="Sign"></div>
+					</form>
+				</body>
+			</html>""")
+class Guestbook(webapp.RequestHandler):
+	""" Class doc """
+	
+	def post(self):
+		self.response.out.write('<html><body>You wrote:<pre>')
+		self.response.out.write(cgi.escape(self.request.get('content')))
+		self.response.out.write('</pre></body></html>')
 
-	def lineReceived(self,line):
-		self.dado = json.loads(line)
-		#print dado["hostname"]
-		#print dado["load"]
-		
-    def clientConnectionLost(self):
-        factory.clients.remove(client)
-		
-class Fact(Listen):
-
-	self.clients = []
-
-	def makeFactory(self):
-		factory = Factory()
-		factory.protocol = Listen
-		return factory
-		
-	def start(self):
-		
-		factory = self.makeFactory()
-		endpoint = TCP4ServerEndpoint(reactor,1089)
-		endpoint.listen(factory)
-		
-		reactor.run()
-
-      
+application = webapp.WSGIApplication(
+									[('/', MainPage),'/sign', Guestbook)],
+									debug=True)
 
 
 def main():
-	
-	servidor = Fact()
-	servidor.start()
 	
 	return 0
 
 if __name__ == '__main__':
 	main()
 
-	

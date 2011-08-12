@@ -21,55 +21,39 @@
 #       MA 02110-1301, USA.
 #       
 #       
-from twisted.internet import reactor
-from twisted.internet.protocol import Protocol, Factory
-from twisted.protocols import basic
-import sys
-from twisted.internet.endpoints import TCP4ServerEndpoint
-import json
-
-class Listen(basic.LineOnlyReceiver):
+from protorpc import messages
+from protorpc import remote, message_types
+from protorpc import service_handlers
+import datetime, guestbook
+class Tick(messages.Message):
+	""" Class doc """
+	data = messages.StringField(1, required=True)
+	when = messages.IntegerField(2)
 	
-	def connectionMade(self):
-		print self.transport.client, "\t Conectou"
-		factory.clients.append(client)
+class TickSuccess(messages.Message):
+	
+	resp = messages.StringField(1,required=True)
 
-	def lineReceived(self,line):
-		self.dado = json.loads(line)
-		#print dado["hostname"]
-		#print dado["load"]
-		
-    def clientConnectionLost(self):
-        factory.clients.remove(client)
-		
-class Fact(Listen):
-
-	self.clients = []
-
-	def makeFactory(self):
-		factory = Factory()
-		factory.protocol = Listen
-		return factory
-		
-	def start(self):
-		
-		factory = self.makeFactory()
-		endpoint = TCP4ServerEndpoint(reactor,1089)
-		endpoint.listen(factory)
-		
-		reactor.run()
-
-      
-
+#class Workstation():
+#	from Django import simplejson
+	
+class ReceiveTick(remote.Service):
+	@remote.method(Tick, TickSuccess)
+	def regtick(self, request):
+		self.request = request
+		if request.when:
+			when = datetime.datetime.utcfromtimestamp(request.when)
+		else:
+			when = datetime.datetime.now()
+			
+		note = guestbook.Greeting(content=request.data, date=when)
+		note.put()
+		return TickSuccess(resp=request.data)
 
 def main():
-	
-	servidor = Fact()
-	servidor.start()
 	
 	return 0
 
 if __name__ == '__main__':
 	main()
 
-	

@@ -21,55 +21,17 @@
 #       MA 02110-1301, USA.
 #       
 #       
-from twisted.internet import reactor
-from twisted.internet.protocol import Protocol, Factory
-from twisted.protocols import basic
-import sys
-from twisted.internet.endpoints import TCP4ServerEndpoint
-import json
+from google.appengine.ext import webapp
+from google.appengine.ext.webapp import util
+import postservice
+from protorpc import service_handlers
 
-class Listen(basic.LineOnlyReceiver):
-	
-	def connectionMade(self):
-		print self.transport.client, "\t Conectou"
-		factory.clients.append(client)
-
-	def lineReceived(self,line):
-		self.dado = json.loads(line)
-		#print dado["hostname"]
-		#print dado["load"]
-		
-    def clientConnectionLost(self):
-        factory.clients.remove(client)
-		
-class Fact(Listen):
-
-	self.clients = []
-
-	def makeFactory(self):
-		factory = Factory()
-		factory.protocol = Listen
-		return factory
-		
-	def start(self):
-		
-		factory = self.makeFactory()
-		endpoint = TCP4ServerEndpoint(reactor,1089)
-		endpoint.listen(factory)
-		
-		reactor.run()
-
-      
+application = webapp.WSGIApplication(service_handlers.service_mapping([('/tick', postservice.ReceiveTick)]),debug=True)
 
 
 def main():
-	
-	servidor = Fact()
-	servidor.start()
-	
-	return 0
-
+	util.run_wsgi_app(application)
+	#webapp.WSGIApplication(application)
 if __name__ == '__main__':
 	main()
 
-	

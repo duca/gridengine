@@ -4,5 +4,10 @@ runtime: python
 api_version: 1
 
 handlers:
+
+- url: /tick.*
+  script: services.py
+- url: /guestbook.*
+  script: guestbook.py
 - url: .*
-  script: main.py
+  script: guestbook.py

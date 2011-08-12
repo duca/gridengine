@@ -95,6 +95,26 @@ class Fetcher:
 		return self.summary;
 	
 	
+class clientDB():
+	""" Class doc """
+	
+	def __init__ (self):
+		""" Class initialiser """
+		self.client = 0;
+		self.load = 0;
+		self.data = []
+
+		
+	def update(self, client, load):
+		
+		self.data.append({client, load})
+		
+	def remove(self,client):
+		
+		for node in self.data:
+			if node[client] != NULL:
+				self.data.pop(node)
+
 	
 if __name__ == '__main__':
 	import erros, sys, time

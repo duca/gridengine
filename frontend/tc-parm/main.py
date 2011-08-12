@@ -16,7 +16,8 @@
 #
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
-
+from protorpc import service_handlers
+import postservice, guestbook
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
@@ -24,10 +25,16 @@ class MainHandler(webapp.RequestHandler):
 
 
 def main():
-    application = webapp.WSGIApplication([('/', MainHandler)],
-                                         debug=True)
-    util.run_wsgi_app(application)
+    #application = webapp.WSGIApplication([('/', MainHandler)],
+     #                                    debug=True)
+    #util.run_wsgi_app(application)
 
+	m = service_handlers.service_mapping([('/tick', postservice.ReceiveTick),])
+
+
+	application = webapp.WSGIApplication(m,([('/guestbook', guestbook.MainPage),('/sign', guestbook.Guestbook)]))
+	util.run_wsgi_app(application)
 
 if __name__ == '__main__':
     main()
+	

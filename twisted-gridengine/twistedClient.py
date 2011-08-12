@@ -39,13 +39,7 @@ class JSONClient(basic.LineOnlyReceiver):
 		print ws_data
 		string = json.dumps(ws_data)
 		print type(string)
-		self.sendLine(string)
-		#sleep(10)
-		#self.repeatmsg()
-		
-	def repeatmsg(self):
-		self.sendmsg()
-		
+		self.sendLine(string)		
 
 class Con(Protocol):
 	""" Class doc """
