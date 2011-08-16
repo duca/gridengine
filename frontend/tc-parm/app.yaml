@@ -1,5 +1,5 @@
 application: tcgridengine
-version: 1
+version: 3
 runtime: python
 api_version: 1
 builtins:
@@ -10,5 +10,7 @@ handlers:
   script: services.py
 - url: /guestbook.*
   script: guestbook.py
+- url: /forms.*
+  script: protorpc/webapp/forms.py
 - url: .*
   script: guestbook.py

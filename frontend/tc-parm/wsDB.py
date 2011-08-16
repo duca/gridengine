@@ -33,20 +33,20 @@ import datetime
 class Workstations(db.Model):
 	""" Class doc """
 	host = db.StringProperty(multiline=False)
-	reg = db.IntegerProperty
-	active = db.BooleanProperty
+	reg = db.IntegerProperty()
+	active = db.BooleanProperty()
 	time = db.DateTimeProperty(auto_now_add=True)
 	
 		
 class HeartBeats(db.Model):
 	hostname = db.StringProperty(multiline=False)
-	reg = db.IntegerProperty
-	load = db.IntegerProperty
-	freeram = db.IntegerProperty
-	totalram = db.IntegerProperty
+	hostid = db.IntegerProperty()
+	load = db.IntegerProperty()
+	freeram = db.IntegerProperty()
+	totalram = db.IntegerProperty()
 	kernel = db.StringProperty(multiline=False)
-	nproc = db.IntegerProperty
-	active = db.BooleanProperty
+	cores = db.IntegerProperty()
+	active = db.BooleanProperty()
 	date = db.DateTimeProperty(auto_now_add=True)
 	#class Tasks(db.Model):
 #	taskid = db.IntegerProperty

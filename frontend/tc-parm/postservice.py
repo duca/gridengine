@@ -34,18 +34,17 @@ class Tick(messages.Message):
 
 	hostname = messages.StringField(1,required=True)
 	load = messages.IntegerField(2,required=True)
-	ava_ram = messages.IntegerField(3,required=True)
+	freeram = messages.IntegerField(3,required=True)
 	kernel = messages.StringField(4,required=True)
 	cores = messages.IntegerField(5,required=True)
-	key = messages.IntegerField(6,required=True)
-	when = messages.IntegerField(7)
+	hostid = messages.IntegerField(6,required=True)
+	totalram = messages.IntegerField(7,required=True)
+	when = messages.IntegerField(8)
 	
 class TickSuccess(messages.Message):
 	
 	resp = messages.StringField(1,required=True)
 
-#class Workstation():
-#	from Django import simplejson
 invdata = "Invalid data"
 class ReceiveTick(remote.Service):
 	@remote.method(Tick, TickSuccess)
@@ -55,29 +54,26 @@ class ReceiveTick(remote.Service):
 			when = datetime.datetime.utcfromtimestamp(request.when)
 		else:
 			when = datetime.datetime.now()
-		#summary = self.unfold(self.request.data)
-		
-		#if summary ==-2:
-		#	return TickSuccess(resp="Data is not valid")
-#		try:
-		host = request.hostname
-		regKey = request.key
-		carga = request.load
-		ava_ram = request.ava_ram
-		kern = request.kernel
-		nproc = request.cores
-#		except:
-#			return TickSuccess(resp=request.hostname)
-			#return TickSuccess(resp=invdata)
-		ticket = wsDB.HeartBeats(hostname=hostname, load=carga, freeram=ava_ram,kernel=kern, nproc = cores, active=True, date=when)	
+
 		try:
-			#ticket = wsDB.HeartBeats(host=hostname, carga = load, freeram=ava_ram,kern=kern, nproc = cores, active=True, date=when)
+			host = request.hostname
+			regKey = request.hostid
+			carga = request.load
+			total = request.totalram
+			avaram = request.freeram
+			kern = request.kernel
+			nproc = request.cores
+		except:			
+			return TickSuccess(resp=invdata)
+		ticket = wsDB.HeartBeats(hostname=host, hostid = regKey, totalram = total, load=carga, freeram=avaram,kernel=kern, cores = nproc, active=True, date=when)	
+		try:
+			
 			ticket.put()
 		except:
 			return TickSuccess(resp="DB unreachable")
 
-		
-		return TickSuccess(resp="Data validated")
+		ans = "Data Validated"
+		return TickSuccess(resp=ans)
 		
 	def unfold(self, data):
 		print data
@@ -89,6 +85,7 @@ class ReceiveTick(remote.Service):
 			return -2
 		decoded = json.dumps(unencrypt)
 		return decoded
+		
 def main():
 	
 	return 0

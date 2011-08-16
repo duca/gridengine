@@ -55,9 +55,11 @@ class Fetcher:
 			free_ = 500;		
 			self.logger.reg("Não foi possível obter os dados de memória ", 3);
 			
-		self.summary = { 'hostname': hostname, 'load': load, 'key':self.key,
-					'kernel': kernel, 'cores': cores, 'total_ram':total,
-					'ava_ram':free_ram}
+		self.summary = { 'hostname': hostname, 'load': load, 'hostid':self.key,
+					'kernel': kernel, 'cores': cores, 'totalram':total,
+					'freeram':free_ram}
+#		self.summary = { 'hostname': hostname, 'load': load, 'key':self.key,
+#					'kernel': kernel, 'cores': cores, 'ava_ram':free_ram}
 		return self.summary
 
 	def fetch_loop(self, delay, pipe):
