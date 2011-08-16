@@ -27,7 +27,10 @@ from twisted.internet import reactor,task
 from twisted.internet.endpoints import TCP4ClientEndpoint
 import json
 import data
+import base64, urllib, urllib2
 
+#rhost = "http://grid.tecnocientifica.com.br/tick.regtick"
+rhost = "localhost:8080/tick.regtick"
 class JSONClient(basic.LineOnlyReceiver):
 	#def startedConnecting(self, connector):
 		#print "Connecting"
@@ -36,10 +39,17 @@ class JSONClient(basic.LineOnlyReceiver):
 		from time import sleep
 		workstation = data.Fetcher(2)
 		ws_data = workstation.fetch()	
-		print ws_data
-		string = json.dumps(ws_data)
-		print type(string)
-		self.sendLine(string)		
+		self.string = json.dumps(ws_data)
+		self.sendLine(self.string)		
+		encrypted = base64.b16encode(self.string)
+		mala = urllib.urlencode({'data': encrypted})
+		try:
+			f = urllib2.urlopen(rhost, mala)
+		except:			
+			f = []
+			print "Connection failed"
+
+
 
 class Con(Protocol):
 	""" Class doc """
@@ -60,11 +70,11 @@ class Con(Protocol):
 		
 	def tick(self):
 		self.proto.sendmsg()
-	
+
 	def connect(self):
 		
 		factory=self.makeFactory()
-		point = TCP4ClientEndpoint(reactor, "localhost", 1089)
+		point = TCP4ClientEndpoint(reactor, "localhost", 1080)
 		d = point.connect(factory)
 		d.addCallback(self.gotProto)
 		reactor.run()

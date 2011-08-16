@@ -36,15 +36,14 @@ class Listen(basic.LineOnlyReceiver):
 
 	def lineReceived(self,line):
 		self.dado = json.loads(line)
-		#print dado["hostname"]
-		#print dado["load"]
-		
-    def clientConnectionLost(self):
-        factory.clients.remove(client)
-		
+		print self.dado
+
+	def clientConnectionLost(self):
+		factory.clients.remove(client)
+
 class Fact(Listen):
 
-	self.clients = []
+	clients = []
 
 	def makeFactory(self):
 		factory = Factory()
@@ -54,9 +53,8 @@ class Fact(Listen):
 	def start(self):
 		
 		factory = self.makeFactory()
-		endpoint = TCP4ServerEndpoint(reactor,1089)
-		endpoint.listen(factory)
-		
+		endpoint = TCP4ServerEndpoint(reactor,1080)
+		endpoint.listen(factory)		
 		reactor.run()
 
       

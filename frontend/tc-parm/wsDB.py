@@ -21,36 +21,35 @@
 #       MA 02110-1301, USA.
 #       
 #       
+from google.appengine.ext import db
 from google.appengine.api import users
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
+import cgi
+import datetime
 
-class MainPage(webapp.RequestHandler):
+
+
+class Workstations(db.Model):
 	""" Class doc """
+	host = db.StringProperty(multiline=False)
+	reg = db.IntegerProperty
+	active = db.BooleanProperty
+	time = db.DateTimeProperty(auto_now_add=True)
 	
-	def get(self):
-		""" Function doc """
-		self.response.out.write("""
-			<html>
-				<body>
-					<form action="/sign" method="post">
-						<div><textarea name="content" rows="3" cols="60"></textarea></div>
-						<div><input type="submit" value="Sign"></div>
-					</form>
-				</body>
-			</html>""")
-class Guestbook(webapp.RequestHandler):
-	""" Class doc """
-	
-	def post(self):
-		self.response.out.write('<html><body>You wrote:<pre>')
-		self.response.out.write(cgi.escape(self.request.get('content')))
-		self.response.out.write('</pre></body></html>')
-
-application = webapp.WSGIApplication(
-									[('/', MainPage),'/sign', Guestbook)],
-									debug=True)
-
+		
+class HeartBeats(db.Model):
+	hostname = db.StringProperty(multiline=False)
+	reg = db.IntegerProperty
+	load = db.IntegerProperty
+	freeram = db.IntegerProperty
+	totalram = db.IntegerProperty
+	kernel = db.StringProperty(multiline=False)
+	nproc = db.IntegerProperty
+	active = db.BooleanProperty
+	date = db.DateTimeProperty(auto_now_add=True)
+	#class Tasks(db.Model):
+#	taskid = db.IntegerProperty
 
 def main():
 	

@@ -24,7 +24,7 @@
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 import postservice
-from protorpc import service_handlers
+from protorpc.webapp import service_handlers
 
 application = webapp.WSGIApplication(service_handlers.service_mapping([('/tick', postservice.ReceiveTick)]),debug=True)
 

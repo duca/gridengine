@@ -23,12 +23,22 @@
 #       
 from protorpc import messages
 from protorpc import remote, message_types
-from protorpc import service_handlers
-import datetime, guestbook
+from protorpc.webapp import service_handlers
+import datetime
+import base64
+import simplejson as json
+import wsDB
+
 class Tick(messages.Message):
 	""" Class doc """
-	data = messages.StringField(1, required=True)
-	when = messages.IntegerField(2)
+
+	hostname = messages.StringField(1,required=True)
+	load = messages.IntegerField(2,required=True)
+	ava_ram = messages.IntegerField(3,required=True)
+	kernel = messages.StringField(4,required=True)
+	cores = messages.IntegerField(5,required=True)
+	key = messages.IntegerField(6,required=True)
+	when = messages.IntegerField(7)
 	
 class TickSuccess(messages.Message):
 	
@@ -36,7 +46,7 @@ class TickSuccess(messages.Message):
 
 #class Workstation():
 #	from Django import simplejson
-	
+invdata = "Invalid data"
 class ReceiveTick(remote.Service):
 	@remote.method(Tick, TickSuccess)
 	def regtick(self, request):
@@ -45,11 +55,40 @@ class ReceiveTick(remote.Service):
 			when = datetime.datetime.utcfromtimestamp(request.when)
 		else:
 			when = datetime.datetime.now()
-			
-		note = guestbook.Greeting(content=request.data, date=when)
-		note.put()
-		return TickSuccess(resp=request.data)
+		#summary = self.unfold(self.request.data)
+		
+		#if summary ==-2:
+		#	return TickSuccess(resp="Data is not valid")
+#		try:
+		host = request.hostname
+		regKey = request.key
+		carga = request.load
+		ava_ram = request.ava_ram
+		kern = request.kernel
+		nproc = request.cores
+#		except:
+#			return TickSuccess(resp=request.hostname)
+			#return TickSuccess(resp=invdata)
+		ticket = wsDB.HeartBeats(hostname=hostname, load=carga, freeram=ava_ram,kernel=kern, nproc = cores, active=True, date=when)	
+		try:
+			#ticket = wsDB.HeartBeats(host=hostname, carga = load, freeram=ava_ram,kern=kern, nproc = cores, active=True, date=when)
+			ticket.put()
+		except:
+			return TickSuccess(resp="DB unreachable")
 
+		
+		return TickSuccess(resp="Data validated")
+		
+	def unfold(self, data):
+		print data
+		#splitted = data.split("=")[1]
+		try:
+			unencrypt = base64.b16decode(data)
+		
+		except:
+			return -2
+		decoded = json.dumps(unencrypt)
+		return decoded
 def main():
 	
 	return 0

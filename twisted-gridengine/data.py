@@ -21,10 +21,9 @@
 #       MA 02110-1301, USA.
 #       
 #       
-
 class Fetcher:
 
-	def __init__(self, delay):
+	def __init__(self, delay, key):
 		import erros
 	
 		self.logger = erros.logger('erro.log')
@@ -32,6 +31,7 @@ class Fetcher:
 		self.summary = {};		
 		self.delay = delay;
 		self.active = True;
+		self.key = key
 		
 	def fetch(self):
 		import os, erros, datetime
@@ -43,7 +43,7 @@ class Fetcher:
 		cores = cpu_count();
 		date = datetime.datetime.utcnow()
 		
-		load = load*100/cores;
+		load = int(load*100/cores);
 		try:
 			memory = os.popen("free -m").readlines()[1];
 			total = int(memory.split()[1]);
@@ -55,7 +55,7 @@ class Fetcher:
 			free_ = 500;		
 			self.logger.reg("Não foi possível obter os dados de memória ", 3);
 			
-		self.summary = { 'hostname': hostname, 'load': load, 
+		self.summary = { 'hostname': hostname, 'load': load, 'key':self.key,
 					'kernel': kernel, 'cores': cores, 'total_ram':total,
 					'ava_ram':free_ram}
 		return self.summary
