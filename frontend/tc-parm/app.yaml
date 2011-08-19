@@ -13,4 +13,4 @@ handlers:
 - url: /forms.*
   script: protorpc/webapp/forms.py
 - url: .*
-  script: guestbook.py
+  script: frontgrid.py

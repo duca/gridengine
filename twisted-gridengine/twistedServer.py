@@ -24,25 +24,32 @@
 from twisted.internet import reactor
 from twisted.internet.protocol import Protocol, Factory
 from twisted.protocols import basic
-import sys
 from twisted.internet.endpoints import TCP4ServerEndpoint
 import json
-
+import httplib2
 class Listen(basic.LineOnlyReceiver):
-	
+	""" Protocol definition """
 	def connectionMade(self):
 		print self.transport.client, "\t Conectou"
 		factory.clients.append(client)
 
 	def lineReceived(self,line):
 		self.dado = json.loads(line)
+		
+		rurl = "http://grid.tecnocientifica.com.br/tick.regtick"
+		lurl = "http://localhost:8080/tick.regtick"
+
+		h = httplib2.Http()
+		resp, content = h.request(lurl,'POST',line,headers={'Content-Type': 'application/json'})
+
+		
 		print self.dado
 
 	def clientConnectionLost(self):
 		factory.clients.remove(client)
 
 class Fact(Listen):
-
+	""" Factory """
 	clients = []
 
 	def makeFactory(self):

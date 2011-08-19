@@ -28,6 +28,7 @@ import datetime
 import base64
 import simplejson as json
 import wsDB
+import mcache
 
 class Tick(messages.Message):
 	""" Class doc """
@@ -47,8 +48,11 @@ class TickSuccess(messages.Message):
 
 invdata = "Invalid data"
 class ReceiveTick(remote.Service):
+	
 	@remote.method(Tick, TickSuccess)
 	def regtick(self, request):
+		machines = mcache.cacher("machines")
+		ticks = mcache.cacher("ticks")
 		self.request = request
 		if request.when:
 			when = datetime.datetime.utcfromtimestamp(request.when)
@@ -65,10 +69,13 @@ class ReceiveTick(remote.Service):
 			nproc = request.cores
 		except:			
 			return TickSuccess(resp=invdata)
-		ticket = wsDB.HeartBeats(hostname=host, hostid = regKey, totalram = total, load=carga, freeram=avaram,kernel=kern, cores = nproc, active=True, date=when)	
-		try:
 			
-			ticket.put()
+		machines.updatecache(host) #atualiza a lista de hosts
+		ticks.updatedict(host,carga,300) #atualiza o dado referente ao computador. Se tiver expirado, insere um novo registro
+		
+		ticket = wsDB.HeartBeats(hostname=host, hostid = regKey, totalram = total, load=carga, freeram=avaram,kernel=kern, cores = nproc, active=True, date=when)	
+		try:			
+			ticket.put() #efetiva a escrita ao banco
 		except:
 			return TickSuccess(resp="DB unreachable")
 
