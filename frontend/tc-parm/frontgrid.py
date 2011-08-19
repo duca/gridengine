@@ -32,7 +32,7 @@ class MainPage(webapp.RequestHandler):
 		ticks = mcache.cacher("ticks")		
 		total_machines = machines.retrieve()		
 
-		if len(total_machines) == 0:
+		if total_machines is None:
 			self.response.out.write("<p>No machines are online at the moment</p>")
 		else:
 			for machine in total_machines:

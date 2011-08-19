@@ -28,16 +28,15 @@ class cacher:
 	""" Class doc """
 	
 	def __init__(self,key):
-		
+		self.dummy = None
 		self.key = key
 		self.lista = []
 #		if memcache.get(self.key) is None:
 #			memcache.add(key,self.lista)
 	
-	def updatecache(self,obj):
+	def updatecache(self,data):
 		
-		self.lista.append(obj)
-		memcache.add(self.key,self.lista)
+		memcache.add(self.key,data)
 
 	def update_timed(self, obj, life):
 		
@@ -50,13 +49,19 @@ class cacher:
 		
 	def updatelist(self, obj):
 		
-		data = self.retrieve(self.key)
-		if data.__contains__(obj) is None:
-			data.append(obj)
+		data = self.retrieve()
+		if data is None:
+			l = []
+			l.append(obj)
+			self.updatecache(l)
 		else:
-			self.removeitem(data,obj)
-			data.append(obj)
-			self.updatecache(obj)
+			
+			if data.__contains__(obj) is None:
+				data.append(obj)
+			else:
+				self.removeitem(data,obj)
+				data.append(obj)
+				self.updatecache(data)
 
 	def updatedict(self, key,info,life):
 
@@ -76,9 +81,8 @@ class cacher:
 		else:
 			return -1	
 			
-	def removeitem(self, item):
+	def removeitem(self, data, item):
 		
-		data = self.retrieve()
 		for i in range(0, len(data)):
 			if data[i] == item:
 				data.pop(i)
@@ -86,7 +90,7 @@ class cacher:
 		
 def main():
 	
-	return 0
+	a = []
 
 if __name__ == '__main__':
 	main()

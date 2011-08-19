@@ -70,7 +70,7 @@ class ReceiveTick(remote.Service):
 		except:			
 			return TickSuccess(resp=invdata)
 			
-		machines.updatecache(host) #atualiza a lista de hosts
+		machines.updatelist(host) #atualiza a lista de hosts
 		ticks.updatedict(host,carga,300) #atualiza o dado referente ao computador. Se tiver expirado, insere um novo registro
 		
 		ticket = wsDB.HeartBeats(hostname=host, hostid = regKey, totalram = total, load=carga, freeram=avaram,kernel=kern, cores = nproc, active=True, date=when)	

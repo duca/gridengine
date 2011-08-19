@@ -36,7 +36,7 @@ def main():
 	
 	lurl = "http://localhost:8080/tick.regtick"
 	rurl = "http://grid.tecnocientifica.com.br/tick.regtick"
-	
+	furl = "http://200.136.224.204:8091/tick.regtick"	
 	h = httplib2.Http()
 	resp, content = h.request(lurl,'POST',enc,headers={'Content-Type': 'application/json'})
 	print resp
