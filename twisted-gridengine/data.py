@@ -42,7 +42,6 @@ class Fetcher:
 		kernel = os.uname()[2];
 		cores = cpu_count();
 		date = datetime.datetime.utcnow()
-		hostname = "Lol"	
 		load = int(load*100/cores);
 		try:
 			memory = os.popen("free -m").readlines()[1];
