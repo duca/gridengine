@@ -23,6 +23,7 @@
 #       
 
 from google.appengine.api import memcache
+import wsDB
 
 class cacher:
 	""" Class doc """
@@ -30,47 +31,45 @@ class cacher:
 	def __init__(self,key):
 		self.dummy = None
 		self.key = key
-		self.lista = []
-#		if memcache.get(self.key) is None:
-#			memcache.add(key,self.lista)
-	
-	def updatecache(self,data):
 		
-		memcache.add(self.key,data)
+		#db = wsDB.manager()
+
+	def updatecache(self,data):	
+		
+		if memcache.get(self.key) is None:
+			memcache.add(self.key,data)
+		else:
+			memcache.replace(self.key,data)
 
 	def update_timed(self, obj, life):
 		
-		if memcache.replace(self.key,obj,life) is None:
-			memcache.add(self.key,obj,life)
+		memcache.add(self.key,obj,life)
+
 			
 	def retrieve(self):
 		
-		return memcache.get(self.key)
+		result = memcache.get(self.key)
+		if result is None:
+			result=[]
+			
+		return result
 		
 	def updatelist(self, obj):
-		
-		data = self.retrieve()
-		if data is None:
-			l = []
-			l.append(obj)
-			self.updatecache(l)
-		else:
-			
-			if data.__contains__(obj) is None:
-				data.append(obj)
-			else:
-				self.removeitem(data,obj)
-				data.append(obj)
-				self.updatecache(data)
 
+		data = self.retrieve()
+
+		if data.__contains__(obj) is False:
+			data.append(obj)
+			self.updatecache(data)
+				
 	def updatedict(self, key,info,life):
 
 		data = memcache.get(key)
 		
-		if data is None:			
-			memcache.add(key, info,life)
-		else:
-			memcache.replace(key,info,life)
+#		if data is None:			
+		memcache.add(key, info,life)
+#		else:
+#			memcache.replace(key,info,life)
 			
 	def retrievedict(self,key):
 		

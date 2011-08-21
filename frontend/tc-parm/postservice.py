@@ -24,8 +24,7 @@
 from protorpc import messages
 from protorpc import remote, message_types
 from protorpc.webapp import service_handlers
-import datetime
-import base64
+import datetime,base64
 import simplejson as json
 import wsDB
 import mcache
@@ -51,7 +50,7 @@ class ReceiveTick(remote.Service):
 	
 	@remote.method(Tick, TickSuccess)
 	def regtick(self, request):
-		machines = mcache.cacher("machines")
+		machines = wsDB.manager()		
 		ticks = mcache.cacher("ticks")
 		self.request = request
 		if request.when:
@@ -69,11 +68,9 @@ class ReceiveTick(remote.Service):
 			nproc = request.cores
 		except:			
 			return TickSuccess(resp=invdata)
-			
-		machines.updatelist(host) #atualiza a lista de hosts
-		ticks.updatedict(host,carga,300) #atualiza o dado referente ao computador. Se tiver expirado, insere um novo registro
-		
-		ticket = wsDB.HeartBeats(hostname=host, hostid = regKey, totalram = total, load=carga, freeram=avaram,kernel=kern, cores = nproc, active=True, date=when)	
+		machines.add(host,regKey) #atualiza a lista de hosts
+		ticks.updatedict(host,carga,300) #atualiza o dado referente ao computador. Se tiver expirado, insere um novo registro		
+		ticket = wsDB.HeartBeats(hostname=host, hostid = regKey, totalram = total, load=carga, freeram=avaram,kernel=kern, cores = nproc, active=1, date=when)	
 		try:			
 			ticket.put() #efetiva a escrita ao banco
 		except:

@@ -21,25 +21,27 @@
 #       MA 02110-1301, USA.
 #       
 #       
-import mcache
+import mcache, wsDB
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 class MainPage(webapp.RequestHandler):
 	def get(self):
 		self.response.out.write('<html><body>')
 
-		machines = mcache.cacher("machines")
-		ticks = mcache.cacher("ticks")		
-		total_machines = machines.retrieve()		
+		machines = wsDB.manager()
+		mws = mcache.cacher("machines")		
+		total_machines = machines.retrieveActive()
 
-		if total_machines is None:
+		if len(total_machines) == 0:
 			self.response.out.write("<p>No machines are online at the moment</p>")
 		else:
 			for machine in total_machines:
-				load = ticks.retrievedict(machine)
+				load = mws.retrievedict(machine)
 				if load != -1:
 					tmp = str(load)+ r'%'
 					self.response.out.write("<p>%s load is %s</p>" % (machine,tmp))
+				else:
+					self.response.out.write("<p>%s is offline at the moment</p>" % (machine))
 	
 
 		self.response.out.write("</body></html>")
