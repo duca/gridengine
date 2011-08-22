@@ -26,7 +26,7 @@ import data, erros, sys, time, httplib2, json
 
 class cliente:
 	
-	def __init__(self):
+	def __init__(self,key):
 		
 		
 		lurl = "http://localhost:8080/tick.regtick"
@@ -36,7 +36,7 @@ class cliente:
 		errors = erros.logger("cliente_erros.log");
 		errors.calee = "cliente.py";
 		
-		self.fetcher = data.Fetcher(1,3);
+		self.fetcher = data.Fetcher(1,key);
 		self.datalogger = True
 	
 	def work(self, timer):
@@ -48,7 +48,7 @@ class cliente:
 			h = httplib2.Http()
 			try:
 				resp, content = h.request(self.url,'POST',enc,headers={'Content-Type': 'application/json'})		
-				print "Success"
+				print "Tick"
 			except:
 				error = "Couldnt connect to %s" & (str(self.url))
 				self.datalogger.reg(error,1)
@@ -57,12 +57,13 @@ class cliente:
 
 	def datalog(self):
 		from time import sleep
+		
 		while self.datalogger:
 			
 			#self.data_sum = self.fetcher.update_data();
 			#self.con.root.reg_workstation(self.data_sum)
-			sleep(1);
-			f = data.Fetcher(2,3)
+			sleep(300);
+			f = data.Fetcher(2,key)
 	
 	
 	
@@ -73,10 +74,21 @@ class cliente:
 if __name__ == '__main__':
 	
 	from multiprocessing import Process
+		import random
 	
-	client = cliente();
+	r = random.Random()
+	
+	
+	try:
+		f = open(".key.dat", "r")
+		key = str(f.read())
+	except:
+		key = r.randint(1,1000000)
+		f = open(".key.dat", "w")
+		f.write(str(key))	
+	client = cliente(key);
 
-	fetch_thread = Process(target=client.work, args=(10,))
+	fetch_thread = Process(target=client.work, args=(300,))
 	fetch_thread.start()
 	
 	
