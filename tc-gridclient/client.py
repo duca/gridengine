@@ -33,15 +33,24 @@ class cliente:
 		rurl = "http://grid.tecnocientifica.com.br/tick.regtick"
 		furl = "http://200.136.224.204:8091/tick.regtick"	
 		self.url = rurl
-		errors = erros.logger("cliente_erros.log");
-		errors.calee = "cliente.py";
+		self.errors = erros.logger("cliente_erros.log");
+		self.errors.calee = "cliente.py";
 		
 		self.fetcher = data.Fetcher(1,key);
 		self.datalogger = True
 	
 	def work(self, timer):
 		import time;	
-		while True:
+		try:
+			pidf = open(".client.pid","r")
+			pid = True
+			pidf.close()
+		except:
+			pidf = open(".client.pid","w")
+			pidf.close()
+			pid = True
+			
+		while pid:
 			
 			string = self.fetcher.fetch();
 			enc = json.dumps(string)
@@ -53,7 +62,16 @@ class cliente:
 				error = "Couldnt connect to %s" & (str(self.url))
 				self.datalogger.reg(error,1)
 				print "Failed"
+			#checagem de existencia de arquivo
+			try:
+				pidf = open(".client.pid","r")
+				pid = True
+				pidf.close()
+			except:
+				pid = False
+				self.errors.reg("Interrompido", 0)
 			time.sleep(timer)
+			
 
 	def datalog(self):
 		from time import sleep
@@ -82,6 +100,13 @@ if __name__ == '__main__':
 	try:
 		f = open(".key.dat", "r")
 		key = str(f.read())
+		
+		if len(key) == 0:
+			key = r.randint(1,1000000)	
+			f = open(".key.dat", "w")
+			f.write(key)
+		else:
+			key = int(key)
 	except:
 		key = r.randint(1,1000000)
 		f = open(".key.dat", "w")

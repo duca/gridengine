@@ -69,7 +69,7 @@ class ReceiveTick(remote.Service):
 		except:			
 			return TickSuccess(resp=invdata)
 		machines.add(host,regKey) #atualiza a lista de hosts
-		ticks.updatedict(host,carga,300) #atualiza o dado referente ao computador. Se tiver expirado, insere um novo registro		
+		ticks.updatedict(host,carga,400) #atualiza o dado referente ao computador. Se tiver expirado, insere um novo registro		
 		ticket = wsDB.HeartBeats(hostname=host, hostid = regKey, totalram = total, load=carga, freeram=avaram,kernel=kern, cores = nproc, active=1, date=when)	
 		try:			
 			ticket.put() #efetiva a escrita ao banco
