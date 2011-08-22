@@ -74,7 +74,7 @@ class cliente:
 if __name__ == '__main__':
 	
 	from multiprocessing import Process
-		import random
+	import random
 	
 	r = random.Random()
 	
