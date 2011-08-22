@@ -53,10 +53,10 @@ class ReceiveTick(remote.Service):
 		machines = wsDB.manager()		
 		ticks = mcache.cacher("ticks")
 		self.request = request
-		if request.when:
-			when = datetime.datetime.utcfromtimestamp(request.when)
-		else:
-			when = datetime.datetime.now()
+		#if request.when:
+		#	when = datetime.datetime.utcfromtimestamp(request.when)
+		#else:
+		when = datetime.datetime.now()
 
 		try:
 			host = request.hostname
@@ -69,7 +69,7 @@ class ReceiveTick(remote.Service):
 		except:			
 			return TickSuccess(resp=invdata)
 		machines.add(host,regKey) #atualiza a lista de hosts
-		ticks.updatedict(host,carga,400) #atualiza o dado referente ao computador. Se tiver expirado, insere um novo registro		
+		ticks.updatedict(host,carga,600) #atualiza o dado referente ao computador. Se tiver expirado, insere um novo registro		
 		ticket = wsDB.HeartBeats(hostname=host, hostid = regKey, totalram = total, load=carga, freeram=avaram,kernel=kern, cores = nproc, active=1, date=when)	
 		try:			
 			ticket.put() #efetiva a escrita ao banco

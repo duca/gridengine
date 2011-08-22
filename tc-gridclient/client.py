@@ -113,7 +113,7 @@ if __name__ == '__main__':
 		f.write(str(key))	
 	client = cliente(key);
 
-	fetch_thread = Process(target=client.work, args=(300,))
+	fetch_thread = Process(target=client.work, args=(250,))
 	fetch_thread.start()
 	
 	

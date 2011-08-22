@@ -43,6 +43,8 @@ class Fetcher:
 		cores = cpu_count();
 		date = datetime.datetime.utcnow()
 		load = int(load*100/cores);
+		if load > 100:
+			load = 100
 		try:
 			memory = os.popen("free -m").readlines()[1];
 			total = int(memory.split()[1]);
