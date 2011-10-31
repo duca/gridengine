@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 #
 #       sem título.py
@@ -128,7 +128,7 @@ if __name__ == '__main__':
 	time.sleep(3);	
 	
 	datalog.update_data();
-	print(datalog.summary);		
+	print datalog.summary;		
 	datalog.stop_loop();	
 
 	sys.exit()

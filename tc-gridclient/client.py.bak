@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 #
 #       sem título.py
@@ -34,7 +34,7 @@ class cliente:
 		rurl = "http://grid.tecnocientifica.com.br/tick.regtick"
 		furl = "http://200.136.224.204:8091/tick.regtick"	
 		self.url = rurl
-		self.errors = erros.logger("erros_cliente.log");
+		self.errors = erros.logger("cliente_erros.log");
 		self.errors.calee = "cliente.py";
 		
 		self.fetcher = data.Fetcher(1,key);
@@ -55,16 +55,16 @@ class cliente:
 			
 			string = self.fetcher.fetch();
 			enc = json.dumps(string)
-			enc = enc.encode('utf-8');
+			enc = json.encode('utf-8');
 			r = urllib.Request(self.url, data=enc, headers={'Content-Type': 'application/json'})			
 			try:				
-				res = urllib.urlopen(r);
+				res = urllil.urlopen(r);
 				#resp, content = h.request(self.url,'POST',enc,headers={'Content-Type': 'application/json'})		
-				print("Tick")
+				print "Tick"
 			except:
-				error = "Couldnt connect to server"
-				self.errors.reg(error,1)
-				print("Failed")
+				error = "Couldnt connect to %s" & (str(self.url))
+				self.datalogger.reg(error,1)
+				print "Failed"
 			#checagem de existencia de arquivo
 			try:
 				pidf = open(".client.pid","r")
@@ -81,8 +81,17 @@ class cliente:
 		
 		while self.datalogger:
 			
+			#self.data_sum = self.fetcher.update_data();
+			#self.con.root.reg_workstation(self.data_sum)
 			sleep(300);
 			f = data.Fetcher(2,key)
+	
+	
+	
+		
+		
+		
+
 if __name__ == '__main__':
 	
 	from multiprocessing import Process

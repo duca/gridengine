@@ -1,7 +1,7 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-#       sem título.py
+#       erros.py
 #       
 #       Copyright 2011 Eduardo Martins Lopes <eduardo@Motorhome>
 #       
@@ -23,7 +23,7 @@
 #       
 import logging, sys;
 class logger:
-
+	'''This class is used to log errors using stderr and a named file'''
 	calee = None;
 	
 	def __init__(self,fname):
