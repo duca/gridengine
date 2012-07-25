@@ -24,11 +24,12 @@
 
 import data, erros, sys, time, json
 import urllib.request as urllib
+import multiprocessing
 
-class cliente:
+class cliente(multiprocessing.Process):
 	
 	def __init__(self,key):
-		
+		super(cliente,self).__init__()   
 
 		lurl = "http://localhost:8080/tick.regtick"
 		rurl = "http://grid.tecnocientifica.com.br/tick.regtick"
@@ -39,6 +40,8 @@ class cliente:
 		
 		self.fetcher = data.Fetcher(1,key);
 		self.datalogger = True
+	def run(self, timer):
+		self.work(timer)
 	
 	def work(self, timer):
 		import time;	
@@ -83,10 +86,11 @@ class cliente:
 			
 			sleep(300);
 			f = data.Fetcher(2,key)
+            
 if __name__ == '__main__':
 	
-	from multiprocessing import Process
 	import random
+	from time import sleep
 	
 	r = random.Random()
 	
@@ -105,10 +109,14 @@ if __name__ == '__main__':
 		key = r.randint(1,1000000)
 		f = open(".key.dat", "w")
 		f.write(str(key))	
+	
 	client = cliente(key);
-
-	fetch_thread = Process(target=client.work, args=(250,))
-	fetch_thread.start()
+	client.run(250)
+	hour = 60*60*60
+	while True:
+		sleep(hour)
+	client.join()
+	
 	
 	
 
