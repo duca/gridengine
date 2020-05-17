@@ -1,9 +1,9 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 #
-#       sem título.py
+#       client.py
 #       
-#       Copyright 2011 Eduardo Martins Lopes <eduardo@Motorhome>
+#       Copyright 2020 Eduardo Martins Lopes <edumlopes@gmail.com>
 #       
 #       This program is free software; you can redistribute it and/or modify
 #       it under the terms of the GNU General Public License as published by
