@@ -32,9 +32,7 @@ class cliente(multiprocessing.Process):
 		super(cliente,self).__init__()   
 
 		lurl = "http://localhost:8080/tick.regtick"
-		rurl = "http://grid.tecnocientifica.com.br/tick.regtick"
-		furl = "http://200.136.224.204:8091/tick.regtick"	
-		self.url = rurl
+		self.url = lurl
 		self.errors = erros.logger("erros_cliente.log");
 		self.errors.calee = "cliente.py";
 		

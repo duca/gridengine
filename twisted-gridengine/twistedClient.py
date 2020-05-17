@@ -29,7 +29,6 @@ import json
 import data
 import base64, urllib, urllib2
 
-#rhost = "http://grid.tecnocientifica.com.br/tick.regtick"
 rhost = "localhost:8080/tick.regtick"
 class JSONClient(basic.LineOnlyReceiver):
 	#def startedConnecting(self, connector):
